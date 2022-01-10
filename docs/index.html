@@ -14,9 +14,47 @@
     window.$docsify = {
       name: '',
       repo: '',
+      name: '我的组队学习',
+        repo: 'https://github.com/swpucwf/Myblog',
+        loadSidebar: true,
+        auto2top: true,
+        sidebarDisplayLevel: 1,
+        subMaxLevel: 0,
+        alias: {
+            '/.*/_sidebar.md': '/_sidebar.md'
+        },
+        pagination: {
+            previousText: '上一章节',
+            nextText: '下一章节',
+        },
+        search: {
+            placeholder: '搜索',
+            noData: '找不到结果！',
+        },
+        count:{
+            countable: true,
+            position: 'top',
+            margin: '10px',
+            float: 'right',
+            fontsize:'0.9em',
+            color:'rgb(90,90,90)',
+            language:'chinese',
+            isExpected: true
+        }
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-pagination@latest/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+  <!-- CDN files for docsify-katex -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0.10.2/dist/katex.min.css">
+  <!-- sidebar collapse -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse@latest/dist/docsify-sidebar-collapse.min.js"></script>
+  <!-- search -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/plugins/search.js"></script>
+  <!-- count -->
+  <script src="//cdn.jsdelivr.net/npm/docsify-count@latest/dist/countable.min.js"></script>
 </body>
 </html>
