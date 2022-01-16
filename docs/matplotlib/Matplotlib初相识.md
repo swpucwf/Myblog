@@ -16,7 +16,7 @@
   import numpy as np
   
   fig, ax = plt.subplots()  # 创建一个包含一个axes的figure
-  ax.plot([1, 2, 3, 4], [1, 4, 2, 3]);  # 绘制图像
+  ax.plot([1, 2, 3, 4], [1, 4, 2, 3])  # 绘制图像
   #line =plt.plot([1, 2, 3, 4], [1, 4, 2, 3]) 
   ```
 
@@ -135,5 +135,5 @@ plt.title("Simple Plot")
 plt.legend() ;
 ```
 
-[参考DataWhale](https://datawhalechina.github.io/fantastic-matplotlib/%E7%AC%AC%E4%B8%80%E5%9B%9E%EF%BC%9AMatplotlib%E5%88%9D%E7%9B%B8%E8%AF%86/index.html)
+[参考：DataWhale](https://datawhalechina.github.io/fantastic-matplotlib/%E7%AC%AC%E4%B8%80%E5%9B%9E%EF%BC%9AMatplotlib%E5%88%9D%E7%9B%B8%E8%AF%86/index.html)
 
