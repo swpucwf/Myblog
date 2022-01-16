@@ -1,8 +1,10 @@
 * [目录](README.md)
     * matplotlib绘图
         * [Matplotlib初相识](matplotlib/Matplotlib初相识.md)
+        * [艺术画笔见乾坤](matplotlib/艺术画笔见乾坤.md)
     * 计算机视觉
         * [斑点检测算法](计算机视觉/斑点检测算法.md)
+        * [边缘检测算法概述](计算机视觉/边缘检测概述.md)
     * 数据结构与算法
         * [python版本]()
 
