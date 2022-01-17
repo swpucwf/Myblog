@@ -20,7 +20,7 @@
 
 他们之间的关系如下图所示：
 
-![分类](../images/%E8%89%BA%E6%9C%AF%E7%94%BB%E7%AC%94%E8%A7%81%E4%B9%BE%E5%9D%A4.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODYwNDk2MQ==,size_16,color_FFFFFF,t_70%23pic_center.jpeg)
+![image-20220117231101799](../images/ch2.assets/image-20220117231101799.png)
 
 | Axes helper method | Artist | Container |
 | :--- | :--- | :--- |
