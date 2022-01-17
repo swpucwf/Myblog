@@ -21,18 +21,16 @@
 他们之间的关系如下图所示：
 
 ![分类](../images/%E8%89%BA%E6%9C%AF%E7%94%BB%E7%AC%94%E8%A7%81%E4%B9%BE%E5%9D%A4.assets/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zODYwNDk2MQ==,size_16,color_FFFFFF,t_70%23pic_center.jpeg)
-$$
-\begin{array}{lll}
-\hline \text { Axes helper method } & \text { Artist } & \text { Container } \\
-\hline \text { bar-bar charts } & \text { Rectangle } & \text { ax.patches } \\
-\hline \text { errorbar - error bar plots } & \text { Line2D and Rectangle } & \text { ax.lines and ax.patches } \\
-\hline \text { fill - shared area } & \text { Polygon } & \text { ax.patches } \\
-\hline \text { hist - histograms } & \text { Rectangle } & \text { ax.lines } \\
-\hline \text { imshow - image data } & \text { AxesImage } & \text { ax.images } \\
-\hline \text { plot-xy plots } & \text { Line2D } & \\
-\hline
-\end{array}
-$$
+
+| Axes helper method | Artist | Container |
+| :--- | :--- | :--- |
+| bar - bar charts | Rectangle | ax.patches |
+| errorbar - error bar plots | Line2D and Rectangle | ax.lines and ax.patches |
+| fill - shared area | Polygon | ax.patches |
+| hist - histograms | Rectangle | ax.patches |
+| scatter - scatter charts | Polycollection | ax.lines |
+| plot - xy plots | AxesImage | Line2D |
+| imshow - image data | axions |  |
 
 ## 基本元素讲解
 
