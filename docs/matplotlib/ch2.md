@@ -1,4 +1,4 @@
-# 第二回：艺术画笔见乾坤
+第二回：艺术画笔见乾坤
 
 ## 概述
 
@@ -628,4 +628,6 @@ ax.yaxis.set_tick_params(which='major', labelcolor='green',
 
 - 分别用一组长方形柱和填充面积的方式模仿画出下图，函数 y = -1 * (x - 2) * (x - 8) +10 在区间[2,9]的积分面积
   ![img](../images/ch2.assets/20201126105910781.png)
+  
   ![img](../images/ch2.assets/20201126105910780.png)
+
