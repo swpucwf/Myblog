@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Myblogs.iml" filepath="$PROJECT_DIR$/.idea/Myblogs.iml" />
+      <module fileurl="file://D:/deep-learning/Project/CV/You_Only_Look_Once-master/.idea/You_Only_Look_Once-master.iml" filepath="D:/deep-learning/Project/CV/You_Only_Look_Once-master/.idea/You_Only_Look_Once-master.iml" />
     </modules>
   </component>
 </project>
