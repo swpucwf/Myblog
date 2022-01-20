@@ -15,9 +15,9 @@
         * yolo
         * 设计优化部署
         * OpenCV
-    
         * [斑点检测算法](cv/ch1.md)
         * [边缘检测算法概述](cv/ch2.md)
+        * [yolov1算法](cv/yolov1.md)
     
     * 程序语言
     
@@ -27,7 +27,5 @@
     
     * 机器学习
       * [特征选择方法调研](MachineLearning/ch1.md)
-    * 特征工程
-    
     * 项目实战
 

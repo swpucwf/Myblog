@@ -5,6 +5,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="You_Only_Look_Once-master" />
+    <orderEntry type="module" module-name="MASR" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
