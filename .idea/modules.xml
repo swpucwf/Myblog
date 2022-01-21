@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://F:/陈伟峰/AI/深度学习/项目/MASR/.idea/MASR.iml" filepath="F:/陈伟峰/AI/深度学习/项目/MASR/.idea/MASR.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Myblogs.iml" filepath="$PROJECT_DIR$/.idea/Myblogs.iml" />
-      <module fileurl="file://D:/deep-learning/Project/CV/You_Only_Look_Once-master/.idea/You_Only_Look_Once-master.iml" filepath="D:/deep-learning/Project/CV/You_Only_Look_Once-master/.idea/You_Only_Look_Once-master.iml" />
     </modules>
   </component>
 </project>
