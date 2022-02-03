@@ -20,16 +20,23 @@
     * **OpenCV**
       * [斑点检测算法](cv/ch1.md)
       * [边缘检测算法概述](cv/ch2.md)
-      
 * **程序语言**
   * c++
     * [c++初始入门](C++/ch1.md)
     * [C++处理数据](C++/ch2.md)
-    * [c++待更](C++/ch3.md)
-    * [c++待更](C++/ch4.md)
+    * [c++复合类型](C++/ch3.md)
+    * [c++循环和关系表达式](C++/ch4.md)
+    * [c++待更](C++/ch5.md)
+    * [c++待更](C++/ch6.md)
 * **数据结构与算法**
 * **语音识别**
 * **机器学习**
   * [特征选择方法调研](MachineLearning/ch1.md)
 * **项目实战**
+
+
+
+[DataWhale开源网址学习](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
+
+
 

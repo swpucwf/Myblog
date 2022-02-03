@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\c++",
+    "\\c++\\ex03",
+    "\\c++\\ex04"
   ],
+  "SelectedNode": "\\c++\\ex04\\5-8.cpp",
   "PreviewInSolutionExplorer": false
 }
