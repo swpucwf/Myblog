@@ -6,7 +6,7 @@
     * [艺术画笔见乾坤](matplotlib/ch2.md)
     * [布局格式定方圆](matplotlib/ch3.md)
     * [文字图例尽眉目](matplotlib/ch4.md)
-    *  [样式色彩秀芳华](matplotlib/ch5.md)
+    * [样式色彩秀芳华](matplotlib/ch5.md)
 * **计算机视觉**
     * **超分辨率**
     * **图像分割**
@@ -15,6 +15,9 @@
     * **YOLO**
       * [yolov1算法](cv/yolov1.md)
       * [yolov2算法](cv/yolov2.md)
+      * [yolov3算法](cv/yolov3.md)
+      * [yolov4算法](cv/yolov4.md)
+      * [yolov5算法](cv/yolov5.md)
     * **优化部署**
 
     * **OpenCV**
