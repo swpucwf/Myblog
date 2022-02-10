@@ -11,18 +11,24 @@
     * **超分辨率**
     * **图像分割**
     * **图像分类**
+      * [alexnet](DeepLearning/alexnet.md)   
+      * [googlenet](DeepLearning/googlenet.md)
+      * [mobileNet](DeepLearning/mobileNet.md)
+      * [resnet](DeepLearning/resnet.md)
+      * [shufflenet](DeepLearning/shufflenet.md)
+      * [vgg](DeepLearning/vgg.md)
     * **RCNN**
     * **YOLO**
-      * [yolov1算法](cv/yolov1.md)
-      * [yolov2算法](cv/yolov2.md)
-      * [yolov3算法](cv/yolov3.md)
-      * [yolov4算法](cv/yolov4.md)
-      * [yolov5算法](cv/yolov5.md)
+    * [yolov1算法](cv/yolov1.md)
+    * [yolov2算法](cv/yolov2.md)
+    * [yolov3算法](cv/yolov3.md)
+    * [yolov4算法](cv/yolov4.md)
+    * [yolov5算法](cv/yolov5.md)
     * **优化部署**
 
     * **OpenCV**
-      * [斑点检测算法](cv/ch1.md)
-      * [边缘检测算法概述](cv/ch2.md)
+    * [斑点检测算法](cv/ch1.md)
+    * [边缘检测算法概述](cv/ch2.md)
 * **程序语言**
   * c++
     * [c++初始入门](C++/ch1.md)
