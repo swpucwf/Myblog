@@ -17,6 +17,8 @@
       * [resnet](DeepLearning/resnet.md)
       * [shufflenet](DeepLearning/shufflenet.md)
       * [vgg](DeepLearning/vgg.md)
+      * [densenet](DeepLearning/densenet.md)
+      * [EfficientNet.md](DeepLearning/EfficientNet.md)
     * **RCNN**
     * **YOLO**
       * [yolov1算法](cv/yolov1.md)
@@ -42,9 +44,6 @@
 * **机器学习**
   * [特征选择方法调研](MachineLearning/ch1.md)
 * **项目实战**
-
-
-
 [DataWhale开源网址学习](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
 
