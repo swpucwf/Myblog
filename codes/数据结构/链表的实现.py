@@ -26,7 +26,7 @@ class  LinkedList(object):
 			count+=1
 			temp_Node = temp_Node.next
 
-		retun temp_Node.next.val
+		return temp_Node.next.val
 
 	def __len__(self):
 		'''
