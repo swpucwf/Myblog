@@ -38,8 +38,7 @@ int main() {
 ```
 
 
-
-2.  编写一个程序，最多将10个`donation`值读入到一个`double`数组中（如果您愿意，也可以使用模板类`array`）。程序遇到非数字输入时将结束输入，并报告这些数字的平均值以及数组中有多少个数字大于平均值。
+编写一个程序，最多将10个`donation`值读入到一个`double`数组中（如果您愿意，也可以使用模板类`array`）。程序遇到非数字输入时将结束输入，并报告这些数字的平均值以及数组中有多少个数字大于平均值。
 
 
 
@@ -48,7 +47,7 @@ int main() {
 #include <array>
 #include <cctype>
 using namespace std;
-// 编写一个程序，最多将10个donation值读入到一个double数组中（如果您愿意，也可以使用模板类array）。
+//编写一个程序，最多将10个donation值读入到一个double数组中（如果您愿意，也可以使用模板类array）。
 // 程序遇到非数字输入时将结束输入，并报告这些数字的平均值以及数组中有多少个数字大于平均值。
 const int LENGTH= 10 ;
 int main() {
@@ -132,7 +131,7 @@ int main() {
 
 ```
 
-4.  加入`Benevolent Order of Programmer`后，在`BOP`大会上，人们便可以通过加入者的真实姓名、头衔或密码`BOP`姓名来了解他（她）。请编写一个程序，可以使用真实姓名、头衔、密码姓名或成员偏好来列出成员。编写该程序时，请使用下面的结构：
+4. 加入`Benevolent Order of Programmer`后，在`BOP`大会上，人们便可以通过加入者的真实姓名、头衔或密码`BOP`姓名来了解他（她）。请编写一个程序，可以使用真实姓名、头衔、密码姓名或成员偏好来列出成员。编写该程序时，请使用下面的结构：
 
 ```c++
 // Benevolent Order of Programmer name structure
