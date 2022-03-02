@@ -98,7 +98,7 @@ ax.plot(x, y, label='linear')
 ax.set_xlabel('x label') 
 ax.set_ylabel('y label') 
 ax.set_title("Simple Plot")  
-ax.legend() ;
+ax.legend() 
 ```
 
 ## 思考题

@@ -2,13 +2,16 @@
 
 
 * **计算机视觉**
-  * matplotlib绘图
+  * **matplotlib绘图**
       * [Matplotlib初相识](matplotlib/ch1.md)
       * [艺术画笔见乾坤](matplotlib/ch2.md)
       * [布局格式定方圆](matplotlib/ch3.md)
       * [文字图例尽眉目](matplotlib/ch4.md)
       * [样式色彩秀芳华](matplotlib/ch5.md)
   * **超分辨率**
+  * **书籍**
+    * [C++ Primer Plus（第6版）编程练习解答](https://relph1119.github.io/cpp-primer-plus/#/)
+    * [计算机视觉](www.baidu.com)
   * **图像分割**
   * **图像分类**
     * [alexnet](DeepLearning/alexnet.md)   
@@ -39,8 +42,9 @@
     * [C++处理数据](C++/ch2.md)
     * [c++复合类型](C++/ch3.md)
     * [c++循环和关系表达式](C++/ch4.md)
-    * [c++待更](C++/ch5.md)
-    * [c++待更](C++/ch6.md)
+    * [c++分支和逻辑运算](C++/ch5.md)
+    * [c++函数](C++/ch6.md)
+    * [c++函数探幽](C++/ch7.md)
 * **数据结构与算法**
 * **语音识别**
 * **机器学习**
