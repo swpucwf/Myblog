@@ -33,9 +33,9 @@
     - 计算机视觉实战编程
     - 深入浅出pytorch
       - 第一章 PyTorch简介和安装
-        - [1.1 PyTorch简介.md](深入浅出pytorch/第一章PyTorch简介和安装/1.1 PyTorch简介.md)
-        - [1.2 PyTorch的安装.md](深入浅出pytorch/第一章PyTorch简介和安装/1.2 PyTorch的安装.md)
-        - [1.3 PyTorch相关资源.md](深入浅出pytorch/第一章PyTorch简介和安装/1.3 PyTorch相关资源.md)
+        - [PyTorch简介.md](深入浅出pytorch/第一章PyTorch简介和安装/1.1 PyTorch简介.md)
+        - [PyTorch的安装.md](深入浅出pytorch/第一章PyTorch简介和安装/1.2 PyTorch的安装.md)
+        - [PyTorch相关资源.md](深入浅出pytorch/第一章PyTorch简介和安装/1.3 PyTorch相关资源.md)
   * **优化部署**
   
   * **OpenCV**
