@@ -31,8 +31,13 @@
     * [yolov5算法](cv/yolov5.md)
   - 计算机书籍
     - 计算机视觉实战编程
+    - 深入浅出pytorch
+      - 第一章 PyTorch简介和安装
+        - [1.1 PyTorch简介.md](docs/深入浅出pytorch/第一章 PyTorch简介和安装/1.1 PyTorch简介.md)
+        - [1.2 PyTorch的安装.md](docs/深入浅出pytorch/第一章 PyTorch简介和安装/1.2 PyTorch的安装.md)
+        - [1.3 PyTorch相关资源.md](docs/深入浅出pytorch/第一章 PyTorch简介和安装/1.3 PyTorch相关资源.mdd)
   * **优化部署**
-
+  
   * **OpenCV**
   * [斑点检测算法](cv/ch1.md)
   * [边缘检测算法概述](cv/ch2.md)

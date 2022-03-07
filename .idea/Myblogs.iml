@@ -4,6 +4,11 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.8 (base)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="MTCNN" />
+    <orderEntry type="module" module-name="Taffic_Anomaly_Detection_based_on_Neural_Network" />
+    <orderEntry type="module" module-name="恶意流量检测" />
+    <orderEntry type="module" module-name="基于YOLOV5的车牌定位和识别源码" />
+    <orderEntry type="module" module-name="flask-video-streaming-recorder-master" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />
