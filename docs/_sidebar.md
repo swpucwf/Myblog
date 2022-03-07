@@ -1,13 +1,12 @@
 # [目录](README.md)
-
-
 * **计算机视觉**
-  * **matplotlib绘图**
-      * [Matplotlib初相识](matplotlib/ch1.md)
-      * [艺术画笔见乾坤](matplotlib/ch2.md)
-      * [布局格式定方圆](matplotlib/ch3.md)
-      * [文字图例尽眉目](matplotlib/ch4.md)
-      * [样式色彩秀芳华](matplotlib/ch5.md)
+  * 数据可视化
+    * **matplotlib绘图**
+        * [Matplotlib初相识](matplotlib/ch1.md)
+        * [艺术画笔见乾坤](matplotlib/ch2.md)
+        * [布局格式定方圆](matplotlib/ch3.md)
+        * [文字图例尽眉目](matplotlib/ch4.md)
+        * [样式色彩秀芳华](matplotlib/ch5.md)
   * **书籍**
     * [C++ Primer Plus（第6版）编程练习解答](https://relph1119.github.io/cpp-primer-plus/#/)
     - 计算机视觉实战编程
