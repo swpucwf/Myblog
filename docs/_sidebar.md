@@ -29,7 +29,7 @@
     * [yolov3算法](cv/yolov3.md)
     * [yolov4算法](cv/yolov4.md)
     * [yolov5算法](cv/yolov5.md)
-  - 计算机书籍
+  - **计算机书籍**
     - 计算机视觉实战编程
     - 深入浅出pytorch
       - 第一章 PyTorch简介和安装
