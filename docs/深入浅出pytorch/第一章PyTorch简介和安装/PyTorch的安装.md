@@ -150,7 +150,26 @@ custom_channels:
 
 ![适配表](figures/适配表.png)
 
-#### 1.2.3 安装Pytorch
+#### **1.2.3 C++环境安装**
+
+c++的环境安装，主要出现在安装pytorch之前，需要配置相关的C++环境。一般我们是利用vs环境来进行配置，以vs2017为例子参考。
+
+1. [安装VS2017](https://my.visualstudio.com/Downloads?q=visual%20studio%202017&wt.mc_id=o~msft~vscom~older-downloads)![image-20220307205234650](../images/PyTorch%E7%9A%84%E5%AE%89%E8%A3%85.assets/image-20220307205234650.png)
+2. ![image-20220307205440451](../images/PyTorch%E7%9A%84%E5%AE%89%E8%A3%85.assets/image-20220307205440451.png)
+
+#### **1.2.cuda版本选择**
+
+1. cuda根据电脑显卡驱动配置选择
+
+![image-20220307205626062](../images/PyTorch%E7%9A%84%E5%AE%89%E8%A3%85.assets/image-20220307205626062.png)
+
+2. 选择对应版本的cudann
+
+   [cudann网址](https://developer.nvidia.com/cudnn-download-survey)
+
+   选择跟cuda版本一致的即可。x86代表windows
+
+#### 1.2.5 安装Pytorch
 
 **Step 1**：登录官网[Pytorch官网](https://pytorch.org/)
 
@@ -171,8 +190,11 @@ custom_channels:
 ##### 注意事项
 
 1. **Stable**代表的是稳定版本，**Preview**代表的是先行版本
+
 2. 可以结合电脑是否有显卡，选择CPU版本还是CUDA版本，建议还是需要NVIDIA GPU
+
 3. 官方建议我们使用**Anaconda**来进行管理
+
 4. 关于安装的系统要求
 
    1. **Windows**：
@@ -185,6 +207,10 @@ custom_channels:
       1. macOS 10.10及其以上
 
 5. 有些电脑所支持的cuda版本<10.2，此时我们需要进行手动降级，即就是cudatoolkit = 你所适合的版本，但是这里需要注意下一定要保持Pytorch和cudatoolkit的版本适配。查看[Previous PyTorch Versions | PyTorch](https://pytorch.org/get-started/previous-versions/)
+
+6. 版本号选择
+
+   
 
 **Step 4**：在线下载
 
@@ -239,7 +265,9 @@ torch.cuda.is_available()
 
 Pytorch的安装绝对是一个容易上火的过程，而且网络上的教程很可能对应早期的版本，或是会出现一些奇奇怪怪的问题，但是别担心，多装几次多遇到点奇奇怪怪的问题就好了，加油！
 
+##### torch版本的选择
 
+![image-20220307210211146](../images/PyTorch%E7%9A%84%E5%AE%89%E8%A3%85.assets/image-20220307210211146.png)
 
 ####  1.2.4 PyCharm安装（可选操作）
 

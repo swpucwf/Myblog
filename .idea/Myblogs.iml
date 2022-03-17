@@ -9,6 +9,7 @@
     <orderEntry type="module" module-name="恶意流量检测" />
     <orderEntry type="module" module-name="基于YOLOV5的车牌定位和识别源码" />
     <orderEntry type="module" module-name="flask-video-streaming-recorder-master" />
+    <orderEntry type="module" module-name="pytorch_just_for_juan" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

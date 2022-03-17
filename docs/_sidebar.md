@@ -12,9 +12,14 @@
     - 计算机视觉实战编程
     - 深入浅出pytorch
       - 第一章 PyTorch简介和安装
-        - [PyTorch简介.md](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch简介.md)
-        - [PyTorch的安装.md](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch的安装.md)
-        - [PyTorch相关资源.md](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch相关资源.md)
+        - [PyTorch简介](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch简介.md)
+        - [PyTorch的安装](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch的安装.md)
+        - [PyTorch相关资源](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch相关资源.md)
+    - 深入浅出paddlepaddle
+      - 第一章
+        - [paddle简介]()
+        - [介绍]
+        - [介绍]
   * **图像分类**
     * [alexnet](DeepLearning/alexnet.md)   
     * [googlenet](DeepLearning/googlenet.md)
@@ -43,6 +48,11 @@
     * [c++函数探幽](C++/ch7.md)
 * **机器学习**
   * [特征选择方法调研](MachineLearning/ch1.md)
+* **工具类**
+  * github
+    * [github上传项目](https://www.cnblogs.com/zouwangblog/p/11201561.html)
+  * 实战
+    * [实战类总结](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
 * **项目实战**
 [DataWhale开源网址学习](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
