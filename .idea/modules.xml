@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:/deep-learning/Project/CV/MTCNN/.idea/MTCNN.iml" filepath="D:/deep-learning/Project/CV/MTCNN/.idea/MTCNN.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Myblogs.iml" filepath="$PROJECT_DIR$/.idea/Myblogs.iml" />
       <module fileurl="file://H:/Taffic_Anomaly_Detection_based_on_Neural_Network/.idea/Taffic_Anomaly_Detection_based_on_Neural_Network.iml" filepath="H:/Taffic_Anomaly_Detection_based_on_Neural_Network/.idea/Taffic_Anomaly_Detection_based_on_Neural_Network.iml" />
       <module fileurl="file://$PROJECT_DIR$/../陈伟峰/AI/深度学习/项目/platMats/.idea/flask-video-streaming-recorder-master.iml" filepath="$PROJECT_DIR$/../陈伟峰/AI/深度学习/项目/platMats/.idea/flask-video-streaming-recorder-master.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../pytorch_just_for_juan/.idea/pytorch_just_for_juan.iml" filepath="$PROJECT_DIR$/../pytorch_just_for_juan/.idea/pytorch_just_for_juan.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../基于yolov5的车牌检测和识别/基于YOLOV5的车牌定位和识别源码/.idea/基于YOLOV5的车牌定位和识别源码.iml" filepath="$PROJECT_DIR$/../基于yolov5的车牌检测和识别/基于YOLOV5的车牌定位和识别源码/.idea/基于YOLOV5的车牌定位和识别源码.iml" />
       <module fileurl="file://$PROJECT_DIR$/../陈伟峰/AI/深度学习/项目/恶意流量检测/.idea/恶意流量检测.iml" filepath="$PROJECT_DIR$/../陈伟峰/AI/深度学习/项目/恶意流量检测/.idea/恶意流量检测.iml" />
     </modules>
   </component>
