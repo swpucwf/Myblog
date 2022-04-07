@@ -28,7 +28,7 @@
     * [shufflenet](DeepLearning/shufflenet.md)
     * [vgg](DeepLearning/vgg.md)
     * [densenet](DeepLearning/densenet.md)
-    * [EfficientNet.md](DeepLearning/EfficientNet.md)
+    * [EfficientNet](DeepLearning/EfficientNet.md)
   * **YOLO**
     * [yolov1算法](cv/yolov1.md)
     * [yolov2算法](cv/yolov2.md)
