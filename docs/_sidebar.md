@@ -1,25 +1,20 @@
 # [目录](README.md)
 * **计算机视觉**
-  * 数据可视化
-    * **matplotlib绘图**
-        * [Matplotlib初相识](matplotlib/ch1.md)
-        * [艺术画笔见乾坤](matplotlib/ch2.md)
-        * [布局格式定方圆](matplotlib/ch3.md)
-        * [文字图例尽眉目](matplotlib/ch4.md)
-        * [样式色彩秀芳华](matplotlib/ch5.md)
+  * **数据可视化**
+    * [Matplotlib初相识](matplotlib/ch1.md)
+    * [艺术画笔见乾坤](matplotlib/ch2.md)
+    * [布局格式定方圆](matplotlib/ch3.md)
+    * [文字图例尽眉目](matplotlib/ch4.md)
+    * [样式色彩秀芳华](matplotlib/ch5.md)
   * **书籍**
     * [C++ Primer Plus（第6版）编程练习解答](https://relph1119.github.io/cpp-primer-plus/#/)
-    - 计算机视觉实战编程
-    - 深入浅出pytorch
-      - 第一章 PyTorch简介和安装
+    - **计算机视觉实战编程**
+    - **深入浅出pytorch**
+      - **第一章 PyTorch简介和安装**
         - [PyTorch简介](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch简介.md)
         - [PyTorch的安装](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch的安装.md)
         - [PyTorch相关资源](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch相关资源.md)
-    - 深入浅出paddlepaddle
-      - 第一章
-        - [paddle简介]()
-        - [介绍]
-        - [介绍]
+    - **深入浅出paddlepaddle**
   * **图像分类**
     * [alexnet](DeepLearning/alexnet.md)   
     * [googlenet](DeepLearning/googlenet.md)
@@ -37,7 +32,7 @@
     * [yolov5算法](cv/yolov5.md)
   * [斑点检测算法](cv/ch1.md)
   * [边缘检测算法概述](cv/ch2.md)
-  * 目标检测问题
+  *** 目标检测问题**
     * [人脸关键点检测](cv/人脸关键点检测.md)
     * [人脸属性](cv/人脸属性识别.md)
     * [人脸检测问题1](cv/人脸检测问题1.md)
@@ -46,7 +41,7 @@
     * [人脸识别难点](cv/人脸识别难点.md)
     * [iou算法](cv/iou.md)
 * **程序语言**
-  * c++
+  * **c++**
     * [c++初始入门](C++/ch1.md)
     * [C++处理数据](C++/ch2.md)
     * [c++复合类型](C++/ch3.md)
@@ -57,12 +52,12 @@
 * **机器学习**
   * [特征选择方法调研](MachineLearning/ch1.md)
 * **工具类**
-  * github
+  * **github**
     * [github上传项目](https://www.cnblogs.com/zouwangblog/p/11201561.html)
-  * 实战
+  * **实战**
     * [实战类总结](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
 * **项目实战**
-[DataWhale开源网址学习](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
+[**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
 
 
