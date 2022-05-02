@@ -56,8 +56,15 @@
     * [github上传项目](https://www.cnblogs.com/zouwangblog/p/11201561.html)
   * **实战**
     * [实战类总结](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
-* **项目实战**
-[**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
+* **文章集合**
+  * [paper](paper/README.md)
+* **超值大佬博客**
+  - 夜雨飘零
+    - 介绍：语音项目，视觉项目,主要开发paddle框架
+    - 相关链接
+      - [github](https://github.com/yeyupiaoling)
+      - [博客](https://yeyupiaoling.blog.csdn.net)
+- [**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
 
 
