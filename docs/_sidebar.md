@@ -8,13 +8,6 @@
     * [样式色彩秀芳华](matplotlib/ch5.md)
   * **书籍**
     * [C++ Primer Plus（第6版）编程练习解答](https://relph1119.github.io/cpp-primer-plus/#/)
-    - **计算机视觉实战编程**
-    - **深入浅出pytorch**
-      - **第一章 PyTorch简介和安装**
-        - [PyTorch简介](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch简介.md)
-        - [PyTorch的安装](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch的安装.md)
-        - [PyTorch相关资源](深入浅出pytorch/第一章PyTorch简介和安装/PyTorch相关资源.md)
-    - **深入浅出paddlepaddle**
   * **图像分类**
     * [alexnet](DeepLearning/alexnet.md)   
     * [googlenet](DeepLearning/googlenet.md)
@@ -24,15 +17,19 @@
     * [vgg](DeepLearning/vgg.md)
     * [densenet](DeepLearning/densenet.md)
     * [EfficientNet](DeepLearning/EfficientNet.md)
+  * **生成对抗网络**
+    * [初步了解GAN](GAN/笔记.md)
+    * [GANs 的理论与提升](GAN/笔记2.md)
   * **YOLO**
     * [yolov1算法](cv/yolov1.md)
     * [yolov2算法](cv/yolov2.md)
     * [yolov3算法](cv/yolov3.md)
     * [yolov4算法](cv/yolov4.md)
     * [yolov5算法](cv/yolov5.md)
-  * [斑点检测算法](cv/ch1.md)
-  * [边缘检测算法概述](cv/ch2.md)
-  *** 目标检测问题**
+  * **边缘检测问题**
+    * [斑点检测算法](cv/ch1.md)
+    * [边缘检测算法概述](cv/ch2.md)
+  * **目标检测问题**
     * [人脸关键点检测](cv/人脸关键点检测.md)
     * [人脸属性](cv/人脸属性识别.md)
     * [人脸检测问题1](cv/人脸检测问题1.md)
@@ -58,7 +55,6 @@
     * [实战类总结](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
 * [文章集合](paper/README.md)
 * [超值大佬博客](GodV/readme.md)
-
 - [**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
 
