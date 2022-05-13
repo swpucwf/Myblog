@@ -26,6 +26,7 @@
     * [yolov3算法](cv/yolov3.md)
     * [yolov4算法](cv/yolov4.md)
     * [yolov5算法](cv/yolov5.md)
+    * [pp-yoloe](cv/PP-YOLOE.md)
   * **边缘检测问题**
     * [斑点检测算法](cv/ch1.md)
     * [边缘检测算法概述](cv/ch2.md)
