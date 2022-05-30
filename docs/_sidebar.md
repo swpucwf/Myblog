@@ -36,18 +36,18 @@
   * [文字图例尽眉目](matplotlib/ch4.md)
   * [样式色彩秀芳华](matplotlib/ch5.md)
 * **书籍**
-  * [C++ Primer Plus（第6版）编程练习解答](https://relph1119.github.io/cpp-primer-plus/#/)
+  * [**C++ Primer Plus（第6版）编程练习解答**](https://relph1119.github.io/cpp-primer-plus/#/)
 * **生成对抗网络**
-  * [初步了解GAN](GAN/笔记.md)
-  * [GANs 的理论与提升](GAN/笔记2.md)
-**机器学习**
-* [特征选择方法调研](MachineLearning/ch1.md)
+  * [**初步了解GAN**](GAN/笔记.md)
+  * [**GANs 的理论与提升**](GAN/笔记2.md)
+* **机器学习**
+  * [**特征选择方法调研**](MachineLearning/ch1.md)
 * **github**
-  * [github上传项目](https://www.cnblogs.com/zouwangblog/p/11201561.html)
+  * [**github上传项目**](https://www.cnblogs.com/zouwangblog/p/11201561.html)
 * **实战**
-  * [FPGA编程资料](https://xupsh.github.io/pp4fpgas-cn/)
-  * [机器学习系统](https://openmlsys.github.io/chapter_preface/index.html)
-  * [实战类总结](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
+  * [**FPGA编程资料**](https://xupsh.github.io/pp4fpgas-cn/)
+  * [**机器学习系统**](https://openmlsys.github.io/chapter_preface/index.html)
+  * [**实战类总结**](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
 * [**文章集合**](paper/README.md)
 * [**超值大佬博客**](GodV/readme.md)
 - [**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
