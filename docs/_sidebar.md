@@ -29,20 +29,21 @@
       * [人脸识别](cv/人脸识别.md)
       * [人脸识别难点](cv/人脸识别难点.md)
     * [iou算法](cv/iou.md)
-* **数据可视化**
-  * [Matplotlib初相识](matplotlib/ch1.md)
-  * [艺术画笔见乾坤](matplotlib/ch2.md)
-  * [布局格式定方圆](matplotlib/ch3.md)
-  * [文字图例尽眉目](matplotlib/ch4.md)
-  * [样式色彩秀芳华](matplotlib/ch5.md)
-* **书籍**
+* **数据分析**
+  * **数据可视化**
+    * [Matplotlib初相识](matplotlib/ch1.md)
+    * [艺术画笔见乾坤](matplotlib/ch2.md)
+    * [布局格式定方圆](matplotlib/ch3.md)
+    * [文字图例尽眉目](matplotlib/ch4.md)
+    * [样式色彩秀芳华](matplotlib/ch5.md)
+* **编程书籍**
   * [**C++ Primer Plus（第6版）编程练习解答**](https://relph1119.github.io/cpp-primer-plus/#/)
 * **生成对抗网络**
   * [**初步了解GAN**](GAN/笔记.md)
   * [**GANs 的理论与提升**](GAN/笔记2.md)
 * **机器学习**
   * [**特征选择方法调研**](MachineLearning/ch1.md)
-* **github**
+* **工程问题**
   * [**github上传项目**](https://www.cnblogs.com/zouwangblog/p/11201561.html)
 * **实战**
   * [**FPGA编程资料**](https://xupsh.github.io/pp4fpgas-cn/)
