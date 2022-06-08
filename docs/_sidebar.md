@@ -44,7 +44,10 @@
 * **机器学习**
   * [**特征选择方法调研**](MachineLearning/ch1.md)
 * **工程问题**
+  * [半精度（FP16）调试血泪总结](https://mp.weixin.qq.com/s/C5WsHZBBXtHLPU7tqAbzyw) 
   * [**github上传项目**](https://www.cnblogs.com/zouwangblog/p/11201561.html)
+  * [ONNXRuntime部署PP-YOLOE](https://github.com/hpc203/pp-yoloe-onnxrun-cpp-py)
+  * [YOLOv5 v6.1无损剪枝](deploy/YOLOv5无损剪枝.md)
 * **实战**
   * [**FPGA编程资料**](https://xupsh.github.io/pp4fpgas-cn/)
   * [**机器学习系统**](https://openmlsys.github.io/chapter_preface/index.html)
