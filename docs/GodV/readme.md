@@ -3,3 +3,4 @@
   - 相关链接
     - [github](https://github.com/yeyupiaoling)
     - [博客](https://yeyupiaoling.blog.csdn.net)
+- [tensorflow1 版本下载](https://github.com/fo40225/tensorflow-windows-wheel)
