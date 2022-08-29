@@ -38,6 +38,7 @@
       * [样式色彩秀芳华](matplotlib/ch5.md)
 * **编程书籍**
   * [**C++ Primer Plus（第6版）编程练习解答**](https://relph1119.github.io/cpp-primer-plus/#/)
+  * [**tensorflow2.x计算机视觉应用开发**](https://github.com/swpucwf/tf_study/tree/master)
 * **推荐系统**
   * [推荐系统简介](推荐系统/推荐系统.md)
 * **生成对抗网络**
