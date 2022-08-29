@@ -43,6 +43,8 @@
   * [**tensorflow2.x计算机视觉应用开发**](https://github.com/swpucwf/tf_study/tree/master)
 * **推荐系统**
   * [推荐系统简介](推荐系统/推荐系统.md)
+* **超分辨率**
+  * [超分辨率工具箱](super-resolution/readme.md)
 * **生成对抗网络**
   * [**初步了解GAN**](GAN/笔记.md)
   * [**GANs 的理论与提升**](GAN/笔记2.md)
