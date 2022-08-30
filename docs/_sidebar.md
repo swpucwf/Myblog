@@ -29,8 +29,6 @@
       * [人脸识别](cv/人脸识别.md)
       * [人脸识别难点](cv/人脸识别难点.md)
     * [iou算法](cv/iou.md)
-    * **超分辨率**
-      * [超分实用工具箱](super-resolution/readme.md)
 * **数据分析**
   * **数据可视化**
       * [Matplotlib初相识](matplotlib/ch1.md)
