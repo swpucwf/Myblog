@@ -83,3 +83,5 @@
   - 论文地址：https://arxiv.org/pdf/2201.09865.pdf
   - 代码连接：https://github.com/andreas128/RePaint
 
+# 有趣的项目集合
+[经典项目集合](https://github.com/Wechat-ggGitHub/Awesome-GitHub-Repo)
