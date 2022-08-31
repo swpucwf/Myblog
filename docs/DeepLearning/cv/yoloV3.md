@@ -3,7 +3,7 @@
 - 论文地址：https://pjreddie.com/media/files/papers/[YOLOv3](https://so.csdn.net/so/search?q=YOLOv3&spm=1001.2101.3001.7020).pdf
 - 论文：YOLOv3: An Incremental Improvement
 
-![image-20220202194620782](../images/yoloV3/image-20220202194620782.png)
+![image-20220202194620782](../../images/yoloV3/image-20220202194620782.png)
 
 ![img](https://upload-images.jianshu.io/upload_images/18623053-237c7d6882c92cef.jpg)
 

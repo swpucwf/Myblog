@@ -7,21 +7,21 @@
 
 首先介绍 Transformer 的整体结构，下图是 Transformer 用于中英文翻译的整体结构：
 
-![img](../images/transformer.assets/v2-4544255f3f24b7af1e520684ae38403f_720w-16425976623332.jpg)
+![img](../../images/transformer.assets/v2-4544255f3f24b7af1e520684ae38403f_720w-16425976623332.jpg)
 
 可以看到 **Transformer 由 Encoder 和 Decoder 两个部分组成**，Encoder 和 Decoder 都包含 6 个 block。Transformer 的工作流程大体如下：
 
 **第一步：**获取输入句子的每一个单词的表示向量 **X**，**X**由单词的 Embedding（Embedding就是从原始数据提取出来的Feature） 和单词位置的 Embedding 相加得到。
 
-![img](../images/transformer.assets/v2-7dd39c44b0ae45d31a3ae7f39d3f883f_720w.jpg)
+![img](../../images/transformer.assets/v2-7dd39c44b0ae45d31a3ae7f39d3f883f_720w.jpg)
 
 **第二步：**将得到的单词表示向量矩阵 (如上图所示，每一行是一个单词的表示 **x**) 传入 Encoder 中，经过 6 个 Encoder block 后可以得到句子所有单词的编码信息矩阵 **C**，如下图。单词向量矩阵用 $X_{n \times d}$ 表示， n 是句子中单词个数，d 是表示向量的维度 (论文中 d=512)。每一个 Encoder block 输出的矩阵维度与输入完全一致。
 
-![img](../images/transformer.assets/v2-45db05405cb96248aff98ee07a565baa_720w.jpg)
+![img](../../images/transformer.assets/v2-45db05405cb96248aff98ee07a565baa_720w.jpg)
 
 **第三步**：将 Encoder 输出的编码信息矩阵 **C**传递到 Decoder 中，Decoder 依次会根据当前翻译过的单词 1~ i 翻译下一个单词 i+1，如下图所示。在使用的过程中，翻译到单词 i+1 的时候需要通过 **Mask (掩盖)** 操作遮盖住 i+1 之后的单词。
 
-![img](../images/transformer.assets/v2-5367bd47a2319397317562c0da77e455_720w.jpg)
+![img](../../images/transformer.assets/v2-5367bd47a2319397317562c0da77e455_720w.jpg)
 
 上图 Decoder 接收了 Encoder 的编码矩阵 **C**，然后首先输入一个翻译开始符 "<Begin>"，预测第一个单词 "I"；然后输入翻译开始符 "<Begin>" 和单词 "I"，预测单词 "have"，以此类推。这是 Transformer 使用时候的大致流程，接下来是里面各个部分的细节。
 
@@ -29,7 +29,7 @@
 
 Transformer 中单词的输入表示 **x**由**单词 Embedding** 和**位置 Embedding** （Positional Encoding）相加得到。
 
-![img](../images/transformer.assets/v2-b0a11f97ab22f5d9ebc396bc50fa9c3f_720w.jpg)
+![img](../../images/transformer.assets/v2-b0a11f97ab22f5d9ebc396bc50fa9c3f_720w.jpg)
 
 ### 2.1 单词 Embedding
 
@@ -88,7 +88,7 @@ class PositionalEncoding(nn.Module):
 
 ## 3. Self-Attention（自注意力机制）
 
-![img](../images/transformer.assets/v2-f6380627207ff4d1e72addfafeaff0bb_720w.jpg)
+![img](../../images/transformer.assets/v2-f6380627207ff4d1e72addfafeaff0bb_720w.jpg)
 
 上图是论文中 Transformer 的内部结构图，左侧为 Encoder block，右侧为 Decoder block。红色圈中的部分为 **Multi-Head Attention**，是由多个 **Self-Attention**组成的，可以看到 Encoder block 包含一个 Multi-Head Attention，而 Decoder block 包含两个 Multi-Head Attention (其中有一个用到 Masked)。Multi-Head Attention 上方还包括一个 Add & Norm 层，Add 表示残差连接 (Residual Connection) 用于防止网络退化，Norm 表示 Layer Normalization，用于对每一层的激活值进行归一化。
 
@@ -96,7 +96,7 @@ class PositionalEncoding(nn.Module):
 
 ### 3.1 Self-Attention 结构
 
-![img](../images/transformer.assets/v2-6444601b4c41d99e70569b0ea388c3bd_720w.jpg)
+![img](../../images/transformer.assets/v2-6444601b4c41d99e70569b0ea388c3bd_720w.jpg)
 
 上图是 Self-Attention 的结构，在计算的时候需要用到矩阵**Q(查询),K(键值),V(值)**。在实际中，Self-Attention 接收的是输入(单词的表示向量x组成的矩阵X) 或者上一个 Encoder block 的输出。而**Q,K,V**正是通过 Self-Attention 的输入进行线性变换得到的。
 
@@ -104,51 +104,51 @@ class PositionalEncoding(nn.Module):
 
 Self-Attention 的输入用矩阵X进行表示，则可以使用线性变阵矩阵**WQ,WK,WV**计算得到**Q,K,V**。计算如下图所示，**注意 X, Q, K, V 的每一行都表示一个单词。**
 
-![img](../images/transformer.assets/v2-4f4958704952dcf2c4b652a1cd38f32e_720w.jpg)Q, K, V 的计算
+![img](../../images/transformer.assets/v2-4f4958704952dcf2c4b652a1cd38f32e_720w.jpg)Q, K, V 的计算
 
 ### 3.3 Self-Attention 的输出
 
 得到矩阵 Q, K, V之后就可以计算出 Self-Attention 的输出了，计算的公式如下：
 
-![img](../images/transformer.assets/v2-9699a37b96c2b62d22b312b5e1863acd_720w.jpg)Self-Attention 的输出
+![img](../../images/transformer.assets/v2-9699a37b96c2b62d22b312b5e1863acd_720w.jpg)Self-Attention 的输出
 
 公式中计算矩阵**Q**和**K**每一行向量的内积，为了防止内积过大，因此除以$d_{k}$的平方根，**Q**乘以**K**的转置后，得到的矩阵行列数都为 n，n 为句子单词数，这个矩阵可以表示单词之间的 attention 强度。下图为**Q**乘以 $K^{T}$ ，1234 表示的是句子中的单词。
 
-![Q乘以K的转置的计算](../images/transformer.assets/v2-9caab2c9a00f6872854fb89278f13ee1_720w.jpg)
+![Q乘以K的转置的计算](../../images/transformer.assets/v2-9caab2c9a00f6872854fb89278f13ee1_720w.jpg)
 
 得到$QK^{T}$之后，使用 Softmax 计算每一个单词对于其他单词的 attention 系数，公式中的 Softmax 是对矩阵的每一行进行 Softmax，即每一行的和都变为 1.
 
 对矩阵的每一行进行 Softmax,即每一行的和都变为 1.
 
-![img](../images/transformer.assets/v2-96a3716cf7f112f7beabafb59e84f418_720w.jpg)
+![img](../../images/transformer.assets/v2-96a3716cf7f112f7beabafb59e84f418_720w.jpg)
 
 得到 Softmax 矩阵之后可以和**V**相乘，得到最终的输出**Z**。
 
-![Self-Attention 输出](../images/transformer.assets/v2-7ac99bce83713d568d04e6ecfb31463b_720w.jpg)
+![Self-Attention 输出](../../images/transformer.assets/v2-7ac99bce83713d568d04e6ecfb31463b_720w.jpg)
 
 上图中 Softmax 矩阵的第 1 行表示单词 1 与其他所有单词的 attention 系数，最终单词 1 的输出 **$Z_1$** 等于所有单词 i 的值  **$V_i$** 根据 attention 系数的比例加在一起得到，如下图所示：
 
-![Zi 的计算方法](../images/transformer.assets/v2-27822b2292cd6c38357803093bea5d0e_720w.jpg)
+![Zi 的计算方法](../../images/transformer.assets/v2-27822b2292cd6c38357803093bea5d0e_720w.jpg)
 
 ### 3.4 Multi-Head Attention
 
 在上一步，我们已经知道怎么通过 Self-Attention 计算得到输出矩阵 Z，而 Multi-Head Attention 是由多个 Self-Attention 组合形成的，下图是论文中 Multi-Head Attention 的结构图。
 
-![Multi-Head Attention](../images/transformer.assets/v2-b0ea8f5b639786f98330f70405e94a75_720w.jpg)
+![Multi-Head Attention](../../images/transformer.assets/v2-b0ea8f5b639786f98330f70405e94a75_720w.jpg)
 
 从上图可以看到 Multi-Head Attention 包含多个 Self-Attention 层，首先将输入**X**分别传递到 h 个不同的 Self-Attention 中，计算得到 h 个输出矩阵**Z**。下图是 h=8 时候的情况，此时会得到 8 个输出矩阵**Z**。
 
-![多个 Self-Attention](../images/transformer.assets/v2-6bdaf739fd6b827b2087b4e151c560f4_720w.jpg)
+![多个 Self-Attention](../../images/transformer.assets/v2-6bdaf739fd6b827b2087b4e151c560f4_720w.jpg)
 
 得到 8 个输出矩阵**$Z_1$**到 **$Z_8$** 之后，Multi-Head Attention 将它们拼接在一起 **(Concat)**，然后传入一个**Linear**层，得到 Multi-Head Attention 最终的输出**Z**。
 
-![img](../images/transformer.assets/v2-35d78d9aa9150ae4babd0ea6aa68d113_720w.jpg)Multi-Head Attention 的输出
+![img](../../images/transformer.assets/v2-35d78d9aa9150ae4babd0ea6aa68d113_720w.jpg)Multi-Head Attention 的输出
 
 可以看到 Multi-Head Attention 输出的矩阵**Z**与其输入的矩阵**X**的维度是一样的。
 
 ## 4. Encoder 结构
 
-![img](../images/transformer.assets/v2-0203e83066913b53ec6f5482be092aa1_720w.jpg)Transformer Encoder block
+![img](../../images/transformer.assets/v2-0203e83066913b53ec6f5482be092aa1_720w.jpg)Transformer Encoder block
 
 上图红色部分是 Transformer 的 Encoder block 结构，可以看到是由 Multi-Head Attention, **Add & Norm, Feed Forward, Add & Norm** 组成的。刚刚已经了解了 Multi-Head Attention 的计算过程，现在了解一下 Add & Norm 和 Feed Forward 部分。
 
@@ -156,13 +156,13 @@ Self-Attention 的输入用矩阵X进行表示，则可以使用线性变阵矩�
 
 Add & Norm 层由 Add 和 Norm 两部分组成，其计算公式如下：
 
-![Add &amp;amp;amp;amp;amp; Norm 公式g](../images/transformer.assets/v2-a4b35db50f882522ee52f61ddd411a5a_720w.jpg)
+![Add &amp;amp;amp;amp;amp; Norm 公式g](../../images/transformer.assets/v2-a4b35db50f882522ee52f61ddd411a5a_720w.jpg)
 
 其中 **X**表示 Multi-Head Attention 或者 Feed Forward 的输入，MultiHeadAttention(**X**) 和 FeedForward(**X**) 表示输出 (输出与输入 **X** 维度是一样的，所以可以相加)。
 
 **Add**指 **X**+MultiHeadAttention(**X**)，是一种残差连接，通常用于解决多层网络训练的问题，可以让网络只关注当前差异的部分，在 ResNet 中经常用到：
 
-![img](../images/transformer.assets/v2-4b3dde965124bd00f9893b05ebcaad0f_720w.jpg)残差连接
+![img](../../images/transformer.assets/v2-4b3dde965124bd00f9893b05ebcaad0f_720w.jpg)残差连接
 
 **Norm**指 Layer Normalization，通常用于 RNN 结构，Layer Normalization 会将每一层神经元的输入都转成均值方差都一样的，这样可以加快收敛。
 
@@ -170,7 +170,7 @@ Add & Norm 层由 Add 和 Norm 两部分组成，其计算公式如下：
 
 Feed Forward 层比较简单，是一个两层的全连接层，第一层的激活函数为 Relu，第二层不使用激活函数，对应的公式如下。
 
-![img](../images/transformer.assets/v2-47b39ca4cc3cd0be157d6803c8c8e0a1_720w.jpg)Feed Forward
+![img](../../images/transformer.assets/v2-47b39ca4cc3cd0be157d6803c8c8e0a1_720w.jpg)Feed Forward
 
 **X**是输入，Feed Forward 最终得到的输出矩阵的维度与**X**一致。
 
@@ -180,11 +180,11 @@ Feed Forward 层比较简单，是一个两层的全连接层，第一层的激�
 
 第一个 Encoder block 的输入为句子单词的表示向量矩阵，后续 Encoder block 的输入是前一个 Encoder block 的输出，最后一个 Encoder block 输出的矩阵就是**编码信息矩阵 C**，这一矩阵后续会用到 Decoder 中。
 
-![Encoder 编码句子信息](../images/transformer.assets/v2-45db05405cb96248aff98ee07a565baa_720w-164259908407240.jpg)
+![Encoder 编码句子信息](../../images/transformer.assets/v2-45db05405cb96248aff98ee07a565baa_720w-164259908407240.jpg)
 
 ## 5. Decoder 结构
 
-![Transformer Decoder block](../images/transformer.assets/v2-f5049e8711c3abe8f8938ced9e7fc3da_720w.jpg)
+![Transformer Decoder block](../../images/transformer.assets/v2-f5049e8711c3abe8f8938ced9e7fc3da_720w.jpg)
 
 上图红色部分为 Transformer 的 Decoder block 结构，与 Encoder block 相似，但是存在一些区别：
 
@@ -199,27 +199,27 @@ Decoder block 的第一个 Multi-Head Attention 采用了 Masked 操作，因为
 
 下面的描述中使用了类似 Teacher Forcing 的概念，不熟悉 Teacher Forcing 的童鞋可以参考以下上一篇文章Seq2Seq 模型详解。在 Decoder 的时候，是需要根据之前的翻译，求解当前最有可能的翻译，如下图所示。首先根据输入 "<Begin>" 预测出第一个单词为 "I"，然后根据输入 "<Begin> I" 预测下一个单词 "have"。
 
-![img](../images/transformer.assets/v2-4616451fe8aa59b2df2ead30fa31dc98_720w.jpg)Decoder 预测
+![img](../../images/transformer.assets/v2-4616451fe8aa59b2df2ead30fa31dc98_720w.jpg)Decoder 预测
 
 Decoder 可以在训练的过程中使用 Teacher Forcing 并且并行化训练，即将正确的单词序列 (<Begin> I have a cat) 和对应输出 (I have a cat <end>) 传递到 Decoder。那么在预测第 i 个输出时，就要将第 i+1 之后的单词掩盖住，**注意 Mask 操作是在 Self-Attention 的 Softmax 之前使用的，下面用 0 1 2 3 4 5 分别表示 "<Begin> I have a cat <end>"。**
 
 **第一步：**是 Decoder 的输入矩阵和 **Mask** 矩阵，输入矩阵包含 "<Begin> I have a cat" (0, 1, 2, 3, 4) 五个单词的表示向量，**Mask** 是一个 5×5 的矩阵。在 **Mask** 可以发现单词 0 只能使用单词 0 的信息，而单词 1 可以使用单词 0, 1 的信息，即只能使用之前的信息。
 
-![img](../images/transformer.assets/v2-b26299d383aee0dd42b163e8bda74fc8_720w.jpg)输入矩阵与 Mask 矩阵
+![img](../../images/transformer.assets/v2-b26299d383aee0dd42b163e8bda74fc8_720w.jpg)输入矩阵与 Mask 矩阵
 
 **第二步：**接下来的操作和之前的 Self-Attention 一样，通过输入矩阵**X**计算得到**Q,K,V**矩阵。然后计算**Q**和 **$K^T$** 的乘积 **$QK^T$**。
 
-![img](../images/transformer.assets/v2-a63ff9b965595438ed0c0e0547cd3d3b_720w.jpg)Q乘以K的转置
+![img](../../images/transformer.assets/v2-a63ff9b965595438ed0c0e0547cd3d3b_720w.jpg)Q乘以K的转置
 
 **第三步：**在得到**$QK^T$**之后需要进行 Softmax，计算 attention score，我们在 Softmax 之前需要使用**Mask**矩阵遮挡住每一个单词之后的信息，遮挡操作如下：
 
-![Softmax 之前 Mask](../images/transformer.assets/v2-35d1c8eae955f6f4b6b3605f7ef00ee1_720w.jpg)
+![Softmax 之前 Mask](../../images/transformer.assets/v2-35d1c8eae955f6f4b6b3605f7ef00ee1_720w.jpg)
 
 得到 **Mask** ![[公式]](https://www.zhihu.com/equation?tex=QK%5E%7BT%7D) 之后在 **Mask** ![[公式]](https://www.zhihu.com/equation?tex=QK%5E%7BT%7D)上进行 Softmax，每一行的和都为 1。但是单词 0 在单词 1, 2, 3, 4 上的 attention score 都为 0。
 
 **第四步：**使用 **Mask** ![[公式]](https://www.zhihu.com/equation?tex=QK%5E%7BT%7D)与矩阵 **V**相乘，得到输出 **Z**，则单词 1 的输出向量**$Z_1$**是只包含单词 1 信息的。
 
-![Mask 之后的输出](../images/transformer.assets/v2-58f916c806a6981e296a7a699151af87_720w.jpg)
+![Mask 之后的输出](../../images/transformer.assets/v2-58f916c806a6981e296a7a699151af87_720w.jpg)
 
 **第五步：**通过上述步骤就可以得到一个 Mask Self-Attention 的输出矩阵 **$Z_i$**，然后和 Encoder 类似，通过 Multi-Head Attention 拼接多个输出![[公式]](https://www.zhihu.com/equation?tex=Z_%7Bi%7D) 然后计算得到第一个 Multi-Head Attention 的输出**Z**，**Z**与输入**X**维度一样。
 
@@ -235,11 +235,11 @@ Decoder block 第二个 Multi-Head Attention 变化不大， 主要的区别在�
 
 Decoder block 最后的部分是利用 Softmax 预测下一个单词，在之前的网络层我们可以得到一个最终的输出 Z，因为 Mask 的存在，使得单词 0 的输出 Z0 只包含单词 0 的信息，如下：
 
-![img](../images/transformer.assets/v2-335cfa1b345bdd5cf1e212903bb9b185_720w.jpg)Decoder Softmax 之前的 Z
+![img](../../images/transformer.assets/v2-335cfa1b345bdd5cf1e212903bb9b185_720w.jpg)Decoder Softmax 之前的 Z
 
 Softmax 根据输出矩阵的每一行预测下一个单词：
 
-![img](../images/transformer.assets/v2-0938aa45a288b5d6bef6487efe53bd9d_720w.jpg)Decoder Softmax 预测
+![img](../../images/transformer.assets/v2-0938aa45a288b5d6bef6487efe53bd9d_720w.jpg)Decoder Softmax 预测
 
 这就是 Decoder block 的定义，与 Encoder 一样，Decoder 是由多个 Decoder block 组合而成。
 
