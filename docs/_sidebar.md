@@ -57,8 +57,9 @@
   * [**FPGA编程资料**](https://xupsh.github.io/pp4fpgas-cn/)
   * [**机器学习系统**](https://openmlsys.github.io/chapter_preface/index.html)
   * [**实战类总结**](https://docs.qq.com/doc/DZG1SZ21YZmx4b2Z1)
+* [**数据集**](datasets/README.md)
 * [**文章集合**](paper/README.md)
-* [**超值大佬博客**](GodV/readme.md)
+* [**超值大佬博客**](语音识别/readme.md)
 - [**DataWhale开源网址学习**](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#zDsZM5)
 
 

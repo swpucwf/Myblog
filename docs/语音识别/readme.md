@@ -1,0 +1,9 @@
+- 夜雨飘零
+  - 介绍：语音项目，视觉项目,主要开发paddle框架
+  - 相关链接
+    - [github](https://github.com/yeyupiaoling)
+    - [博客](https://yeyupiaoling.blog.csdn.net)
+- [tensorflow1 版本下载](https://github.com/fo40225/tensorflow-windows-wheel)
+- 霹雳吧王炸
+  - [github](https://github.com/WZMIAOMIAO/deep-learning-for-image-processing)
+  - [csdn](https://blog.csdn.net/qq_37541097)
