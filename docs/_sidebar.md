@@ -29,18 +29,11 @@
       * [人脸识别](DeepLearning/cv/人脸识别.md)
       * [人脸识别难点](DeepLearning/cv/人脸识别难点.md)
     * [iou算法](DeepLearning/cv/iou.md)
-* **数据分析**
-  * **数据可视化**
-      * [Matplotlib初相识](matplotlib/ch1.md)
-      * [艺术画笔见乾坤](matplotlib/ch2.md)
-      * [布局格式定方圆](matplotlib/ch3.md)
-      * [文字图例尽眉目](matplotlib/ch4.md)
-      * [样式色彩秀芳华](matplotlib/ch5.md)
 * **编程书籍**
   * [**C++ Primer Plus（第6版）编程练习解答**](https://relph1119.github.io/cpp-primer-plus/#/)
   * [**tensorflow2.x计算机视觉应用开发**](https://github.com/swpucwf/tf_study/tree/master)
 * **推荐系统**
-  *** [**推荐系统简介](DeepLearning/推荐系统/推荐系统.md)
+  *** [**推荐系统简介**](DeepLearning/推荐系统/推荐系统.md)
 * **超分辨率**
   * [**超分辨率工具箱**](DeepLearning/super-resolution/readme.md)
 * **生成对抗网络**
