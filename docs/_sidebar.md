@@ -29,4 +29,5 @@
       * [人脸识别](DeepLearning/cv/人脸识别.md)
       * [人脸识别难点](DeepLearning/cv/人脸识别难点.md)
       * [iou算法](DeepLearning/cv/iou.md)
-* *[**文章集合**](paper/README.md)
+* **附件信息** 
+      * [**文章集合**](paper/README.md)
