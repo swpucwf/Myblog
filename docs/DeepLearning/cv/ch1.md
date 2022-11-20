@@ -17,7 +17,7 @@
 
 边缘一般分为两种：屋脊型边缘和**阶跃型边缘**。在实际应用中，一般只考虑阶跃边缘，因为只要采样足够或者说窗口足够小，屋脊型边缘也可以看做是阶跃边缘。
 
-![image-20220108155358979](斑点检测算法.assets/image-20220108155358979.png)
+![image-20220108155358979](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20220108155358979.png)
 
 
 
@@ -47,7 +47,7 @@ edges = filters.roberts(img)
 - 一般来说，距离越远，产生的影响越小。
 - 该算子其实是经过了高斯平滑后计算差分。
 
-![preview](斑点检测算法.assets/v2-21b4515e0fb5f09ba5c0b66f7ca684e2_r-16417169753504.jpg)
+![preview](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/v2-21b4515e0fb5f09ba5c0b66f7ca684e2_r-16417169753504.jpg)
 
 ```python
 from skimage import data,filters
@@ -62,7 +62,7 @@ edges = filters.sobel(img)
 
 - 利用像素点上下、左右邻点的灰度差，在边缘处达到极值检测边缘，去掉部分伪边缘，对噪声具有平滑作用 。
 
-  ![preview](斑点检测算法.assets/v2-9401364220e4e3b704cc5e5d0108280c_r-16417169690633.jpg)
+  ![preview](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/v2-9401364220e4e3b704cc5e5d0108280c_r-16417169690633.jpg)
 
 ### 二阶算子
 
@@ -72,11 +72,11 @@ edges = filters.sobel(img)
 
 - 二阶laplace算子的卷积模板：
 
-  ![image-20220109165938054](斑点检测算法.assets/image-20220109165938054.png)
+  ![image-20220109165938054](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20220109165938054.png)
 
 - 考虑到四个方向，则卷积模板为：
 
-  ![image-20220109170001549](斑点检测算法.assets/image-20220109170001549.png)
+  ![image-20220109170001549](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20220109170001549.png)
 
 ```python
 from skimage import data,filters
@@ -87,7 +87,7 @@ edges = filters.laplace(img)
 
 #### **高斯拉普拉斯算子**(LOG)
 
-![image-20220109170127191](斑点检测算法.assets/image-20220109170127191.png)
+![image-20220109170127191](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20220109170127191.png)
 
 #### 高斯差分算子(DOG)
 

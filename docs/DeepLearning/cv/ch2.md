@@ -8,7 +8,8 @@
 总结：边缘组合起来可以构成轮廓，轮廓可以由多个边缘组成。
 ### 边缘的类型
 简单分为4种类型，阶跃型、屋脊型、斜坡型、脉冲型，其中阶跃型和斜坡型是类似的，只是变化的快慢不同，同样，屋脊型和脉冲型也是如此。在边缘检测中更多关注的是阶跃和屋脊型边缘。见图1，（a）和（b）可认为是阶跃或斜坡型，（c）脉冲型，（d）屋脊型，阶跃与屋脊的不同在于阶跃上升或下降到某个值后持续下去，而屋脊则是先上升后下降。
-![在这里插入图片描述](../../images/边缘检测概述.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6ZmIcGhk,size_14,color_FFFFFF,t_70,g_se,x_16.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/watermark%252Ctype_d3F5LXplbmhlaQ%252Cshadow_50%252Ctext_Q1NETiBA5bCP6ZmIcGhk%252Csize_14%252Ccolor_FFFFFF%252Ct_70%252Cg_se%252Cx_16.png)
+
 # 边缘检测的概念
 ##  概念
 边缘检测是图像处理与计算机视觉中极为重要的一种分析图像的方法，它的目的是找到图像中亮度变化剧烈的像素点构成的集合，表现出来往往是轮廓。如果图像中边缘能够精确的测量和定位，那么，就意味着实际的物体能够被定位和测量，包括物体的面积、物体的直径、物体的形状等就能被测量。在对现实世界的图像采集中，有下面4种情况会表现在图像中时形成一个边缘。 
@@ -16,7 +17,7 @@
 2.  表面方向的不连续（如正方体的不同的两个面）；
 3.  物体材料不同（这样会导致光的反射系数不同）；
 4.  场景中光照不同（如被树萌投向的地面）； 
-![在这里插入图片描述](../../images/边缘检测概述.assets/c9faf64563a84a48a2e442697df4ea7c.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/c9faf64563a84a48a2e442697df4ea7c.png)
 例如上面的图像是图像中水平方向7个像素点的灰度值显示效果，我们很容易地判断在第4和第5个像素之间有一个边缘，因为它俩之间发生了强烈的灰度跳变。在实际的边缘检测中，边缘远没有上图这样简单明显，我们需要取对应的阈值来区分出它们。
 
 # 边缘检测方法
@@ -33,12 +34,12 @@
 如果某一应用场合要求确定边缘位置，则边缘的位置可在子像素分辨率上来估计，边缘的方位也可以被估计出来。 
 
 # 边缘检测算子的概念
-![在这里插入图片描述](../../images/边缘检测概述.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6ZmIcGhk,size_17,color_FFFFFF,t_70,g_se,x_16.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/watermark%252Ctype_d3F5LXplbmhlaQ%252Cshadow_50%252Ctext_Q1NETiBA5bCP6ZmIcGhk%252Csize_17%252Ccolor_FFFFFF%252Ct_70%252Cg_se%252Cx_16.png)
 
 在数学中，函数的变化率由导数来刻画，图像我们看成二维函数，其上面的像素值变化，当然也可以用导数来刻画，当然图像是离散的，那我们换成像素的差分来实现。对于阶跃型边缘，图2中显示其一阶导数具有极大值，极大值点对应二阶导数的过零点，也就是，准确的边缘的位置是对应于一阶导数的极大值点，或者二阶导数的过零点（注意不仅仅是二阶导数为0值的位置，二值正负值过渡的零点）。故边缘检测算子的类型当然就存在一阶和二阶微分算子。
 # 常见的边缘检测算子 
 近20多年来提出了许多边缘检测算子，在这里仅讨论集中常见的边缘检测算子。 
-![在这里插入图片描述](../../images/边缘检测概述.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6ZmIcGhk,size_20,color_FFFFFF,t_70,g_se,x_16.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/watermark%252Ctype_d3F5LXplbmhlaQ%252Cshadow_50%252Ctext_Q1NETiBA5bCP6ZmIcGhk%252Csize_20%252Ccolor_FFFFFF%252Ct_70%252Cg_se%252Cx_16.png)
 1. 常见的一阶微分边缘算子包括Roberts，Prewitt，Sobel，Kirsch以及Nevitia，
 2. 常见的二阶微分边缘算子包括Laplace算子，LOG算子，DOG算子和Canny算子等。
 3. 其中Canny算子是最为常用的一种，也是当前被认为最优秀的边缘检测算子。 此外本文还会介绍一种边缘检测方法SUSAN，它没有用到图像像素的梯度（导数）。以及本文会概述一些新兴的边缘检测方法，如小波分析，模糊算法以及人工神经网络等。 
@@ -78,7 +79,7 @@ $$
 基于梯度算子的边缘检测大多数是基于方向导数求卷积的方法 
 ### 实现
 以3×3的卷积模板为例。 
-![在这里插入图片描述](../../images/边缘检测概述.assets/watermark,type_d3F5LXplbmhlaQ,shadow_50,text_Q1NETiBA5bCP6ZmIcGhk,size_20,color_FFFFFF,t_70,g_se,x_16-16423466191861.png)
+![在这里插入图片描述](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/watermark%252Ctype_d3F5LXplbmhlaQ%252Cshadow_50%252Ctext_Q1NETiBA5bCP6ZmIcGhk%252Csize_20%252Ccolor_FFFFFF%252Ct_70%252Cg_se%252Cx_16-16423466191861.png)
 设定好卷积模板后，将模板在图像中移动，并将图像中的每个像素点与此模板进行卷积，得到每个像素点的响应R，用R来表征每个像素点的邻域灰度值变化率，即灰度梯度值，从而可将灰度图像经过与模板卷积后转化为梯度图像。模板系数𝑊𝑖（i=1,2,3,……9）相加的总和必须为零，以确保在灰度级不变的区域中模板的响应为零。Z表示像素的灰度值 ：
 $$
 \mathrm{R}=W_{1} Z_{1}+W_{2} Z_{2}+\cdots+W_{9} Z_{9}
