@@ -1,6 +1,6 @@
 # 陈伟峰
 
-> \> [个人博客](https://blog.csdn.net/weixin_42917352?spm=1000.2115.3001.5343)
+> \> [CSDN个人博客](https://blog.csdn.net/weixin_42917352?spm=1000.2115.3001.5343)
 >
 > \> 个人邮箱：swpucwf@126.com
 >
