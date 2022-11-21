@@ -850,6 +850,10 @@ def _varifocal_loss(pred_score, gt_score, label, alpha=0.75, gamma=2.0):
 GIOU的计算很简单，对于两个bounding box A，B。我们可以算出其最小凸集（包围A、B的最小包围框）C。有了最小凸集，就可以计算GIOU：
 
 ![img](images/PP-YOLOE/75550304-67e7-47b2-95e6-dc0090c11f96.png?lastModify=1668957935)
+$$
+
+$$
+
 
 计算方法很简单，从公式可以看出，GIOU有几个特点：
 
@@ -867,7 +871,9 @@ GIOU的计算很简单，对于两个bounding box A，B。我们可以算出其�
 
 在TOOD中，bbox(Bouding box)通过对齐的anchor(具有更大的分类得分、更精确的定位)预测得到，这样的bbox通常经过NMS后仍可以得以保留。此外，t可以在训练阶段通过对损失加权选择高质量的bbox。因此，采用t度量bbox的质量，同时结合GIoU Loss定义了TOOD的Reg Loss如下:
 
-![img](https://files.mdnice.com/user/3026/ae7c75b5-40a7-42fb-809f-71c5290adb74.png)
+$$
+L_{\text {reg }}=\sum_{i=1}^{N_{\text {pos }}} \hat{t}_i L_{G I o U}\left(b_i, \tilde{b}_i\right)
+$$
 
 ```
 @register
@@ -950,11 +956,12 @@ class GIoULoss(object):
 
 均绝对误差（Mean Absolute Error,MAE) 是指模型预测值f(x)和真实值y之间距离的均值，其公式如下：
 
-![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/450d64b9-f3c7-4a97-b81e-7aec562956bb.png)
-
+$$
+M A E=\frac{\sum_{n=1}^n\left|f\left(x_i\right)-y_i\right|}{n}
+$$
 忽略下标i ，设n=1，以f(x)−y为横轴，MAE的值为纵轴，得到函数的图形如下：
 
-![img](images/PP-YOLOE/7c64a2ed-e541-4d92-9732-8d3e1ae6538f.png?lastModify=1668957935)
+![image-20221121123318863](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121123318863.png)
 
 MAE曲线连续，但是在y−f(x)=0处不可导。而且 MAE 大部分情况下梯度都是相等的，这意味着即使对于小的损失值，其梯度也是大的。这不利于函数的收敛和模型的学习。但是，无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解。
 
@@ -968,7 +975,7 @@ loss_l1 = F.l1_loss(pred_bboxes_pos, assigned_bboxes_pos)
 
 对于任意分布来建模框的表示，它可以用积分形式嵌入到任意已有的和框回归相关的损失函数上，例如最近比较流行的GIoU Loss。这个实际上也就够了，不过涨点不是很明显，我们又仔细分析了一下，发现如果分布过于任意，网络学习的效率可能会不高，原因是一个积分目标可能对应了无穷多种分布模式。如下图所示：
 
-![img](images/PP-YOLOE/e9f71869-1c41-4f41-aa1c-ffc5f5506428.jpg?lastModify=1668957935)
+![image-20221121123339138](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121123339138.png)
 
 考虑到真实的分布通常不会距离标注的位置太远，所以我们又额外加了个loss，希望网络能够快速地聚焦到标注位置附近的数值，使得他们概率尽可能大。基于此，我们取了个名字叫Distribution Focal Loss (DFL)：
 
@@ -976,7 +983,7 @@ loss_l1 = F.l1_loss(pred_bboxes_pos, assigned_bboxes_pos)
 
 其形式上与QFL的右半部分很类似，含义是以类似交叉熵的形式去优化与标签y最接近的一左一右两个位置的概率，从而让网络快速地聚焦到目标位置的邻近区域的分布中去。
 
-![img](images/PP-YOLOE/1f12664c-f87a-435a-8283-eca39fdaf3a8.jpg?lastModify=1668957935)
+![image-20221121123427154](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121123427154.png)
 
 > QFL和DFL的作用是正交的，他们的增益互不影响
 
@@ -1073,7 +1080,7 @@ CUDA_VISIBLE_DEVICES=0 python tools/infer.py -c configs/ppyoloe/ppyoloe_crn_l_30
 CUDA_VISIBLE_DEVICES=0 python tools/infer.py -c configs/ppyoloe/ppyoloe_crn_l_300e_coco.yml -o weights=https://paddledet.bj.bcebos.com/models/ppyoloe_crn_l_300e_coco.pdparams --infer_dir=demo
 ```
 
-![img](images/PP-YOLOE/364eb864-41f9-42c9-8ec2-945d2f536f3a.jpg?lastModify=1668957935)
+![image-20221121123500740](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121123500740.png)
 
 ### 4.2、导出ONNX
 
