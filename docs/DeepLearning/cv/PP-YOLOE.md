@@ -128,6 +128,7 @@ class RepVggBlock(nn.Layer):
 $$
 \operatorname{SiLU}(x)=x \cdot \operatorname{Sigmoid}(x)
 $$
+
 $$
 \operatorname{Swish}(x)=x \cdot \operatorname{Sigmoid}(\beta x)
 $$
