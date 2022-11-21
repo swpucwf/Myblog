@@ -40,7 +40,11 @@ RepVGG，这个网络就是在VGG的基础上面进行改进，主要的思路�
 $$
 \mathrm{W}_{i,:,,::}^{\prime}=\frac{\gamma_i}{\boldsymbol{\sigma}_i} \mathrm{~W}_{i,,,,,:}, \quad \mathbf{b}_i^{\prime}=-\frac{\boldsymbol{\mu}_i \gamma_i}{\boldsymbol{\sigma}_i}+\boldsymbol{\beta}_i
 $$
+
+
 Then it is easy to verify that $\forall 1 \leq i \leq C_2$,
+
+
 $$
 \operatorname{bn}(\mathrm{M} * \mathrm{~W}, \boldsymbol{\mu}, \boldsymbol{\sigma}, \boldsymbol{\gamma}, \boldsymbol{\beta})_{:, i,:,:}=\left(\mathrm{M} * \mathrm{~W}^{\prime}\right)_{:, i,:,:}+\mathbf{b}_i^{\prime}
 $$
@@ -849,11 +853,7 @@ def _varifocal_loss(pred_score, gt_score, label, alpha=0.75, gamma=2.0):
 
 GIOU的计算很简单，对于两个bounding box A，B。我们可以算出其最小凸集（包围A、B的最小包围框）C。有了最小凸集，就可以计算GIOU：
 
-![img](images/PP-YOLOE/75550304-67e7-47b2-95e6-dc0090c11f96.png?lastModify=1668957935)
-$$
-
-$$
-
+![image-20221121155757489](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121155757489.png)
 
 计算方法很简单，从公式可以看出，GIOU有几个特点：
 
@@ -863,7 +863,7 @@ $$
 
 当IOU=0时：
 
-![img](images/PP-YOLOE/7f6c2728-51db-4f75-be69-03e50d3e6db4.png?lastModify=1668957935)
+![image-20221121155808694](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221121155808694.png)
 
 显然， A∪B值不变，最大化GIOU就是要最小化C，最小化C就会促成2个框不断靠近，而不是像最小化IOU那样loss为0。
 
