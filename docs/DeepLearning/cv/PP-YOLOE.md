@@ -1,65 +1,72 @@
-![](images/PP-YOLOE/13057519-c93c-4c91-aeae-114a32a0efe4.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/13057519-c93c-4c91-aeae-114a32a0efe4.png)
 
->   PP-YOLOE是基于PP-YOLOv2的卓越的单阶段Anchor-free模型，超越了多种流行的yolo模型。PP-YOLOE有一系列的模型，即s/m/l/x，可以通过width multiplier和depth multiplier配置。PP-YOLOE避免使用诸如deformable convolution或者matrix nms之类的特殊算子，以使其能轻松地部署在多种多样的硬件上。 
+> PP-YOLOE是基于PP-YOLOv2的卓越的单阶段Anchor-free模型，超越了多种流行的yolo模型。PP-YOLOE有一系列的模型，即s/m/l/x，可以通过width multiplier和depth multiplier配置。PP-YOLOE避免使用诸如deformable convolution或者matrix nms之类的特殊算子，以使其能轻松地部署在多种多样的硬件上。 
 >
+> ![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/94b40512-9485-4877-9ea0-a656f4ee63ba.png)
 >
->   ![](https://files.mdnice.com/user/3026/94b40512-9485-4877-9ea0-a656f4ee63ba.png)
->
->   ![](images/PP-YOLOE/d0bfcded-7e96-4791-86cf-0082342b6a5e.png)
+> ![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/d0bfcded-7e96-4791-86cf-0082342b6a5e.png)
 
 ## 模型架构
 
-![](images/PP-YOLOE/413ec68d-6d31-4889-96a9-e37bb8720279.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/413ec68d-6d31-4889-96a9-e37bb8720279.png)
 
 PP-YOLOE由以下方法组成：
 
--   可扩展的backbone和neck
--   [Task Alignment Learning](https://arxiv.org/abs/2108.07755)
--   Efficient Task-aligned head with [DFL](https://arxiv.org/abs/2006.04388)和[VFL](https://arxiv.org/abs/2008.13367)
--   [SiLU激活函数](https://arxiv.org/abs/1710.05941)
+- 可扩展的backbone和neck
+- [Task Alignment Learning](https://arxiv.org/abs/2108.07755)
+- Efficient Task-aligned head with [DFL](https://arxiv.org/abs/2006.04388)和[VFL](https://arxiv.org/abs/2008.13367)
+- [SiLU激活函数](https://arxiv.org/abs/1710.05941)
 
 ### 1.1、Backbone
 
-![](images/PP-YOLOE/4cddbcfb-4ba7-466a-918f-181c39603d89.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/4cddbcfb-4ba7-466a-918f-181c39603d89.png)
 
 PP-YOLOE的Backbone主要是使用RepVGG模块以及CSP的模型思想对ResNet及逆行的改进，同时也使用了SiLU激活函数、Effitive SE Attention等模块，下面我们一一道来。
 
 #### 1、RepVGG
+
 RepVGG，这个网络就是在VGG的基础上面进行改进，主要的思路包括：
+
 1. 在VGG网络的Block块中加入了Identity和残差分支，相当于把ResNet网络中的精华应用 到VGG网络中；
 2. 模型推理阶段，通过Op融合策略将所有的网络层都转换为3×3卷积，便于网络的部署和加速。
 
-![](images/PP-YOLOE/a383aabf-d933-440e-ae26-1d165e3f0c8a.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/a383aabf-d933-440e-ae26-1d165e3f0c8a.png)
 
-![](images/PP-YOLOE/d40139ba-4b34-4d91-8653-75970c6397a5.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/d40139ba-4b34-4d91-8653-75970c6397a5.png)
 
 上图展示了模型推理阶段的重参数化过程，其实就是一个OP融合和OP替换的过程。图A从结构化的角度展示了整个重参数化流程， 图B从模型参数的角度展示了整个重参数化流程。整个重参数化步骤如下所示：
 
-**步骤1**：首先通过式3将残差块中的卷积层和BN层进行融合，该操作在很多深度学习框架的推理阶段都会执行。图中的蓝色框中执行3×3卷积+BN层的融合，图中的黑色矩形框中执行1×1卷积+BN层的融合，图中的黄色矩形框中执行3×3卷积(卷积核设置为全1)+BN层的融合。其中$W_i$表示转换前的卷积层参数，$\mu_{i}$表示BN层的均值，$\sigma_{i}$表示BN层的方差，$\gamma_{i}$和$\beta_{i}$分别表示BN层的尺度因子和偏移因子，W’和b’分别表示融合之后的卷积的权重和偏置。
-
-![](images/PP-YOLOE/ff120dae-69a2-4612-95a2-20f7c98698f8.png)
-
+**步骤1**：首先通过式3将残差块中的卷积层和BN层进行融合，该操作在很多深度学习框架的推理阶段都会执行。图中的蓝色框中执行3×3卷积+BN层的融合，图中的黑色矩形框中执行1×1卷积+BN层的融合，图中的黄色矩形框中执行3×3卷积(卷积核设置为全1)+BN层的融合。其中表示转换前的卷积层参数，表示BN层的均值，表示BN层的方差，和分别表示BN层的尺度因子和偏移因子，W’和b’分别表示融合之后的卷积的权重和偏置。
+$$
+\mathrm{W}_{i,:,,::}^{\prime}=\frac{\gamma_i}{\boldsymbol{\sigma}_i} \mathrm{~W}_{i,,,,,:}, \quad \mathbf{b}_i^{\prime}=-\frac{\boldsymbol{\mu}_i \gamma_i}{\boldsymbol{\sigma}_i}+\boldsymbol{\beta}_i
+$$
+Then it is easy to verify that $\forall 1 \leq i \leq C_2$,
+$$
+\operatorname{bn}(\mathrm{M} * \mathrm{~W}, \boldsymbol{\mu}, \boldsymbol{\sigma}, \boldsymbol{\gamma}, \boldsymbol{\beta})_{:, i,:,:}=\left(\mathrm{M} * \mathrm{~W}^{\prime}\right)_{:, i,:,:}+\mathbf{b}_i^{\prime}
+$$
 **步骤2**：将融合后的卷积层转换为3×3卷积，即将具体不同卷积核的卷积均转换为具有3×3大小的卷积核的卷积。由于整个残差块中可能包含1×1卷积分支和Identity两种分支，如图中的黑框和黄框所示。对于1×1卷积分支而言，整个转换过程就是利用3×3卷积核替换1×1卷积核，具体的细节如图中的紫框所示，即将1×1卷积核中的数值移动到3×3卷积核的中心点即可；对于Identity分支而言，该分支并没有改变输入的特征映射的数值，那么可以设置一个3×3的卷积核，将所有的9个位置处的权重值都设置为1，那么它与输入的特征映射相乘之后，保持了原来的数值，具体的细节如图中的褐色框所示。
 
 **步骤3**：合并残差分支中的3×3卷积。即将所有分支的权重W和偏置B叠加起来，从而获得一个融合之后的3×3卷积层。
 
-
 #### 为什么要用VGG式模型？
 
 除了相信简单就是美以外，VGG式极简模型至少还有5大现实的优势：
+
 1. 3×3卷积非常快。在GPU上，3×3卷积的计算密度（理论运算量除以所用时间）可达1×1和5×5卷积的4倍。
 2. 单路架构非常快，因为并行度高。同样的计算量，“大而整”的运算效率远超“小而碎”的运算。
 3. 单路架构省内存。例如，ResNet的shortcut虽然不占计算量，却增加了一倍的显存占用。
 4. 单路架构灵活性更好，容易改变各层的宽度（如剪枝）。
 5. RepVGG主体部分只有一种算子：3×3卷积接ReLU。在设计专用芯片时，给定芯片尺寸或造价可以集成海量的3×3卷积+ReLU计算单元来达到很高的效率。
 
-![](images/PP-YOLOE/e8be11ec-c03b-49d8-967b-58574cf99aee.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/e8be11ec-c03b-49d8-967b-58574cf99aee.png)
 
 下图表示RepVGG推理融合后的ONNX输出，可以看出简化了很多。
 
-![](images/PP-YOLOE/595c1a27-04d3-4254-a6dc-f3485b844d48.png)
+![](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/595c1a27-04d3-4254-a6dc-f3485b844d48.png)
 
-```python
+1
+
+```
 class RepVggBlock(nn.Layer):
     def __init__(self, ch_in, ch_out, act='relu'):
         super(RepVggBlock, self).__init__()
@@ -108,26 +115,34 @@ class RepVggBlock(nn.Layer):
         std = (running_var + eps).sqrt()
         t = (gamma / std).reshape((-1, 1, 1, 1))
         return kernel * t, beta - running_mean * gamma / std
+
 ```
 
 #### 2、Swish激活函数
-从代码和公式来看，Swish包含了SiLU，换句话说SiLU是Swish的一种特例。
 
-![](https://files.mdnice.com/user/3026/a71b0d05-bbe6-4507-9fba-3faa877f45aa.png)
+从代码和公式来看，Swish包含了SiLU，换句话说SiLU是Swish的一种特例。、
+$$
+\operatorname{SiLU}(x)=x \cdot \operatorname{Sigmoid}(x)
+$$
+$$
+\operatorname{Swish}(x)=x \cdot \operatorname{Sigmoid}(\beta x)
+$$
 
-所以画图基本上都使用了SiLU代替Swish，因为YOLOE中的Swish的$\beta=1$，也就是SiLU激活函数。
+所以画图基本上都使用了SiLU代替Swish，因为YOLOE中的Swish的，也就是SiLU激活函数。
 
-![](images/PP-YOLOE/a689d9dd-d41f-46e1-9961-76a1bb8c8b60.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/a689d9dd-d41f-46e1-9961-76a1bb8c8b60.png)
 
 β是个常数或可训练的参数。 Swish 具备无上界有下界、平滑、非单调的特性。Swish 在深层模型上的效果优于 ReLU。
 
 例如，仅仅使用 Swish 单元替换 ReLU 就能把 Mobile NASNetA 在 ImageNet 上的 top-1 分类准确率提高 0.9%，Inception-ResNet-v 的分类准确率提高 0.6%。
 
-![](images/PP-YOLOE/444c265b-44bd-4a76-93ca-6a63b99f388b.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/444c265b-44bd-4a76-93ca-6a63b99f388b.png)
 
-![](https://files.mdnice.com/user/3026/1d2beafd-21c4-4304-a24e-a18816da7789.png)
+![img](https://files.mdnice.com/user/3026/1d2beafd-21c4-4304-a24e-a18816da7789.png)
 
-```python
+
+
+```
 class ConvBNLayer(nn.Layer):
     def __init__(self, ch_in, ch_out, filter_size=3, stride=1, groups=1, padding=0, act=None):
         super(ConvBNLayer, self).__init__()
@@ -144,15 +159,18 @@ class ConvBNLayer(nn.Layer):
 ```
 
 #### 3、Effective SE Attention
+
 该模块主要是来自于《CenterMask：Real-Time Anchor-Free Instance Segmentation》中的eSE模块；
 
-![](images/PP-YOLOE/b16b3505-caf1-4983-9759-60d4df950bfb.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/b16b3505-caf1-4983-9759-60d4df950bfb.png)
 
 在输出的内部添加了一个channel上的attention模块eSE。原始的SE模块中使用2个FC去进行channel权重映射，但是为了减少计算量通常会将FC中的channel给剪裁一些（小于输入的channel），这就引入了一些信息的损失，为此文章直接将2个FC替换为了1个FC。
 
-![](images/PP-YOLOE/adcbb448-47f7-4cbc-80e0-e91da6685bd9.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/adcbb448-47f7-4cbc-80e0-e91da6685bd9.png)
 
-```python
+
+
+```
 class EffectiveSELayer(nn.Layer):
     def __init__(self, channels, act='hardsigmoid'):
         super(EffectiveSELayer, self).__init__()
@@ -163,22 +181,22 @@ class EffectiveSELayer(nn.Layer):
         x_se = x.mean((2, 3), keepdim=True)
         x_se = self.fc(x_se)
         return x * self.act(x_se)
+
 ```
 
 #### 4、CSPNet结构
 
-![](images/PP-YOLOE/a8ba998f-40b5-4525-b8a7-7946b07b654a.png)
-
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/a8ba998f-40b5-4525-b8a7-7946b07b654a.png)
 
 CSPNet的主要思想还是Partial Dense Block，设计Partial Dense Block的目的是：
 
 - 增加梯度路径：通过分裂合并策略，可以使梯度路径的数目翻倍。由于采用了跨阶段的策略，可以减轻使用显式特征映射复制进行连接的缺点；
 - 平衡各层的计算：通常情况下，DenseNet底层的信道数远远大于增长率。由于部分dense block中的dense layer操作所涉及的底层信道只占原始信道的一半，因此可以有效地解决近一半的计算瓶颈；
-- 减少内存流量：假设dense block在DenseNet中的基本特征映射大小为$w×h×c$，增长率为d，并且共m层。然后，该dense block的CIO为$(c×m)+((m^2+m)×d)=2$，部分dense block的CIO为$((c×m)+(m^2+m)×d)=2$。虽然m和d通常比c小得多，但部分dense block最多可以节省网络内存流量的一半。
+- 减少内存流量：假设dense block在DenseNet中的基本特征映射大小为，增长率为d，并且共m层。然后，该dense block的CIO为，部分dense block的CIO为。虽然m和d通常比c小得多，但部分dense block最多可以节省网络内存流量的一半。
 
-![](https://files.mdnice.com/user/3026/3b8d1c8c-df2c-4c21-864b-ce0e45e16579.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/3b8d1c8c-df2c-4c21-864b-ce0e45e16579.png)
 
-```python
+```
 class CSPResStage(nn.Layer):
     def __init__(self, block_fn, ch_in, ch_out, n, stride, act='relu', attn='eca'):
         super(CSPResStage, self).__init__()
@@ -207,31 +225,33 @@ class CSPResStage(nn.Layer):
             y = self.attn(y)
         y = self.conv3(y)
         return y
+
 ```
 
 #### 5、SPP结构
+
 SPP-Net全名为Spatial Pyramid Pooling（空间金字塔池化结构），2015年由微软研究院的何恺明提出,主要解决2个问题：
+
 1. 有效避免了R-CNN算法对图像区域剪裁、缩放操作导致的图像物体剪裁不全以及形状扭曲等问题。
 2. 解决了卷积神经网络对图像重复特征提取的问题，大大提高了产生候选框的速度，且节省了计算成本。
 
-![](images/PP-YOLOE/781559c3-8d5d-4610-aa07-ad2dc3c4a62c.jpg)
+![img](images/PP-YOLOE/781559c3-8d5d-4610-aa07-ad2dc3c4a62c.jpg?lastModify=1668957935)
 
 #### SPP 显著特点
-1) 不管输入尺寸是怎样，SPP 可以产生固定大小的输出
-2) 使用多个窗口(pooling window)
-3) SPP 可以使用同一图像不同尺寸(scale)作为输入, 得到同样长度的池化特征。
+
+1) 不管输入尺寸是怎样，SPP 可以产生固定大小的输出 2) 使用多个窗口(pooling window) 3) SPP 可以使用同一图像不同尺寸(scale)作为输入, 得到同样长度的池化特征。
 
 #### 其它特点
-1) 由于对输入图像的不同纵横比和不同尺寸，SPP同样可以处理，所以提高了图像的尺度不变(scale-invariance)和降低了过拟合(over-fitting)
-2) 实验表明训练图像尺寸的多样性比单一尺寸的训练图像更容易使得网络收敛(convergence)
-3) SPP 对于特定的CNN网络设计和结构是独立的。(也就是说，只要把SPP放在最后一层卷积层后面，对网络的结构是没有影响的， 它只是替换了原来的pooling层)
-4) 不仅可以用于图像分类而且可以用来目标检测
 
-![](images/PP-YOLOE/0c807aea-bff0-451e-972a-1900c922e907.png)
+1) 由于对输入图像的不同纵横比和不同尺寸，SPP同样可以处理，所以提高了图像的尺度不变(scale-invariance)和降低了过拟合(over-fitting) 2) 实验表明训练图像尺寸的多样性比单一尺寸的训练图像更容易使得网络收敛(convergence) 3) SPP 对于特定的CNN网络设计和结构是独立的。(也就是说，只要把SPP放在最后一层卷积层后面，对网络的结构是没有影响的， 它只是替换了原来的pooling层) 4) 不仅可以用于图像分类而且可以用来目标检测
 
->通过spp模块实现局部特征和全局特征（所以空间金字塔池化结构的最大的池化核要尽可能的接近等于需要池化的featherMap的大小）的featherMap级别的融合，丰富最终特征图的表达能力，从而提高MAP。
+![img](images/PP-YOLOE/0c807aea-bff0-451e-972a-1900c922e907.png?lastModify=1668957935)
 
-```python
+> 通过spp模块实现局部特征和全局特征（所以空间金字塔池化结构的最大的池化核要尽可能的接近等于需要池化的featherMap的大小）的featherMap级别的融合，丰富最终特征图的表达能力，从而提高MAP。
+
+
+
+```
 class SPP(nn.Layer):
     def __init__(self, ch_in, ch_out, k, pool_size, act='swish', data_format='NCHW'):
         super(SPP, self).__init__()
@@ -278,21 +298,26 @@ class CSPStage(nn.Layer):
         y = paddle.concat([y1, y2], axis=1)
         y = self.conv3(y)
         return y
+
 ```
+
 ### 1.2、Neck
+
 yoloe的neck结构采用的依旧是FPN+PAN结构模式，将Neck部分用立体图画出来，更直观的看下两部分之间是如何通过FPN结构融合的。
 
-![](images/PP-YOLOE/9280db1c-124b-4133-a43e-96958b644bd3.png)
+![img](images/PP-YOLOE/9280db1c-124b-4133-a43e-96958b644bd3.png?lastModify=1668957935)
 
 如图所示，FPN是自顶向下的，将高层特征通过上采样和低层特征做融合得到进行预测的特征图。
 
-![](images/PP-YOLOE/2b71d758-e033-4a09-8fb7-28e291791e0a.png)
+![img](images/PP-YOLOE/2b71d758-e033-4a09-8fb7-28e291791e0a.png?lastModify=1668957935)
 
 和FPN层不同，yoloe在FPN层的后面还添加了一个自底向上的特征金字塔。FPN是自顶向下，将高层的强语义特征传递下来，对整个金字塔进行增强，不过只增强了语义信息，对定位信息没有传递，而本文就是针对这一点，在FPN的后面添加一个自底向上的金字塔。这样的操作是对FPN的补充，将低层的强定位特征传递上去。
 
-![](images/PP-YOLOE/e2e3171c-6af9-4ee7-9994-5f43ff25f3d1.png)
+![img](images/PP-YOLOE/e2e3171c-6af9-4ee7-9994-5f43ff25f3d1.png?lastModify=1668957935)
 
-```python
+
+
+```
 class CustomCSPPAN(nn.Layer):
     __shared__ = ['norm_type', 'data_format', 'width_mult', 'depth_mult', 'trt']
 
@@ -373,24 +398,24 @@ class CustomCSPPAN(nn.Layer):
             pan_feats.append(route)
 
         return pan_feats[::-1]
+
 ```
+
 ### 1.3、Head
 
-![](images/PP-YOLOE/45d006ca-7557-4404-b588-481acc8f039f.png)
+![img](images/PP-YOLOE/45d006ca-7557-4404-b588-481acc8f039f.png?lastModify=1668957935)
 
 对于PP-YOLOE的head部分，其依旧是TOOD的head，也就是T-Head，主要是包括了Cls Head和Loc Head。具体来说，T-head首先在FPN特征基础上进行分类与定位预测；然后TAL基于所提任务对齐测度计算任务对齐信息；最后T-head根据从TAL传回的信息自动调整分类概率与定位预测。
 
-![](images/PP-YOLOE/d59d9629-4221-43d9-9fea-ecb3b77da670.png)
+![img](images/PP-YOLOE/d59d9629-4221-43d9-9fea-ecb3b77da670.png?lastModify=1668957935)
 
-由于2个任务的预测都是基于这个交互特征来完成的，但是2个任务对于特征的需求肯定是不一样的，因为作者设计了一个layer attention来为每个任务单独的调整一下特征，这个部分的结构也很简单，可以理解为是一个channel-wise的注意力机制。这样的话就得到了对于每个任务单独的特征$X_{1N}^{task}$,然后再利用这些特征生成所需要的类别或者定位的特征图。
+由于2个任务的预测都是基于这个交互特征来完成的，但是2个任务对于特征的需求肯定是不一样的，因为作者设计了一个layer attention来为每个任务单独的调整一下特征，这个部分的结构也很简单，可以理解为是一个channel-wise的注意力机制。这样的话就得到了对于每个任务单独的特征,然后再利用这些特征生成所需要的类别或者定位的特征图。
 
-![](images/PP-YOLOE/191d9fd6-c24e-4212-87e3-38829cc118f0.png)
+![img](images/PP-YOLOE/191d9fd6-c24e-4212-87e3-38829cc118f0.png?lastModify=1668957935)
 
+![img](images/PP-YOLOE/f3c82bb6-24d3-43f6-8ec5-6ebec8b4d8ca.png?lastModify=1668957935)
 
-![](images/PP-YOLOE/f3c82bb6-24d3-43f6-8ec5-6ebec8b4d8ca.png)
-
-
-```python
+```
 class PPYOLOEHead(nn.Layer):
     __shared__ = ['num_classes', 'trt', 'exclude_nms']
     __inject__ = ['static_assigner', 'assigner', 'nms']
@@ -499,15 +524,16 @@ class PPYOLOEHead(nn.Layer):
             return self.forward_train(feats, targets)
         else:
             return self.forward_eval(feats)
+
 ```
 
 ## 样本匹配
+
 ### 2.1 ATSS Assigner思想
 
  ATSS论文指出One-Stage Anchor-Based和Center-Based Anchor-Free检测算法间的差异主要来自于正负样本的选择，基于此提出ATSS(Adaptive Training Sample Selection)方法，该方法能够自动根据GT的相关统计特征选择合适的Anchor Box作为正样本，在不带来额外计算量和参数的情况下，能够大幅提升模型的性能。
 
-ATSS选取正样本的方法如下：
-其简要流程为：
+ATSS选取正样本的方法如下： 其简要流程为：
 
 1. 计算每个 gt bbox 和多尺度输出层的所有 anchor 之间的 IoU
 2. 计算每个 gt bbox 中心坐标和多尺度输出层的所有 anchor 中心坐标的 l2 距离
@@ -518,16 +544,16 @@ ATSS选取正样本的方法如下：
 
 #### 1、ATSS主要2大特性：
 
-1.  保证了所有的正样本Anchor都是在Ground Truth的周围。
-2.  最主要是根据不同层的特性对不同层的正样本的阈值进行了微调。
+1. 保证了所有的正样本Anchor都是在Ground Truth的周围。
+2. 最主要是根据不同层的特性对不同层的正样本的阈值进行了微调。
 
 #### 2、ATSS的贡献
 
--   指出Anchor-Base检测器和Anchor-Free检测器之间的本质区别实际上是如何定义正训练样本和负训练样本；
--   提出自适应训练样本选择，以根据目标的统计特征自动选择正负样本；
--   证明了在图像上的每个位置上平铺多个Anchor来提升检测的性能是没效果的；
+- 指出Anchor-Base检测器和Anchor-Free检测器之间的本质区别实际上是如何定义正训练样本和负训练样本；
+- 提出自适应训练样本选择，以根据目标的统计特征自动选择正负样本；
+- 证明了在图像上的每个位置上平铺多个Anchor来提升检测的性能是没效果的；
 
-```python
+```
 class ATSSAssigner(nn.Layer):
     """Bridging the Gap Between Anchor-based and Anchor-free Detection
      via Adaptive Training Sample Selection
@@ -656,13 +682,14 @@ class ATSSAssigner(nn.Layer):
             assigned_scores *= gather_scores.unsqueeze(-1)
 
         return assigned_labels, assigned_bboxes, assigned_scores
+
 ```
 
 ### 2.2、Task-aligned Assigner思想（TOOD）
 
  TOOD提出了Task Alignment Learning (TAL) 来显式的把2个任务的最优Anchor拉近。这是通过设计一个样本分配策略和任务对齐loss来实现的。样本分配计算每个Anchor的任务对齐度，同时任务对齐loss可以逐步将分类和定位的最佳Anchor统一起来。 
 
- ![img](images/PP-YOLOE/v2-e587b18e4047344eeba01af04487cb0a_r.jpg) 
+ ![img](images/PP-YOLOE/v2-e587b18e4047344eeba01af04487cb0a_r.jpg?lastModify=1668957935) 
 
  类似于近期提出的One-Stage检测器，所提TOOD采用了类似的架构:`Backbone-FPN-Head`。考虑到效率与简单性，类似ATSS， TOOD在每个位置放置一个Anchor。
 
@@ -670,9 +697,9 @@ class ATSSAssigner(nn.Layer):
 
 TOOD选取样本的方法具体来说:
 
--   首先，`T-head`在FPN特征基础上进行分类与定位预测;
--   然后，`TAL`基于所提任务对齐测度计算任务对齐信息;
--   最后，`T-head`根据从TAL传回的信息自动调整分类概率与定位预测。
+- 首先，`T-head`在FPN特征基础上进行分类与定位预测;
+- 然后，`TAL`基于所提任务对齐测度计算任务对齐信息;
+- 最后，`T-head`根据从TAL传回的信息自动调整分类概率与定位预测。
 
 #### 1、Task-Aligned Head
 
@@ -680,9 +707,9 @@ TOOD选取样本的方法具体来说:
 
 为增强分类与定位之间的相互作用，作者通过特征提取器学习`任务交互`（Task-Interactive）特征，如中蓝色框部分。这种设计不仅有助于任务交互，同时可以为2个任务提供多级多尺度特征。
 
-![](images/PP-YOLOE/45d006ca-7557-4404-b588-481acc8f039f.png)
+![img](images/PP-YOLOE/45d006ca-7557-4404-b588-481acc8f039f.png?lastModify=1668957935)
 
-假设![[公式]](https://www.zhihu.com/equation?tex=+X%5E%7Bfpn%7D+%5Cin+R%5E%7BH%5Ctimes+W%5Ctimes+C%7D+)表示FPN特征，特征提取器采用N个连续卷积计算任务交互特征： ![[公式]](https://www.zhihu.com/equation?tex=X_k%5E%7Binter%7D+%3D+%5Cbegin%7Bcases%7D+%5Cdelta%28conv_k%28X%5E%7Bfpn%7D%29%29%2C+k%3D1+%5C%5C+%5Cdelta%28conv_k%28X%5E%7Binter%7D_%7Bk-1%7D%29%29%2C+%5Cforall+k+%5Cin+%5C%7B1%2C2%2C%5Ccdots%2CN%5C%7D++%5Cend%7Bcases%7D+%5C%5C)
+假设![[公式]](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/equation)表示FPN特征，特征提取器采用N个连续卷积计算任务交互特征： ![[公式]](https://www.zhihu.com/equation?tex=X_k^{inter}+%3D+\begin{cases}+\delta(conv_k(X^{fpn}))%2C+k%3D1+\\+\delta(conv_k(X^{inter}_{k-1}))%2C+\forall+k+\in+\{1%2C2%2C\cdots%2CN\}++\end{cases}+\\)
 
 因此，通过特征提取器可以得到丰富的多尺度特征并用于送入到后续2个TAP模块中进行分类与定位对齐。
 
@@ -690,20 +717,20 @@ TOOD选取样本的方法具体来说:
 
 为与NMS搭配，训练样例的Anchor分配需要满足以下规则：
 
--   正常对齐的Anchor应当可以预测高分类得分，同时具有精确定位；
--   不对齐的Anchor应当具有低分类得分，并在NMS阶段被抑制。
+- 正常对齐的Anchor应当可以预测高分类得分，同时具有精确定位；
+- 不对齐的Anchor应当具有低分类得分，并在NMS阶段被抑制。
 
 基于上述两个规则，**作者设计了一种新的Anchor对齐度量以显式度量Anchor层面的对齐度**。该对齐度量将集成到样本分配与损失函数中以动态提炼每个Anchor的预测。
 
 **Anchor Alignment metric** 考虑到分类得分与IoU表征了预测质量，我们采用2者的高阶组合度量任务对齐度，公式定义如下：
 
-$t=s^{\alpha} + u^{\beta}$
 
-其中，s与u分别表示分类得分与IoU值，而$\alpha, \beta$用于控制两者的影响。因此，t在联合优化中起着非常重要的作用，它**激励网络动态的聚焦于高质量的Anchor上**。
+
+其中，s与u分别表示分类得分与IoU值，而用于控制两者的影响。因此，t在联合优化中起着非常重要的作用，它**激励网络动态的聚焦于高质量的Anchor上**。
 
 **Training sample assignment** 正如已有研究表明，**训练样例分配对于检测器的训练非常重要**。为提升两个任务的对齐性，我们聚焦于任务对齐Anchor，采用一种简单的分配规则选择训练样本：对每个实例，我们选择m个具有最大t值的Anchor作为正样例，选择其余的Anchor作为负样例。然后，通过新的损失函数(针对分类与定位的对齐而设计的损失函数)任务进行训练。
 
-```python
+```
 class TaskAlignedAssigner(nn.Layer):
     def __init__(self, topk=13, alpha=1.0, beta=6.0, eps=1e-9):
         super(TaskAlignedAssigner, self).__init__()
@@ -793,20 +820,20 @@ class TaskAlignedAssigner(nn.Layer):
 ## 损失函数
 
 ### 3.1、分类损失varifocal loss
+
 Focal loss定义：
 
-![](images/PP-YOLOE/74f08d9a-f12f-4cf0-a67f-176ff2d7c96e.png)
+![img](images/PP-YOLOE/74f08d9a-f12f-4cf0-a67f-176ff2d7c96e.png?lastModify=1668957935)
 
 其中a是前景背景的损失权重，p的y次是不同样本的权重，难分样本的损失权重会增大。当训练一个密集的物体检测器使连续的IACS回归时，本文从focal loss中借鉴了样本加权思想来解决类不平衡问题。 但是，与focal loss同等对待正负样本的损失不同，而varifocal loss选择不对称地对待它们。varifocal loss定义如下：
 
-![](images/PP-YOLOE/98ffff4e-589e-4f64-864a-27c7ea6c5bb4.png)
+![img](images/PP-YOLOE/98ffff4e-589e-4f64-864a-27c7ea6c5bb4.png?lastModify=1668957935)
 
 其中p是预测的IACS得分，q是目标IoU分数。 对于训练中的正样本，将q设置为生成的bbox和gt box之间的IoU（gt IoU），而对于训练中的负样本，所有类别的训练目标q均为0。
 
 备注：Varifocal Loss会预测Iou-aware Cls_score（IACS）与分类两个得分，通过p的y次来有效降低负样本损失的权重，正样本选择不降低权重。此外，通过q（Iou感知得分）来对Iou高的正样本损失加大权重，相当于将训练重点放在高质量的样本上面。
 
-
-```python
+```
 @staticmethod
 def _varifocal_loss(pred_score, gt_score, label, alpha=0.75, gamma=2.0):
     weight = alpha * pred_score.pow(gamma) * (1 - label) + gt_score * label
@@ -817,10 +844,12 @@ def _varifocal_loss(pred_score, gt_score, label, alpha=0.75, gamma=2.0):
 
 
 ### 3.2、回归损失
+
 #### 1、GIoULoss
+
 GIOU的计算很简单，对于两个bounding box A，B。我们可以算出其最小凸集（包围A、B的最小包围框）C。有了最小凸集，就可以计算GIOU：
 
-![](images/PP-YOLOE/75550304-67e7-47b2-95e6-dc0090c11f96.png)
+![img](images/PP-YOLOE/75550304-67e7-47b2-95e6-dc0090c11f96.png?lastModify=1668957935)
 
 计算方法很简单，从公式可以看出，GIOU有几个特点：
 
@@ -830,18 +859,17 @@ GIOU的计算很简单，对于两个bounding box A，B。我们可以算出其�
 
 当IOU=0时：
 
-![](images/PP-YOLOE/7f6c2728-51db-4f75-be69-03e50d3e6db4.png)
+![img](images/PP-YOLOE/7f6c2728-51db-4f75-be69-03e50d3e6db4.png?lastModify=1668957935)
 
 显然， A∪B值不变，最大化GIOU就是要最小化C，最小化C就会促成2个框不断靠近，而不是像最小化IOU那样loss为0。
 
->YOLO V3涨了2个点，Faster RCNN，MaskRCNN这种涨点少了些。主要原因在于Faster RCNN，MaskRCNN本身的Anchor很多，出现完全无重合的情况比较少，这样GIOU和IOU Loss就无明显差别。所以提升不是太明显。
+> YOLO V3涨了2个点，Faster RCNN，MaskRCNN这种涨点少了些。主要原因在于Faster RCNN，MaskRCNN本身的Anchor很多，出现完全无重合的情况比较少，这样GIOU和IOU Loss就无明显差别。所以提升不是太明显。
 
 在TOOD中，bbox(Bouding box)通过对齐的anchor(具有更大的分类得分、更精确的定位)预测得到，这样的bbox通常经过NMS后仍可以得以保留。此外，t可以在训练阶段通过对损失加权选择高质量的bbox。因此，采用t度量bbox的质量，同时结合GIoU Loss定义了TOOD的Reg Loss如下:
 
-![](https://files.mdnice.com/user/3026/ae7c75b5-40a7-42fb-809f-71c5290adb74.png)
+![img](https://files.mdnice.com/user/3026/ae7c75b5-40a7-42fb-809f-71c5290adb74.png)
 
-
-```python
+```
 @register
 @serializable
 class GIoULoss(object):
@@ -919,38 +947,40 @@ class GIoULoss(object):
 
 
 #### 2、L1 loss
+
 均绝对误差（Mean Absolute Error,MAE) 是指模型预测值f(x)和真实值y之间距离的均值，其公式如下：
 
-![](https://files.mdnice.com/user/3026/450d64b9-f3c7-4a97-b81e-7aec562956bb.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/450d64b9-f3c7-4a97-b81e-7aec562956bb.png)
 
 忽略下标i ，设n=1，以f(x)−y为横轴，MAE的值为纵轴，得到函数的图形如下：
 
-![](images/PP-YOLOE/7c64a2ed-e541-4d92-9732-8d3e1ae6538f.png)
+![img](images/PP-YOLOE/7c64a2ed-e541-4d92-9732-8d3e1ae6538f.png?lastModify=1668957935)
 
 MAE曲线连续，但是在y−f(x)=0处不可导。而且 MAE 大部分情况下梯度都是相等的，这意味着即使对于小的损失值，其梯度也是大的。这不利于函数的收敛和模型的学习。但是，无论对于什么样的输入值，都有着稳定的梯度，不会导致梯度爆炸问题，具有较为稳健性的解。
 
 相比于MSE，MAE有个优点就是，对于离群点不那么敏感。因为MAE计算的是误差y−f(x)的绝对值，对于任意大小的差值，其惩罚都是固定的。
 
-```python
+```
 loss_l1 = F.l1_loss(pred_bboxes_pos, assigned_bboxes_pos)
 ```
 
 #### 3、DF Loss
+
 对于任意分布来建模框的表示，它可以用积分形式嵌入到任意已有的和框回归相关的损失函数上，例如最近比较流行的GIoU Loss。这个实际上也就够了，不过涨点不是很明显，我们又仔细分析了一下，发现如果分布过于任意，网络学习的效率可能会不高，原因是一个积分目标可能对应了无穷多种分布模式。如下图所示：
 
-![](images/PP-YOLOE/e9f71869-1c41-4f41-aa1c-ffc5f5506428.jpg)
+![img](images/PP-YOLOE/e9f71869-1c41-4f41-aa1c-ffc5f5506428.jpg?lastModify=1668957935)
 
 考虑到真实的分布通常不会距离标注的位置太远，所以我们又额外加了个loss，希望网络能够快速地聚焦到标注位置附近的数值，使得他们概率尽可能大。基于此，我们取了个名字叫Distribution Focal Loss (DFL)：
 
-![](images/PP-YOLOE/b85159bc-930b-4324-a11e-2df78a4e9d29.png)
+![img](images/PP-YOLOE/b85159bc-930b-4324-a11e-2df78a4e9d29.png?lastModify=1668957935)
 
 其形式上与QFL的右半部分很类似，含义是以类似交叉熵的形式去优化与标签y最接近的一左一右两个位置的概率，从而让网络快速地聚焦到目标位置的邻近区域的分布中去。
 
-![](images/PP-YOLOE/1f12664c-f87a-435a-8283-eca39fdaf3a8.jpg)
+![img](images/PP-YOLOE/1f12664c-f87a-435a-8283-eca39fdaf3a8.jpg?lastModify=1668957935)
 
->QFL和DFL的作用是正交的，他们的增益互不影响
+> QFL和DFL的作用是正交的，他们的增益互不影响
 
-```python
+```
 def _df_loss(self, pred_dist, target):
     target_left = paddle.cast(target, 'int64')
     target_right = target_left + 1
@@ -965,10 +995,11 @@ def _df_loss(self, pred_dist, target):
 
 ### 3.3、总损失
 
-$loss = a\times loss_{cls} + b\times loss_{giou} + c\times loss_{dfl}$
+
 
 其中，a表示分类损失的权重系数，b表示回归损失的权重系数，c表示DFL损失的权重系数。
-```python
+
+```
     def get_loss(self, head_outs, gt_meta):
         pred_scores, pred_distri, anchors, anchor_points, num_anchors_list, stride_tensor = head_outs
 
@@ -1031,9 +1062,10 @@ $loss = a\times loss_{cls} + b\times loss_{giou} + c\times loss_{dfl}$
 ```
 
 ## 模型推理与部署
+
 ### 4.1、模型推理
 
-```bash
+```
 # inference single image
 CUDA_VISIBLE_DEVICES=0 python tools/infer.py -c configs/ppyoloe/ppyoloe_crn_l_300e_coco.yml -o weights=https://paddledet.bj.bcebos.com/models/ppyoloe_crn_l_300e_coco.pdparams --infer_img=demo/000000014439_640x640.jpg
 
@@ -1041,11 +1073,11 @@ CUDA_VISIBLE_DEVICES=0 python tools/infer.py -c configs/ppyoloe/ppyoloe_crn_l_30
 CUDA_VISIBLE_DEVICES=0 python tools/infer.py -c configs/ppyoloe/ppyoloe_crn_l_300e_coco.yml -o weights=https://paddledet.bj.bcebos.com/models/ppyoloe_crn_l_300e_coco.pdparams --infer_dir=demo
 ```
 
-![](images/PP-YOLOE/364eb864-41f9-42c9-8ec2-945d2f536f3a.jpg)
+![img](images/PP-YOLOE/364eb864-41f9-42c9-8ec2-945d2f536f3a.jpg?lastModify=1668957935)
 
 ### 4.2、导出ONNX
 
-```bash
+```
 # export inference model
 python tools/export_model.py configs/ppyoloe/ppyoloe_crn_l_300e_coco.yml --output_dir=output_inference -o weights=https://paddledet.bj.bcebos.com/models/ppyoloe_crn_l_300e_coco.pdparams
 
@@ -1054,14 +1086,16 @@ pip install paddle2onnx
 
 # convert to onnx
 paddle2onnx --model_dir output_inference/ppyoloe_crn_l_300e_coco --model_filename model.pdmodel --params_filename model.pdiparams --opset_version 11 --save_file ppyoloe_crn_l_300e_coco.onnx
+```
+
+### 4。3、导出TensorRT Engine
 
 ```
-### 4。3、导出TensorRT Engine
-```bash
 python tools/export_model.py configs/ppyoloe/ppyoloe_crn_l_300e_coco.yml -o weights=https://paddledet.bj.bcebos.com/models/ppyoloe_crn_l_300e_coco.pdparams -o trt=True
 ```
 
 ## 参考
+
 [1].https://github.com/PaddlePaddle/PaddleDetection<br>
 
 ## 推荐阅读
