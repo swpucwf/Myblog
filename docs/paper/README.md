@@ -68,6 +68,8 @@
 - DeepLabv3+(Encoder-Decoder with Atrous Separable Convolution for Semantic Image Segmentation) [https://arxiv.org/abs/1802.02611](https://arxiv.org/abs/1802.02611)
 - Mask R-CNN [https://arxiv.org/abs/1703.06870](https://arxiv.org/abs/1703.06870)
 
+## 生成对抗网络
+- deblur-gan[https://arxiv.org/pdf/1711.07064](https://arxiv.org/pdf/1711.07064.pdf)
 
 ## 自然语言处理
 - Attention Is All You Need [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
