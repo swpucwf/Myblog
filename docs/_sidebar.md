@@ -6,8 +6,8 @@
       - [认识计算机视觉](source/books/OpenCV/认识计算机视觉.md)
       - [图像的显示与读取](source/books/OpenCV/图像的显示与读取.md)
     - **c++学习**
-    - [初识c++](source/books/C++/ch1.md)
-    - [c++第二天](source/books/C++/ch2.md)
+      - [初识c++](source/books/C++/ch1.md)
+      - [c++第二天](source/books/C++/ch2.md)
   - **论文阅读笔记**
     - **GAN生成对抗网络**
       - DCGAN
