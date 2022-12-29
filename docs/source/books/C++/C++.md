@@ -1,3 +1,3 @@
 ### 目录
-- [初识c++](ch1.md)
-- [c++第二天](ch2.md)
+- [初识c++](source/books/C++/ch1.md)
+- [c++第二天](source/books/C++/ch2.md)
