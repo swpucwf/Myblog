@@ -692,7 +692,7 @@ LOG 算子的卷积模板通常采用 5×5 的矩阵，如：
 
 计算代码流程：
 
-![image-20221229195548576](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221229195548576.png)
+![image-20221229220224905](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221229220224905.png)
 
 其中左边这个模板是在高斯标准差为 0.5 时的逼近，右边的模板的高斯标准差为 1。
 
