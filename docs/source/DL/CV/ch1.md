@@ -1873,6 +1873,6 @@ int main(int argc, char** argv)
 
 ### 1.**致谢及引用** 
 
-[www.gwylab.com](www.gwylab.com)
+[www.gwylab.com](https://www.gwylab.com)
 
 [https://github.com/ronnyyoung/ImageFeatures](https://github.com/ronnyyoung/ImageFeatures)
