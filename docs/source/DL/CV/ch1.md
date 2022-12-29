@@ -871,7 +871,7 @@ $$
 
    双阈值检测的伪代码描写如下： 
 
-   ![image-20221229203832152](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221229203832152.png)
+   ![image-20221229220546777](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221229220546777.png)
 
    6**．** **通过抑制孤立的弱边缘完成边缘检测** 
 
@@ -895,7 +895,7 @@ $$
 
 ![image-20221229204308168](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20221229204308168.png)
 
-### **第四章** SUSAN **边缘及角点检测方法** 
+## **第四章** SUSAN **边缘及角点检测方法** 
 
 #### 1 SUSAN **检测方法概述** 
 
@@ -1002,7 +1002,7 @@ $$
 \end{aligned}
 $$
 
-### **第五章** ***新兴的边缘检测算法** 
+## **第五章** ***新兴的边缘检测算法** 
 
 #### 1 **小波分析** 
 
@@ -1032,8 +1032,847 @@ $$
 
  以上神经网络的特性决定了它用来检测图像边缘的可用性。 
 
-### **第六章** **附录** 
+相关代码实
 
-1.**致谢及引用** 
+## **第六章**  **相关代码** 
+
+### **1. 头文件imgFeat.h 实现**
+
+```c++
+#include "imgFeat.h"
+
+void feat::extBlobFeat(Mat& imgSrc, vector<SBlob>& blobs)
+{
+	double dSigmaStart = 2;
+	double dSigmaEnd = 15;
+	double dSigmaStep = 1;
+
+	Mat image;
+	cvtColor(imgSrc, image, cv::COLOR_BGR2RGB);
+	image.convertTo(image, CV_64F);
+
+	vector<double> ivecSigmaArray;
+	double dInitSigma = dSigmaStart;
+	while (dInitSigma <= dSigmaEnd)
+	{
+		ivecSigmaArray.push_back(dInitSigma);
+		dInitSigma += dSigmaStep;
+	}
+	int iSigmaNb = ivecSigmaArray.size();
+
+	vector<Mat> matVecLOG;
+	
+	for (size_t i = 0; i != iSigmaNb; i++)
+	{
+		double iSigma = ivecSigmaArray[i]; 
+		
+		Size kSize(6 * iSigma + 1, 6 * iSigma + 1);
+		Mat HOGKernel = getHOGKernel(kSize, iSigma);
+		Mat imgLog;
+		
+		filter2D(image, imgLog, -1, HOGKernel); // why imgLog must be an empty mat ?
+		imgLog = imgLog * iSigma *iSigma;
+
+		matVecLOG.push_back(imgLog);
+	}
+
+	vector<SBlob> allBlobs;
+	for (size_t k = 1; k != matVecLOG.size() - 1 ;k++)
+	{
+		Mat topLev = matVecLOG[k + 1];
+		Mat medLev = matVecLOG[k];
+		Mat botLev = matVecLOG[k - 1];
+		for (int i = 1; i < image.rows - 1; i++)
+		{
+			double* pTopLevPre = topLev.ptr<double>(i - 1);
+			double* pTopLevCur = topLev.ptr<double>(i);
+			double* pTopLevAft = topLev.ptr<double>(i + 1);
+
+			double* pMedLevPre = medLev.ptr<double>(i - 1);
+			double* pMedLevCur = medLev.ptr<double>(i);
+			double* pMedLevAft = medLev.ptr<double>(i + 1);
+
+			double* pBotLevPre = botLev.ptr<double>(i - 1);
+			double* pBotLevCur = botLev.ptr<double>(i);
+			double* pBotLevAft = botLev.ptr<double>(i + 1);
+
+			for (int j = 1; j < image.cols - 1; j++)
+			{
+				if ((pMedLevCur[j] >= pMedLevCur[j + 1] && pMedLevCur[j] >= pMedLevCur[j -1] &&
+				pMedLevCur[j] >= pMedLevPre[j + 1] && pMedLevCur[j] >= pMedLevPre[j -1] && pMedLevCur[j] >= pMedLevPre[j] && 
+				pMedLevCur[j] >= pMedLevAft[j + 1] && pMedLevCur[j] >= pMedLevAft[j -1] && pMedLevCur[j] >= pMedLevAft[j] &&
+				pMedLevCur[j] >= pTopLevPre[j + 1] && pMedLevCur[j] >= pTopLevPre[j -1] && pMedLevCur[j] >= pTopLevPre[j] &&
+				pMedLevCur[j] >= pTopLevCur[j + 1] && pMedLevCur[j] >= pTopLevCur[j -1] && pMedLevCur[j] >= pTopLevCur[j] &&
+				pMedLevCur[j] >= pTopLevAft[j + 1] && pMedLevCur[j] >= pTopLevAft[j -1] && pMedLevCur[j] >= pTopLevAft[j] &&
+				pMedLevCur[j] >= pBotLevPre[j + 1] && pMedLevCur[j] >= pBotLevPre[j -1] && pMedLevCur[j] >= pBotLevPre[j] &&
+				pMedLevCur[j] >= pBotLevCur[j + 1] && pMedLevCur[j] >= pBotLevCur[j -1] && pMedLevCur[j] >= pBotLevCur[j] &&
+				pMedLevCur[j] >= pBotLevAft[j + 1] && pMedLevCur[j] >= pBotLevAft[j -1] && pMedLevCur[j] >= pBotLevAft[j] ) || 
+				(pMedLevCur[j] < pMedLevCur[j + 1] && pMedLevCur[j] < pMedLevCur[j -1] &&
+				pMedLevCur[j] < pMedLevPre[j + 1] && pMedLevCur[j] < pMedLevPre[j -1] && pMedLevCur[j] < pMedLevPre[j] && 
+				pMedLevCur[j] < pMedLevAft[j + 1] && pMedLevCur[j] < pMedLevAft[j -1] && pMedLevCur[j] < pMedLevAft[j] &&
+				pMedLevCur[j] < pTopLevPre[j + 1] && pMedLevCur[j] < pTopLevPre[j -1] && pMedLevCur[j] < pTopLevPre[j] &&
+				pMedLevCur[j] < pTopLevCur[j + 1] && pMedLevCur[j] < pTopLevCur[j -1] && pMedLevCur[j] < pTopLevCur[j] &&
+				pMedLevCur[j] < pTopLevAft[j + 1] && pMedLevCur[j] < pTopLevAft[j -1] && pMedLevCur[j] < pTopLevAft[j] &&
+				pMedLevCur[j] < pBotLevPre[j + 1] && pMedLevCur[j] < pBotLevPre[j -1] && pMedLevCur[j] < pBotLevPre[j] &&
+				pMedLevCur[j] < pBotLevCur[j + 1] && pMedLevCur[j] < pBotLevCur[j -1] && pMedLevCur[j] < pBotLevCur[j] &&
+				pMedLevCur[j] < pBotLevAft[j + 1] && pMedLevCur[j] < pBotLevAft[j -1] && pMedLevCur[j] < pBotLevAft[j] ))
+				{
+					SBlob blob;
+					blob.position = Point(j, i);
+					blob.sigma = ivecSigmaArray[k];
+					blob.value = pMedLevCur[j];
+					allBlobs.push_back(blob);
+				}
+			}
+		}
+	}
+
+	
+
+	vector<bool> delFlags(allBlobs.size(), true);
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i] == false)
+		{
+			continue;
+		}
+		for (size_t j = i; j != allBlobs.size(); j++)
+		{
+			if (delFlags[j] == false)
+			{
+				continue;
+			}
+			double distCent = sqrt((allBlobs[i].position.x - allBlobs[j].position.x) * (allBlobs[i].position.x - allBlobs[j].position.x) + 
+			(allBlobs[i].position.y - allBlobs[j].position.y) * (allBlobs[i].position.y - allBlobs[j].position.y));
+			if ((allBlobs[i].sigma + allBlobs[j].sigma) / distCent > 2)
+			{
+				if (allBlobs[i].value >= allBlobs[j].value)
+				{
+					delFlags[j] = false;
+					delFlags[i] = true;
+				}
+				else
+				{
+				 	delFlags[i] = false;
+				 	delFlags[j] = true;
+				}
+			}
+		}
+	}
+
+
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i])
+		{
+			blobs.push_back(allBlobs[i]);
+		}
+	}
+
+	sort(blobs.begin(), blobs.end(), compareBlob);
+	
+}
+Mat feat::getHOGKernel(Size& ksize, double sigma)
+{
+	Mat kernel(ksize, CV_64F);
+	Point centPoint = Point((ksize.width -1)/2, ((ksize.height -1)/2));
+	// first calculate Gaussian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double param = -((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x)) / (2*sigma*sigma);
+			pData[j] = exp(param);
+		}
+	}
+	double maxValue;
+	minMaxLoc(kernel, NULL, &maxValue);
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			if (pData[j] < EPS* maxValue)
+			{
+				pData[j] = 0;
+			}
+		}
+	}
+
+	double sumKernel = sum(kernel)[0];
+	if (sumKernel != 0)
+	{
+		kernel = kernel / sumKernel;
+	}
+	// now calculate Laplacian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double addition = ((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x) - 2*sigma*sigma)/(sigma*sigma*sigma*sigma);
+			pData[j] *= addition;
+		}
+	}
+	// make the filter sum to zero
+	sumKernel = sum(kernel)[0];
+	kernel -= (sumKernel/(ksize.width  * ksize.height));	
+
+	return kernel;
+}
+
+bool feat::compareBlob(const SBlob& lhs, const SBlob& rhs)
+{
+	return lhs.value > rhs.value;
+}
+
+
+
+```
+
+### 2.sobel 算法实现
+
+```c++
+#include "imgFeat.h"
+
+void feat::extBlobFeat(Mat& imgSrc, vector<SBlob>& blobs)
+{
+	double dSigmaStart = 2;
+	double dSigmaEnd = 15;
+	double dSigmaStep = 1;
+
+	Mat image;
+	cvtColor(imgSrc, image, cv::COLOR_BGR2RGB);
+	image.convertTo(image, CV_64F);
+
+	vector<double> ivecSigmaArray;
+	double dInitSigma = dSigmaStart;
+	while (dInitSigma <= dSigmaEnd)
+	{
+		ivecSigmaArray.push_back(dInitSigma);
+		dInitSigma += dSigmaStep;
+	}
+	int iSigmaNb = ivecSigmaArray.size();
+
+	vector<Mat> matVecLOG;
+	
+	for (size_t i = 0; i != iSigmaNb; i++)
+	{
+		double iSigma = ivecSigmaArray[i]; 
+		
+		Size kSize(6 * iSigma + 1, 6 * iSigma + 1);
+		Mat HOGKernel = getHOGKernel(kSize, iSigma);
+		Mat imgLog;
+		
+		filter2D(image, imgLog, -1, HOGKernel); // why imgLog must be an empty mat ?
+		imgLog = imgLog * iSigma *iSigma;
+
+		matVecLOG.push_back(imgLog);
+	}
+
+	vector<SBlob> allBlobs;
+	for (size_t k = 1; k != matVecLOG.size() - 1 ;k++)
+	{
+		Mat topLev = matVecLOG[k + 1];
+		Mat medLev = matVecLOG[k];
+		Mat botLev = matVecLOG[k - 1];
+		for (int i = 1; i < image.rows - 1; i++)
+		{
+			double* pTopLevPre = topLev.ptr<double>(i - 1);
+			double* pTopLevCur = topLev.ptr<double>(i);
+			double* pTopLevAft = topLev.ptr<double>(i + 1);
+
+			double* pMedLevPre = medLev.ptr<double>(i - 1);
+			double* pMedLevCur = medLev.ptr<double>(i);
+			double* pMedLevAft = medLev.ptr<double>(i + 1);
+
+			double* pBotLevPre = botLev.ptr<double>(i - 1);
+			double* pBotLevCur = botLev.ptr<double>(i);
+			double* pBotLevAft = botLev.ptr<double>(i + 1);
+
+			for (int j = 1; j < image.cols - 1; j++)
+			{
+				if ((pMedLevCur[j] >= pMedLevCur[j + 1] && pMedLevCur[j] >= pMedLevCur[j -1] &&
+				pMedLevCur[j] >= pMedLevPre[j + 1] && pMedLevCur[j] >= pMedLevPre[j -1] && pMedLevCur[j] >= pMedLevPre[j] && 
+				pMedLevCur[j] >= pMedLevAft[j + 1] && pMedLevCur[j] >= pMedLevAft[j -1] && pMedLevCur[j] >= pMedLevAft[j] &&
+				pMedLevCur[j] >= pTopLevPre[j + 1] && pMedLevCur[j] >= pTopLevPre[j -1] && pMedLevCur[j] >= pTopLevPre[j] &&
+				pMedLevCur[j] >= pTopLevCur[j + 1] && pMedLevCur[j] >= pTopLevCur[j -1] && pMedLevCur[j] >= pTopLevCur[j] &&
+				pMedLevCur[j] >= pTopLevAft[j + 1] && pMedLevCur[j] >= pTopLevAft[j -1] && pMedLevCur[j] >= pTopLevAft[j] &&
+				pMedLevCur[j] >= pBotLevPre[j + 1] && pMedLevCur[j] >= pBotLevPre[j -1] && pMedLevCur[j] >= pBotLevPre[j] &&
+				pMedLevCur[j] >= pBotLevCur[j + 1] && pMedLevCur[j] >= pBotLevCur[j -1] && pMedLevCur[j] >= pBotLevCur[j] &&
+				pMedLevCur[j] >= pBotLevAft[j + 1] && pMedLevCur[j] >= pBotLevAft[j -1] && pMedLevCur[j] >= pBotLevAft[j] ) || 
+				(pMedLevCur[j] < pMedLevCur[j + 1] && pMedLevCur[j] < pMedLevCur[j -1] &&
+				pMedLevCur[j] < pMedLevPre[j + 1] && pMedLevCur[j] < pMedLevPre[j -1] && pMedLevCur[j] < pMedLevPre[j] && 
+				pMedLevCur[j] < pMedLevAft[j + 1] && pMedLevCur[j] < pMedLevAft[j -1] && pMedLevCur[j] < pMedLevAft[j] &&
+				pMedLevCur[j] < pTopLevPre[j + 1] && pMedLevCur[j] < pTopLevPre[j -1] && pMedLevCur[j] < pTopLevPre[j] &&
+				pMedLevCur[j] < pTopLevCur[j + 1] && pMedLevCur[j] < pTopLevCur[j -1] && pMedLevCur[j] < pTopLevCur[j] &&
+				pMedLevCur[j] < pTopLevAft[j + 1] && pMedLevCur[j] < pTopLevAft[j -1] && pMedLevCur[j] < pTopLevAft[j] &&
+				pMedLevCur[j] < pBotLevPre[j + 1] && pMedLevCur[j] < pBotLevPre[j -1] && pMedLevCur[j] < pBotLevPre[j] &&
+				pMedLevCur[j] < pBotLevCur[j + 1] && pMedLevCur[j] < pBotLevCur[j -1] && pMedLevCur[j] < pBotLevCur[j] &&
+				pMedLevCur[j] < pBotLevAft[j + 1] && pMedLevCur[j] < pBotLevAft[j -1] && pMedLevCur[j] < pBotLevAft[j] ))
+				{
+					SBlob blob;
+					blob.position = Point(j, i);
+					blob.sigma = ivecSigmaArray[k];
+					blob.value = pMedLevCur[j];
+					allBlobs.push_back(blob);
+				}
+			}
+		}
+	}
+
+	
+
+	vector<bool> delFlags(allBlobs.size(), true);
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i] == false)
+		{
+			continue;
+		}
+		for (size_t j = i; j != allBlobs.size(); j++)
+		{
+			if (delFlags[j] == false)
+			{
+				continue;
+			}
+			double distCent = sqrt((allBlobs[i].position.x - allBlobs[j].position.x) * (allBlobs[i].position.x - allBlobs[j].position.x) + 
+			(allBlobs[i].position.y - allBlobs[j].position.y) * (allBlobs[i].position.y - allBlobs[j].position.y));
+			if ((allBlobs[i].sigma + allBlobs[j].sigma) / distCent > 2)
+			{
+				if (allBlobs[i].value >= allBlobs[j].value)
+				{
+					delFlags[j] = false;
+					delFlags[i] = true;
+				}
+				else
+				{
+				 	delFlags[i] = false;
+				 	delFlags[j] = true;
+				}
+			}
+		}
+	}
+
+
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i])
+		{
+			blobs.push_back(allBlobs[i]);
+		}
+	}
+
+	sort(blobs.begin(), blobs.end(), compareBlob);
+	
+}
+Mat feat::getHOGKernel(Size& ksize, double sigma)
+{
+	Mat kernel(ksize, CV_64F);
+	Point centPoint = Point((ksize.width -1)/2, ((ksize.height -1)/2));
+	// first calculate Gaussian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double param = -((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x)) / (2*sigma*sigma);
+			pData[j] = exp(param);
+		}
+	}
+	double maxValue;
+	minMaxLoc(kernel, NULL, &maxValue);
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			if (pData[j] < EPS* maxValue)
+			{
+				pData[j] = 0;
+			}
+		}
+	}
+
+	double sumKernel = sum(kernel)[0];
+	if (sumKernel != 0)
+	{
+		kernel = kernel / sumKernel;
+	}
+	// now calculate Laplacian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double addition = ((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x) - 2*sigma*sigma)/(sigma*sigma*sigma*sigma);
+			pData[j] *= addition;
+		}
+	}
+	// make the filter sum to zero
+	sumKernel = sum(kernel)[0];
+	kernel -= (sumKernel/(ksize.width  * ksize.height));	
+
+	return kernel;
+}
+
+bool feat::compareBlob(const SBlob& lhs, const SBlob& rhs)
+{
+	return lhs.value > rhs.value;
+}
+
+
+
+```
+
+### 3. Hog实现
+
+```c++
+#include "imgFeat.h"
+
+void feat::extBlobFeat(Mat& imgSrc, vector<SBlob>& blobs)
+{
+	double dSigmaStart = 2;
+	double dSigmaEnd = 15;
+	double dSigmaStep = 1;
+
+	Mat image;
+	cvtColor(imgSrc, image, cv::COLOR_BGR2RGB);
+	image.convertTo(image, CV_64F);
+
+	vector<double> ivecSigmaArray;
+	double dInitSigma = dSigmaStart;
+	while (dInitSigma <= dSigmaEnd)
+	{
+		ivecSigmaArray.push_back(dInitSigma);
+		dInitSigma += dSigmaStep;
+	}
+	int iSigmaNb = ivecSigmaArray.size();
+
+	vector<Mat> matVecLOG;
+	
+	for (size_t i = 0; i != iSigmaNb; i++)
+	{
+		double iSigma = ivecSigmaArray[i]; 
+		
+		Size kSize(6 * iSigma + 1, 6 * iSigma + 1);
+		Mat HOGKernel = getHOGKernel(kSize, iSigma);
+		Mat imgLog;
+		
+		filter2D(image, imgLog, -1, HOGKernel); // why imgLog must be an empty mat ?
+		imgLog = imgLog * iSigma *iSigma;
+
+		matVecLOG.push_back(imgLog);
+	}
+
+	vector<SBlob> allBlobs;
+	for (size_t k = 1; k != matVecLOG.size() - 1 ;k++)
+	{
+		Mat topLev = matVecLOG[k + 1];
+		Mat medLev = matVecLOG[k];
+		Mat botLev = matVecLOG[k - 1];
+		for (int i = 1; i < image.rows - 1; i++)
+		{
+			double* pTopLevPre = topLev.ptr<double>(i - 1);
+			double* pTopLevCur = topLev.ptr<double>(i);
+			double* pTopLevAft = topLev.ptr<double>(i + 1);
+
+			double* pMedLevPre = medLev.ptr<double>(i - 1);
+			double* pMedLevCur = medLev.ptr<double>(i);
+			double* pMedLevAft = medLev.ptr<double>(i + 1);
+
+			double* pBotLevPre = botLev.ptr<double>(i - 1);
+			double* pBotLevCur = botLev.ptr<double>(i);
+			double* pBotLevAft = botLev.ptr<double>(i + 1);
+
+			for (int j = 1; j < image.cols - 1; j++)
+			{
+				if ((pMedLevCur[j] >= pMedLevCur[j + 1] && pMedLevCur[j] >= pMedLevCur[j -1] &&
+				pMedLevCur[j] >= pMedLevPre[j + 1] && pMedLevCur[j] >= pMedLevPre[j -1] && pMedLevCur[j] >= pMedLevPre[j] && 
+				pMedLevCur[j] >= pMedLevAft[j + 1] && pMedLevCur[j] >= pMedLevAft[j -1] && pMedLevCur[j] >= pMedLevAft[j] &&
+				pMedLevCur[j] >= pTopLevPre[j + 1] && pMedLevCur[j] >= pTopLevPre[j -1] && pMedLevCur[j] >= pTopLevPre[j] &&
+				pMedLevCur[j] >= pTopLevCur[j + 1] && pMedLevCur[j] >= pTopLevCur[j -1] && pMedLevCur[j] >= pTopLevCur[j] &&
+				pMedLevCur[j] >= pTopLevAft[j + 1] && pMedLevCur[j] >= pTopLevAft[j -1] && pMedLevCur[j] >= pTopLevAft[j] &&
+				pMedLevCur[j] >= pBotLevPre[j + 1] && pMedLevCur[j] >= pBotLevPre[j -1] && pMedLevCur[j] >= pBotLevPre[j] &&
+				pMedLevCur[j] >= pBotLevCur[j + 1] && pMedLevCur[j] >= pBotLevCur[j -1] && pMedLevCur[j] >= pBotLevCur[j] &&
+				pMedLevCur[j] >= pBotLevAft[j + 1] && pMedLevCur[j] >= pBotLevAft[j -1] && pMedLevCur[j] >= pBotLevAft[j] ) || 
+				(pMedLevCur[j] < pMedLevCur[j + 1] && pMedLevCur[j] < pMedLevCur[j -1] &&
+				pMedLevCur[j] < pMedLevPre[j + 1] && pMedLevCur[j] < pMedLevPre[j -1] && pMedLevCur[j] < pMedLevPre[j] && 
+				pMedLevCur[j] < pMedLevAft[j + 1] && pMedLevCur[j] < pMedLevAft[j -1] && pMedLevCur[j] < pMedLevAft[j] &&
+				pMedLevCur[j] < pTopLevPre[j + 1] && pMedLevCur[j] < pTopLevPre[j -1] && pMedLevCur[j] < pTopLevPre[j] &&
+				pMedLevCur[j] < pTopLevCur[j + 1] && pMedLevCur[j] < pTopLevCur[j -1] && pMedLevCur[j] < pTopLevCur[j] &&
+				pMedLevCur[j] < pTopLevAft[j + 1] && pMedLevCur[j] < pTopLevAft[j -1] && pMedLevCur[j] < pTopLevAft[j] &&
+				pMedLevCur[j] < pBotLevPre[j + 1] && pMedLevCur[j] < pBotLevPre[j -1] && pMedLevCur[j] < pBotLevPre[j] &&
+				pMedLevCur[j] < pBotLevCur[j + 1] && pMedLevCur[j] < pBotLevCur[j -1] && pMedLevCur[j] < pBotLevCur[j] &&
+				pMedLevCur[j] < pBotLevAft[j + 1] && pMedLevCur[j] < pBotLevAft[j -1] && pMedLevCur[j] < pBotLevAft[j] ))
+				{
+					SBlob blob;
+					blob.position = Point(j, i);
+					blob.sigma = ivecSigmaArray[k];
+					blob.value = pMedLevCur[j];
+					allBlobs.push_back(blob);
+				}
+			}
+		}
+	}
+
+	
+
+	vector<bool> delFlags(allBlobs.size(), true);
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i] == false)
+		{
+			continue;
+		}
+		for (size_t j = i; j != allBlobs.size(); j++)
+		{
+			if (delFlags[j] == false)
+			{
+				continue;
+			}
+			double distCent = sqrt((allBlobs[i].position.x - allBlobs[j].position.x) * (allBlobs[i].position.x - allBlobs[j].position.x) + 
+			(allBlobs[i].position.y - allBlobs[j].position.y) * (allBlobs[i].position.y - allBlobs[j].position.y));
+			if ((allBlobs[i].sigma + allBlobs[j].sigma) / distCent > 2)
+			{
+				if (allBlobs[i].value >= allBlobs[j].value)
+				{
+					delFlags[j] = false;
+					delFlags[i] = true;
+				}
+				else
+				{
+				 	delFlags[i] = false;
+				 	delFlags[j] = true;
+				}
+			}
+		}
+	}
+
+
+	for (size_t i = 0; i != allBlobs.size(); i++)
+	{
+		if (delFlags[i])
+		{
+			blobs.push_back(allBlobs[i]);
+		}
+	}
+
+	sort(blobs.begin(), blobs.end(), compareBlob);
+	
+}
+Mat feat::getHOGKernel(Size& ksize, double sigma)
+{
+	Mat kernel(ksize, CV_64F);
+	Point centPoint = Point((ksize.width -1)/2, ((ksize.height -1)/2));
+	// first calculate Gaussian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double param = -((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x)) / (2*sigma*sigma);
+			pData[j] = exp(param);
+		}
+	}
+	double maxValue;
+	minMaxLoc(kernel, NULL, &maxValue);
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			if (pData[j] < EPS* maxValue)
+			{
+				pData[j] = 0;
+			}
+		}
+	}
+
+	double sumKernel = sum(kernel)[0];
+	if (sumKernel != 0)
+	{
+		kernel = kernel / sumKernel;
+	}
+	// now calculate Laplacian
+	for (int i=0; i < kernel.rows; i++)
+	{
+		double* pData = kernel.ptr<double>(i);
+		for (int j = 0; j < kernel.cols; j++)
+		{
+			double addition = ((i - centPoint.y) * (i - centPoint.y) + (j - centPoint.x) * (j - centPoint.x) - 2*sigma*sigma)/(sigma*sigma*sigma*sigma);
+			pData[j] *= addition;
+		}
+	}
+	// make the filter sum to zero
+	sumKernel = sum(kernel)[0];
+	kernel -= (sumKernel/(ksize.width  * ksize.height));	
+
+	return kernel;
+}
+
+bool feat::compareBlob(const SBlob& lhs, const SBlob& rhs)
+{
+	return lhs.value > rhs.value;
+}
+
+
+
+```
+
+### 4. canny实现
+
+```c++
+#include "imgFeat.h"
+void feat::getCannyEdge(const Mat& imgSrc, Mat& imgDst, double lowThresh, double highThresh, double sigma)
+{
+    Mat gray;
+    if (imgSrc.channels() == 3)
+    {
+        cvtColor(imgSrc, gray, cv::COLOR_BGR2GRAY);
+    }
+    else
+    {
+        gray = imgSrc.clone();
+    }
+    gray.convertTo(gray, CV_64F);
+    gray = gray / 255;
+    
+    double gaussianDieOff = .0001;
+    double percentOfPixelsNotEdges = .7; // Used for selecting thresholds
+    double thresholdRatio = .4;   // Low thresh is this fraction of the high
+
+    int possibleWidth = 30;
+    double ssq = sigma * sigma;
+    for (int i = 1; i <= possibleWidth; i++)
+    {
+        if (exp(-(i * i) / (2* ssq)) < gaussianDieOff)
+        {
+            possibleWidth = i - 1;
+            break;
+        }
+    }
+
+    if (possibleWidth == 30)
+    {
+        possibleWidth = 1; // the user entered a reallly small sigma
+    }
+
+    // get the 1D gaussian filter
+    int winSz = 2 * possibleWidth + 1;
+    Mat gaussKernel1D(1, winSz, CV_64F);
+    double* kernelPtr = gaussKernel1D.ptr<double>(0);
+    for (int i = 0; i < gaussKernel1D.cols; i++)
+    {
+        kernelPtr[i] = exp(-(i - possibleWidth) * (i - possibleWidth) / (2 * ssq)) / (2 * CV_PI * ssq);
+    }
+
+    
+    // get the derectional derivatives of gaussian kernel
+    Mat dGaussKernel(winSz, winSz, CV_64F);
+    for (int i = 0; i < dGaussKernel.rows; i++)
+    {
+        double* linePtr = dGaussKernel.ptr<double>(i);
+        for (int j = 0; j< dGaussKernel.cols; j++)
+        {
+            linePtr[j] = - (j - possibleWidth) * exp(-((i - possibleWidth) * (i - possibleWidth) + (j - possibleWidth) * (j - possibleWidth)) / (2 * ssq)) / (CV_PI * ssq);
+        }
+    }
+
+
+    /* smooth the image out*/
+    Mat imgSmooth;
+    filter2D(gray, imgSmooth, -1, gaussKernel1D);
+    filter2D(imgSmooth, imgSmooth, -1, gaussKernel1D.t());
+    /*apply directional derivatives*/
+
+    Mat imgX, imgY;
+    filter2D(imgSmooth, imgX, -1, dGaussKernel);
+    filter2D(imgSmooth, imgY, -1, dGaussKernel.t());
+
+    Mat imgMag;
+    sqrt(imgX.mul(imgX) + imgY.mul(imgY), imgMag);
+    double magMax;
+    minMaxLoc(imgMag, NULL, &magMax, NULL, NULL);
+
+    if (magMax > 0 )
+    {
+        imgMag = imgMag / magMax;
+    }
+
+    
+    if (lowThresh == -1 || highThresh == -1)
+    {
+        highThresh = getCannyThresh(imgMag, percentOfPixelsNotEdges);
+        lowThresh = thresholdRatio * highThresh;
+    }
+
+
+
+
+    Mat imgStrong = Mat::zeros(imgMag.size(), CV_8U);
+    Mat imgWeak = Mat::zeros(imgMag.size(), CV_8U);
+    
+    
+    for (int dir = 1; dir <= 4; dir++)
+    {
+        Mat gradMag1(imgMag.size(), imgMag.type());
+        Mat gradMag2(imgMag.size(), imgMag.type());
+        Mat idx = Mat::zeros(imgMag.size(), CV_8U);
+        if (dir == 1)
+        {
+            Mat dCof = abs(imgY / imgX);
+            idx = (imgY <= 0 & imgX > -imgY) | (imgY >= 0 & imgX < -imgY);
+            idx.row(0).setTo(Scalar(0));
+            idx.row(idx.rows - 1).setTo(Scalar(0));
+            idx.col(0).setTo(Scalar(0));
+            idx.col(idx.cols - 1).setTo(Scalar(0));
+            for (int i = 1; i < imgMag.rows - 1; i++)
+            {
+                for (int j = 1; j < imgMag.cols - 1; j++)
+                {
+                    gradMag1.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i,j + 1) + dCof.at<double>(i,j) * imgMag.at<double>(i - 1,j + 1);
+                    gradMag2.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i,j - 1) + dCof.at<double>(i,j) * imgMag.at<double>(i + 1,j - 1);
+                }
+            }
+        }
+        else if(dir == 2)
+        {
+            Mat dCof = abs(imgX / imgY);
+            idx = (imgX > 0 & -imgY >= imgX) | (imgX < 0 & -imgY <= imgX);
+            for (int i = 1; i < imgMag.rows - 1; i++)
+            {
+                for (int j = 1; j < imgMag.cols - 1; j++)
+                {
+                    gradMag1.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i - 1,j) + dCof.at<double>(i,j) * imgMag.at<double>(i - 1,j + 1);
+                    gradMag2.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i + 1,j) + dCof.at<double>(i,j) * imgMag.at<double>(i + 1,j - 1);
+                }
+            }
+        }
+        else if(dir == 3)
+        {
+            Mat dCof = abs(imgX / imgY);
+            idx = (imgX <= 0 & imgX > imgY) | (imgX >= 0 & imgX < imgY);
+            for (int i = 1; i < imgMag.rows - 1; i++)
+            {
+                for (int j = 1; j < imgMag.cols - 1; j++)
+                {
+                    gradMag1.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i - 1,j) + dCof.at<double>(i,j) * imgMag.at<double>(i - 1,j - 1);
+                    gradMag2.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i + 1,j) + dCof.at<double>(i,j) * imgMag.at<double>(i + 1,j + 1);
+                }
+            }
+        
+        }
+        else
+        {
+            Mat dCof = abs(imgY / imgX);
+            idx = (imgY <0 & imgX <= imgY) | (imgY > 0 & imgX >= imgY);
+            for (int i = 1; i < imgMag.rows - 1; i++)
+            {
+                for (int j = 1; j < imgMag.cols - 1; j++)
+                {
+                    gradMag1.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i,j - 1) + dCof.at<double>(i,j) * imgMag.at<double>(i - 1,j - 1);
+                    gradMag2.at<double>(i,j) = (1 - dCof.at<double>(i,j)) * imgMag.at<double>(i,j + 1) + dCof.at<double>(i,j) * imgMag.at<double>(i + 1,j + 1);
+                }
+            }
+        }
+
+        Mat idxLocalMax = idx & ((imgMag >= gradMag1) & (imgMag >= gradMag2));
+
+
+        imgWeak = imgWeak | ((imgMag > lowThresh) & idxLocalMax);
+        imgStrong= imgStrong| ((imgMag > highThresh) & imgWeak);
+
+    }
+
+    imgDst = Mat::zeros(imgWeak.size(),imgWeak.type());
+    for (int i = 1; i < imgWeak.rows - 1; i++)
+    {
+        uchar* pWeak = imgWeak.ptr<uchar>(i);
+        uchar* pDst = imgDst.ptr<uchar>(i);
+        uchar* pStrPre = imgStrong.ptr<uchar>(i - 1);
+        uchar* pStrMid = imgStrong.ptr<uchar>(i);
+        uchar* pStrAft = imgStrong.ptr<uchar>(i + 1);
+        for (int j = 1; j < imgWeak.cols - 1; j++)
+        {
+            if (!pWeak[j])
+            {
+                continue;
+            }
+            if (pStrMid[j])
+            {
+                pDst[j] = 255;
+            }
+            if (pStrMid[j-1] || pStrMid[j+1] || pStrPre[j-1] || pStrPre[j] || pStrPre[j+1] || pStrAft[j-1] || pStrAft[j] ||pStrAft[j+1])
+            {
+                pDst[j] = 255;
+            }
+        }
+    }
+}
+
+double feat::getCannyThresh(const Mat& inputArray, double percentage)
+{
+    double thresh = -1.0;
+    // compute the 64-hist of inputArray
+    int nBins = 64;
+    double minValue, maxValue;
+    minMaxLoc(inputArray, &minValue, &maxValue, NULL, NULL);
+    double step = (maxValue - minValue) / nBins;
+
+    vector<unsigned> histBin(nBins,0);
+    for (int i = 0; i < inputArray.rows; i++)
+    {
+        const double* pData = inputArray.ptr<double>(i);
+        for(int j = 0; j < inputArray.cols; j++)
+        {
+
+            int index = (pData[j] - minValue) / step;
+            histBin[index]++;
+        }
+    }
+    unsigned cumSum = 0; 
+    for (int i = 0; i < nBins; i++)
+    {
+        cumSum += histBin[i];
+
+        if (cumSum > percentage * inputArray.rows * inputArray.cols)
+        {
+            thresh = (i + 1) / 64.0;
+            break;
+        }
+    }
+    return thresh;
+    
+}
+
+
+```
+
+main函数
+
+```c++
+#include "imgFeat.h"
+int main(int argc, char** argv)
+{
+	Mat image = imread("test.jpg");
+	Mat cornerMap;
+	feat::getSobelEdge(image ,cornerMap);
+	feat::drawCornerOnImage(image, cornerMap);
+	cv::namedWindow("corners");
+	cv::imshow("corners", image);
+	cv::waitKey();
+	return 0;
+}
+```
+
+
+
+## **第七章** **附录** 
+
+### 1.**致谢及引用** 
 
 [www.gwylab.com](www.gwylab.com)
+
+[https://github.com/ronnyyoung/ImageFeatures](https://github.com/ronnyyoung/ImageFeatures)
