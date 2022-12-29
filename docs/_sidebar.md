@@ -10,6 +10,7 @@
     - [c++第二天](source/books/C++/ch2.md)
 - [论文阅读笔记]
   - [GAN生成对抗网络]
+    - DCGAN
     - deblur-gan
 
 * [文章集合](paper/README.md)

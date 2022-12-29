@@ -69,7 +69,11 @@
 - Mask R-CNN [https://arxiv.org/abs/1703.06870](https://arxiv.org/abs/1703.06870)
 
 ## 生成对抗网络
+- dcgan[https://arxiv.org/abs/1511.06434](https://arxiv.org/abs/1511.06434)
 - deblur-gan[https://arxiv.org/pdf/1711.07064](https://arxiv.org/pdf/1711.07064.pdf)
+- [Wgan]
+  - TOWARDS PRINCIPLED METHODS FOR TRAINING GENERATIVE ADVERSARIAL NETWORKS[https://arxiv.org/pdf/1701.04862](https://arxiv.org/pdf/1701.04862)
+  - Wasserstein GAN[https://arxiv.org/pdf/1701.07875](https://arxiv.org/pdf/1701.07875)
 
 ## 自然语言处理
 - Attention Is All You Need [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
