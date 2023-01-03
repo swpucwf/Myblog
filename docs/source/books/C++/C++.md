@@ -4,3 +4,4 @@
 - [循环 数组](source/books/C++/ch3.md)
 - [字符串 函数](source/books/C++/ch4.md)
 - [指针基础](source/books/C++/ch5.md)
+- [指针和字符串](source/books/C++/ch6.md)
