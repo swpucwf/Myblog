@@ -133,7 +133,7 @@ K L\left(P_g \| P_r\right) & =\mathbb{E}_{x \sim P_g}\left[\log \frac{P_g(x)}{P_
 & =\mathbb{E}_{x \sim P_g}\left[\log \frac{P_g(x) /\left(P_r(x)+P_g(x)\right)}{P_r(x) /\left(P_r(x)+P_g(x)\right)}\right] \\
 & =\mathbb{E}_{x \sim P_g}\left[\log \frac{1-D^*(x)}{D^*(x)}\right] \\
 & =\mathbb{E}_{x \sim P_g} \log \left[1-D^*(x)\right]-\mathbb{E}_{x \sim P_g} \log D^*(x)          (公式10)
-\end{aligned}
+\end{aligned}
 $$
 由公式3，9，10可得最小化目标的等价变形
 $$
