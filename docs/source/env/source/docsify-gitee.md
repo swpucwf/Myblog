@@ -106,7 +106,7 @@ http://localhost:3000/#/ 成功截图：
 </html>
 ```
 
-### 2.2.2 顶部导航栏和侧边栏
+#### 2.2.2 顶部导航栏和侧边栏
 
 ```javascript
    window.$docsify = {
