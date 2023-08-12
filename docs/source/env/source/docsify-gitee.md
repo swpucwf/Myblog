@@ -75,7 +75,7 @@ docsify serve docs
 
 http://localhost:3000/#/ 成功截图：
 
-![image-20230812092559318](https://img-blog.csdnimg.cn/img_convert/fd8656c21826a0bcf7affbf8b1d85e57.png)
+![image-20230812092559318](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/fd8656c21826a0bcf7affbf8b1d85e57.png)
 
 ### 2.2 自定义配置
 
