@@ -1,0 +1,7 @@
+  -7.0  0.1  7.0   !!! Unit: meter
+  75.0    0.0   .0   !!! Unit: degree, Note:not rad
+  3                !!! Number of layer, N
+  -3    1.0     4.0
+   3    20.0   20.0   !!! Bottom boundary and 1-st layer resistivities
+  20    4.0     16.0 !!! Top boundary and N-1-th layer resistivites 
+
