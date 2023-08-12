@@ -8,4 +8,4 @@
 * [**文章集合**](paper/README.md) -->
 
 - [**目录**](README.md)
-  - [**环境安装**](source/env/docsify & gitee 搭建个人博客.md)
+  - [**环境安装**](source/env/docsify&gitee搭建个人博客.md)
