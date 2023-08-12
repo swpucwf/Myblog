@@ -67,11 +67,11 @@ docsify init ./docs
 docsify serve docs
 ```
 
-![image-20230812092252353](https://img-blog.csdnimg.cn/img_convert/03dcc1fa290645a5e616e68d1e248358.png)
+![image-20230812092252353](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/03dcc1fa290645a5e616e68d1e248358.png)
 
-![img](https://img-blog.csdnimg.cn/img_convert/620c693d3fc8ff73515765bbf561bf99.png)
+![img](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/620c693d3fc8ff73515765bbf561bf99.png)
 
-![image-20230812092420688](https://img-blog.csdnimg.cn/img_convert/6cc8731b2c42a6b37436520586832f98.png)
+![image-20230812092420688](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/6cc8731b2c42a6b37436520586832f98.png)
 
 http://localhost:3000/#/ 成功截图：
 
