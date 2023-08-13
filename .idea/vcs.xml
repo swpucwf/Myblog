@@ -3,6 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/docs/source/CV/source/目标检测/AutoLabelImg" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/docs/source/CV/source/目标检测/PyTorch_YOLOv4" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/docs/source/CV/source/目标检测/YOLOv5-Lite" vcs="Git" />
   </component>
 </project>
