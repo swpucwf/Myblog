@@ -204,7 +204,13 @@
 
    ![image-20230813143831547](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20230813143831547.png)
 
+7. drf_spectacular库安装
 
+   ```python
+   pip install drf_spectacular
+   ```
+
+   ![image-20230813181648559](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20230813181648559.png)
 
 
 
