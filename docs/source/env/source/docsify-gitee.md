@@ -10,7 +10,7 @@ npm是Node.js的包管理器，用于安装和管理JavaScript包。要安装npm
 
 ### 1.1 在Windows上安装npm：
 
-1. 访问Node.js官方网站（https://nodejs.org）。
+1. 访问[Node.js官方网站](https://nodejs.org)。
 2. 在下载页面上，选择适用于Windows的LTS版本（长期支持版本）的Node.js安装程序。
 3. 下载安装程序并运行它。
 4. 在安装过程中，确保选中"npm package manager"选项。
