@@ -16,4 +16,5 @@
     - PP-YOLOv2 FP16 106.5 FPS
         - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
 - 即插即用
-    - [即插即用 | 卷积与Self-Attention完美融合X-volution插入CV模型将带来全任务的涨点]()
+- 算法应用
+    - [yolov5与产猪的关系  ](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)

@@ -31,7 +31,7 @@
 
 ## 3.2 相关参数说明
 
-#### 3.2.1 BASE_DIR
+### 3.2.1 BASE_DIR
 
 ```
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,7 +39,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
  当前工程的根目录，Django会依此来定位工程内的相关文件，我们也可以使用该参数来构造文件路径。
 
-#### 3.2.2 DEBUG
+### 3.2.2 DEBUG
 
 ```python
 调试模式，创建工程后初始值为True，即默认工作在调试模式下。
@@ -50,7 +50,7 @@ Django程序出现异常时，向前端显示详细的错误追踪信息.而非�
 
 注意：部署线上运行的Django不要运行在调式模式下，记得修改DEBUG=False和ALLOW_HOSTS。
 
-## 3.2.3 本地语言与时区
+### 3.2.3 本地语言与时区
 
 Django支持本地化处理，即显示语言与时区支持本地化。
 
@@ -70,7 +70,7 @@ LANGUAGE_CODE = 'zh-Hans'
 TIME_ZONE = 'Asia/Shanghai'
 ```
 
-### 3.3 静态文件
+## 3.3 静态文件
 
 项目中的CSS、图片、js都是静态文件。一般会将静态文件放到一个单独的目录中，以方便管理。在html页面中调用时，也需要指定静态文件的路径，Django中提供了一种解析的方式配置静态文件路径。静态文件可以放在项目根目录下，也可以放在应用的目录下，由于有些静态文件在项目中是通用的，所以推荐放在项目的根目录下，方便管理。
 

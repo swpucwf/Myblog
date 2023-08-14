@@ -7,13 +7,13 @@
 - **创建子应用**
   - python manager.py startapp name
 
-### 2.1 创建工程
+## 2.1 创建工程
 
 在使用Flask框架时，项目工程目录的组织与创建是需要我们自己手动创建完成的。
 
 在django中，项目工程目录可以借助django提供的命令帮助我们创建。
 
-#### 2.1.1 创建
+### 2.1.1 创建
 
 创建工程的命令为：
 
@@ -28,7 +28,7 @@ cd ~/Desktop/source
 django-admin startproject ezfy
 ```
 
-#### 2.2.2 工程目录说明
+### 2.2.2 工程目录说明
 
 查看创建的工程目录，结构如下：
 
@@ -40,7 +40,7 @@ django-admin startproject ezfy
 - **wsgi.py**是项目与WSGI兼容的Web服务器入口。
 - **manage.py**是项目管理文件，通过它管理项目。
 
-#### 2.2.3 运行内置开发服务器
+### 2.2.3 运行内置开发服务器
 
 在开发阶段，django提供了一个纯python编写的轻量级web服务器，仅在开发阶段使用。
 
@@ -54,9 +54,9 @@ python manage.py runserver
 
 ![image-20230813163044387](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20230813163044387.png)
 
-### 2.3 新建应用
+## 2.3 新建应用
 
-#### 2.3.1 同级目录建立应用
+### 2.3.1 同级目录建立应用
 
 1. 安装 django
 
@@ -90,7 +90,7 @@ python manage.py runserver
 
    注册名方式2：直接与应用名字相同![image-20230813165231305](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20230813165231305.png)
 
-#### 2.3.2  在目录下新建应用步骤
+### 2.3.2  在目录下新建应用步骤
 
 很多时候在同级目录下新建应用会造成文件夹众多，一般在apps包下开发多种应用，也就是集中将应用放在一个包下，这里做个演示。
 
