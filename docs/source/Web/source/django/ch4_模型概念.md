@@ -22,6 +22,7 @@
   - ```python
     #  产品表 
     from django.db import models
+    from django.db.models import *
     class GoodsCategory(models.Model):
         """产品分类"""
         '''  
