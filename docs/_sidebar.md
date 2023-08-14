@@ -11,3 +11,5 @@
   - [**环境安装**](source/env/env.md)
   - [**计算机视觉**](source/CV/CV.md)
   - [**开发**](source/Web/Web.md)
+  - [**NLP待更新**]
+  - [**大模型待更新**]

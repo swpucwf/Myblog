@@ -17,4 +17,4 @@
         - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
 - 即插即用
 - 算法应用
-    - [yolov5与产猪的关系  ](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
+    - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
