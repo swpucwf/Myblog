@@ -19,7 +19,7 @@
 
 - 首先在`models.py`下定义模型类,继承自`models.Model`
 
-  - ```python
+```python
     #  产品表 
     from django.db import models
     from django.db.models import *
@@ -35,7 +35,7 @@
 
 - 根据设计产品信息 表 类：
 
-  - ```python
+```python
     #  产品信息 表 
     class Goods(models.Model):
         """产品"""
