@@ -31,9 +31,9 @@
         '''
         name = CharField(max_length=64, verbose_name='名称')
         remark = CharField(max_length=256, null=True, blank=True, verbose_name='备注')
-    ```
+   ```
 
-- 根据设计产品信息 表 类：
+- 根据设计产品信息 表类：
 
 ```python
     #  产品信息 表 
@@ -59,7 +59,7 @@
         purchase_price = FloatField(default=0, verbose_name='采购价')
         retail_price = FloatField(default=0, verbose_name='零售价')
         remark = CharField(max_length=256, null=True, blank=True, verbose_name='备注')
-    ```
+   ```
 
 - 说明 :
 
