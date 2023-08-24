@@ -9,3 +9,6 @@
 - [LMDeploy：涵盖了LLM任务的全套轻量化、部署和服务解决方案](http://github.com/InternLM/lmdeploy)
 - [llm_finetuning：大语言模型微调和推理](https://github.com/taprosoft/llm_finetuning)
 - [ChatGPT资料汇总学习](https://github.com/dalinvip/Awesome-ChatGPT)
+
+### CLIP模型
+- 实时目标跟踪：基于DeepSORT和TorchVision检测器实现

@@ -7,3 +7,9 @@
 
 ### c#
 - [C#学习资料](https://github.com/MoienTajik/AspNetCore-Developer-Roadmap/blob/master/ReadMe.zh-Hans.md)
+
+### 爬虫资料
+- 「爬虫项目资料-持续更新」[链接](https://pan.quark.cn/s/698fd0e11604) 提取码：gJUR
+
+### python资料
+- 「python进阶-中英文版」[链接](https://pan.quark.cn/s/fdb4c46fcca3)  提取码：zLjA
