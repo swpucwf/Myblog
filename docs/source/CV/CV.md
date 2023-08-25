@@ -18,3 +18,5 @@
 - 即插即用
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
+- 机器学习教材
+  - [教材网址](https://github.com/lTbgykio/Books-Free-Books) 
