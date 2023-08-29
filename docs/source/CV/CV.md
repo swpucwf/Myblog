@@ -9,6 +9,7 @@
     - [AutoLabelImg](https://github.com/ppogg/AutoLabelImg)
 - 边缘检测部署
     - [截断骨干用于检测，YOLO-ReT开源：边缘GPU设备上的高性能检测器](https://github.com/prakharg24/yoloret)
+    - [边缘端检测edgeyolo(查)](https://github.com/LSH9832/edgeyolo)
 - 检测算法
     - [Scaled YOLO V4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
     - VarifocalNet
