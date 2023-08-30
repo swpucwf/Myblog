@@ -23,3 +23,4 @@
   - [教材网址](https://github.com/lTbgykio/Books-Free-Books) 
 - yolov8相关实例
   - [目标检测器](https://blog.csdn.net/river_star1/article/details/132530344)
+  - [yolov8dnn](https://blog.csdn.net/jameschen9051/article/details/131069271)
