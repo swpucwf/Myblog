@@ -21,3 +21,5 @@
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
 - 机器学习教材
   - [教材网址](https://github.com/lTbgykio/Books-Free-Books) 
+- yolov8相关实例
+  - [目标检测器](https://blog.csdn.net/river_star1/article/details/132530344)
