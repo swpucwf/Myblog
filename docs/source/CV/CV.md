@@ -24,3 +24,7 @@
 - yolov8相关实例
   - [目标检测器](https://blog.csdn.net/river_star1/article/details/132530344)
   - [yolov8dnn](https://blog.csdn.net/jameschen9051/article/details/131069271)
+- clip多模态
+  - [多模态领域先行者 详解 CLIP 算法实现](https://zhuanlan.zhihu.com/p/520443068)
+- CV界的transformer
+  - [Vision Transformer原理及解析](https://zhuanlan.zhihu.com/p/427388113)
