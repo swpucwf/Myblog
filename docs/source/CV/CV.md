@@ -30,3 +30,7 @@
   - [Vision Transformer原理及解析](https://zhuanlan.zhihu.com/p/427388113)
 - 视频行为识别
   - [yolo-slowfast](https://pytorch.org/hub/facebookresearch_pytorchvideo_slowfast/)
+
+### AGI前夜笔记
+一些AI趣闻，常用分享 
+- [AGI前夜笔记](https://agi360.xyz)
