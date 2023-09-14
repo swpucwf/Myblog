@@ -18,6 +18,7 @@
         -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
     - PP-YOLOv2 FP16 106.5 FPS
         - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
+    -  [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
 - 即插即用
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
