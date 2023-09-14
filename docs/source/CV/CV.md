@@ -44,3 +44,6 @@ https://github.com/ddbourgin/numpy-ml
 ### 人脸识别
 [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
 
+### 模型部署
+[使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
+[使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
