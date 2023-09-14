@@ -41,3 +41,6 @@ https://github.com/ddbourgin/numpy-ml
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
 
+### 人脸识别
+[最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
+
