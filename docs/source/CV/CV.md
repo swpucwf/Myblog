@@ -60,3 +60,6 @@ https://github.com/ddbourgin/numpy-ml
 ### OCR
 #### PPOCR描述-一种实用的超轻量OCR系统
 [相关链接](https://zhuanlan.zhihu.com/p/560512112)
+
+### 超分辨率
+[codeformer](https://zhuanlan.zhihu.com/p/599051269)
