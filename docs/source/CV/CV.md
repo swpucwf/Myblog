@@ -57,5 +57,6 @@ https://github.com/ddbourgin/numpy-ml
 [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
 
 
-### 
-![img.png](img.png)
+### OCR
+#### PPOCR描述-一种实用的超轻量OCR系统
+[相关链接](https://zhuanlan.zhihu.com/p/560512112)
