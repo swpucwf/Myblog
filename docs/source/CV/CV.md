@@ -1,6 +1,9 @@
 ### 传统机器学习算法
 - [传统CV算法-边缘检测](source/CV/source/传统CV/cv_1.md)
 ### 目标检测
+- repvgg
+  - [SOTA性能，让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
+
 - 标注工具
   - [目标检测数据集标注工具](https://zhuanlan.zhihu.com/p/445559419)
 - 小目标问题
