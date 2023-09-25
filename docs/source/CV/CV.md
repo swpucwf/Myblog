@@ -1,5 +1,5 @@
 ### 传统机器学习算法
-- [传统CV算法-边缘检测](source/CV/source/传统CV/cv_1.md)
+  - [传统CV算法-边缘检测](source/CV/source/传统CV/cv_1.md)
 ### 目标检测
 - repvgg
   - [SOTA性能，让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
@@ -19,8 +19,7 @@
     - [Scaled YOLO V4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
     - VarifocalNet
         -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
-    - PP-YOLOv2 FP16 106.5 FPS
-        - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
+    - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
     -  [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
 - 即插即用
 - 算法应用
@@ -42,18 +41,19 @@ https://github.com/ddbourgin/numpy-ml
 ### AGI前夜笔记
 一些AI趣闻，常用分享 
 - [AGI前夜笔记](https://agi360.xyz)
+- [Tian_Feng 人工智能博客](https://tianfeng.space/)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
 
 ### 人脸识别
-[最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
+- [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
 
 
 ### 模型部署
-[使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
-[使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
-[TensorRT ONNX 学习笔记](https://zhuanlan.zhihu.com/p/354600414)
-[TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
+- [使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
+- [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
+- [TensorRT ONNX 学习笔记](https://zhuanlan.zhihu.com/p/354600414)
+- [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 
 ### 向量数据库
 - 张量匹配、查询
@@ -62,7 +62,8 @@ https://github.com/ddbourgin/numpy-ml
 
 ### OCR
 #### PPOCR描述-一种实用的超轻量OCR系统
-[相关链接](https://zhuanlan.zhihu.com/p/560512112)
+- [相关链接](https://zhuanlan.zhihu.com/p/560512112)
 
 ### 超分辨率
 [codeformer](https://zhuanlan.zhihu.com/p/599051269)
+[地震去噪](https://blog.csdn.net/weixin_44259058/article/details/119422994?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%9C%B0%E9%9C%87%E5%8E%BB%E5%99%AA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-7-119422994.142^v94^insert_down1&spm=1018.2226.3001.4187)
