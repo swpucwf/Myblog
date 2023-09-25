@@ -3,7 +3,6 @@
 ### 目标检测
 - repvgg
   - [SOTA性能，让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
-
 - 标注工具
   - [目标检测数据集标注工具](https://zhuanlan.zhihu.com/p/445559419)
 - 小目标问题
@@ -21,6 +20,9 @@
         -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
     - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
     -  [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
+    - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
+    - [深入浅出Yolo系列之Yolov5算法](https://zhuanlan.zhihu.com/p/172121380)
+    - [深入浅出Yolo系列之YoloX算法](https://zhuanlan.zhihu.com/p/397993315)
 - 即插即用
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
@@ -42,6 +44,7 @@ https://github.com/ddbourgin/numpy-ml
 一些AI趣闻，常用分享 
 - [AGI前夜笔记](https://agi360.xyz)
 - [Tian_Feng 人工智能博客](https://tianfeng.space/)
+- [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
 
