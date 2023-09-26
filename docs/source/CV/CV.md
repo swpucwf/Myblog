@@ -68,11 +68,11 @@ https://github.com/ddbourgin/numpy-ml
 - [相关链接](https://zhuanlan.zhihu.com/p/560512112)
 
 ### 超分辨率
-[codeformer](https://zhuanlan.zhihu.com/p/599051269)
-[地震去噪](https://blog.csdn.net/weixin_44259058/article/details/119422994?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%9C%B0%E9%9C%87%E5%8E%BB%E5%99%AA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-7-119422994.142^v94^insert_down1&spm=1018.2226.3001.4187)
+- [codeformer](https://zhuanlan.zhihu.com/p/599051269)
+- [地震去噪](https://blog.csdn.net/weixin_44259058/article/details/119422994?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%9C%B0%E9%9C%87%E5%8E%BB%E5%99%AA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-7-119422994.142^v94^insert_down1&spm=1018.2226.3001.4187)
 
 ### 信创经验
-[在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
-
+- [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
+- [如何修改电脑的MAC地址(手把手更改)](https://blog.csdn.net/weixin_44458490/article/details/122297864)
 
 ### [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
