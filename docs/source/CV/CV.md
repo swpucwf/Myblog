@@ -2,7 +2,7 @@
   - [传统CV算法-边缘检测](source/CV/source/传统CV/cv_1.md)
 ### 目标检测
 - yolo全系列解析
-  [yolo全系列解析](source/CV/source/yolo/yolo.md)
+  - [yolo全系列解析](source/CV/source/yolo/yolo.md)
 - repvgg
   - [SOTA性能，让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
 - 标注工具
@@ -17,14 +17,14 @@
     - [截断骨干用于检测，YOLO-ReT开源：边缘GPU设备上的高性能检测器](https://github.com/prakharg24/yoloret)
     - [边缘端检测edgeyolo(查)](https://github.com/LSH9832/edgeyolo)
 - 检测算法
-    - [Scaled YOLO V4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
-    - VarifocalNet
-        -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
-    - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
-    -  [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
-    - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
-    - [深入浅出Yolo系列之Yolov5算法](https://zhuanlan.zhihu.com/p/172121380)
-    - [深入浅出Yolo系列之YoloX算法](https://zhuanlan.zhihu.com/p/397993315)
+  - [Scaled YOLO V4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
+  - VarifocalNet
+  -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
+  - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
+  - [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
+  - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
+  - [深入浅出Yolo系列之Yolov5算法](https://zhuanlan.zhihu.com/p/172121380)
+  - [深入浅出Yolo系列之YoloX算法](https://zhuanlan.zhihu.com/p/397993315)
 - 即插即用
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
@@ -41,19 +41,16 @@
   - [yolo-slowfast](https://pytorch.org/hub/facebookresearch_pytorchvideo_slowfast/)
 
 ### numpy实现机器学习算法
-https://github.com/ddbourgin/numpy-ml
+  - [numpy实现机器学习算法](https://github.com/ddbourgin/numpy-ml)
 ### AGI前夜笔记
 一些AI趣闻，常用分享 
-- [AGI前夜笔记](https://agi360.xyz)
-- [Tian_Feng 人工智能博客](https://tianfeng.space/)
-- [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
+  - [AGI前夜笔记](https://agi360.xyz)
+  - [Tian_Feng 人工智能博客](https://tianfeng.space/)
+  - [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
-
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
-
-
 ### 模型部署
 - [使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
 - [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
@@ -76,5 +73,5 @@ https://github.com/ddbourgin/numpy-ml
 ### 信创经验
 - [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
 - [如何修改电脑的MAC地址(手把手更改)](https://blog.csdn.net/weixin_44458490/article/details/122297864)
-
-### [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
+### QT布局
+- [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
