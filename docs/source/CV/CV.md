@@ -60,8 +60,6 @@
 ### 向量数据库
 - 张量匹配、查询
 [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
-
-
 ### OCR
 #### PPOCR描述-一种实用的超轻量OCR系统
 - [相关链接](https://zhuanlan.zhihu.com/p/560512112)
@@ -69,7 +67,10 @@
 - [codeformer](https://zhuanlan.zhihu.com/p/599051269)
 - [地震去噪](https://blog.csdn.net/weixin_44259058/article/details/119422994?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%9C%B0%E9%9C%87%E5%8E%BB%E5%99%AA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-7-119422994.142^v94^insert_down1&spm=1018.2226.3001.4187)
 ### 信创经验
+- [手把手教你在昇腾平台上搭建PyTorch训练环境](https://blog.51cto.com/u_15214399/6354822)(https://bbs.huaweicloud.com/blogs/399602?utm_source=51cto&utm_medium=bbs-ex&utm_campaign=other&utm_content=content)
 - [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
 - [如何修改电脑的MAC地址(手把手更改)](https://blog.csdn.net/weixin_44458490/article/details/122297864)
+- [DCU海光GPU安装](https://blog.csdn.net/qq_41480495/article/details/127045231?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-0-127045231-blog-132588855.235^v38^pc_relevant_anti_vip_base&spm=1001.2101.3001.4242.1&utm_relevant_index=3)
+- [海光教程](https://developer.hpccube.com/gitbook//dcu_tutorial/#11)
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
