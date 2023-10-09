@@ -71,6 +71,6 @@
 - [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
 - [如何修改电脑的MAC地址(手把手更改)](https://blog.csdn.net/weixin_44458490/article/details/122297864)
 - [DCU海光GPU安装](https://blog.csdn.net/qq_41480495/article/details/127045231?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_utm_term~default-0-127045231-blog-132588855.235^v38^pc_relevant_anti_vip_base&spm=1001.2101.3001.4242.1&utm_relevant_index=3)
-- [海光教程](https://developer.hpccube.com/gitbook//dcu_tutorial/#11)
+- [海光GPU社区](https://developer.hpccube.com/gitbook//dcu_tutorial/#11)
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
