@@ -76,3 +76,6 @@
 - [海光服务器搭建流程](https://developer.hpccube.com/gitbook//dcu_tutorial/index.html)
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
+
+### Docker安装
+[Docker Desktop requires the Server service to be enabled ：Docker 在 Windows 10 专业版上的安装](https://blog.csdn.net/sunhy_csdn/article/details/106526991)
