@@ -29,7 +29,7 @@
 - 2021.10 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2021年研创网华为杯数学建模全国二等奖
 - 2020.9 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 西南石油大学党委组织部下属学生工作室优秀技术骨干，负责万人级校园社群运营。
 - 2022.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Universum（优兴咨询）校园大使
-- 2022.8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2022年西南石油大学”互联网+大赛”比赛 银奖
+- 2022.8 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2022年西南石油大学"互联网+大赛"比赛 银奖
 - 2023.1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 工信部-初级-人工智能工程师人认证
 - 2023.2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 人社部-三级-人工智能训练师认证
 
