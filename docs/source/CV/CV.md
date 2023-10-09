@@ -49,6 +49,7 @@
   - [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
+- [自定义AVA数据集流程及在SlowFast中训练](https://blog.csdn.net/qq_45672807/article/details/123294954?spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=15)
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
 ### 模型部署
