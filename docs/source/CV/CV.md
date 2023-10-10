@@ -47,11 +47,20 @@
   - [AGI前夜笔记](https://agi360.xyz)
   - [Tian_Feng 人工智能博客](https://tianfeng.space/)
   - [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
+- [开发人员都应该知道的9个GitHub库](https://github.com/EbookFoundation/free-programming-books)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
 - [自定义AVA数据集流程及在SlowFast中训练](https://blog.csdn.net/qq_45672807/article/details/123294954?spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=15)
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
+- [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace)
+  - OpenFace是一个用于计算机视觉和机器学习的工具，能够进行各种面部识别检测，包括：特征点检测、头部姿态识别、面部动作识别和眼睛注视识别。
+  - 从网络摄像头无需任何专业硬件实现人脸实时识别功能。
+- [face_recognition](https://github.com/ageitgey/face_recognition)
+- [InsightFace](https://github.com/deepinsight/insightface)
+- [facenet](https://github.com/davidsandberg/facenet)
+- [deepface](https://github.com/serengil/deepface)
+- [CompreFace](https://github.com/exadel-inc/CompreFace)
 ### 模型部署
 - [使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
 - [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
@@ -74,6 +83,8 @@
 - [海光GPU社区](https://developer.hpccube.com/gitbook//dcu_tutorial/#11)
 - [麒麟V10离线安装docker及docker-compose](https://blog.csdn.net/QQ83512272/article/details/126323435)
 - [海光服务器搭建流程](https://developer.hpccube.com/gitbook//dcu_tutorial/index.html)
+- [离线安装gcc,g++,make等依赖包](https://blog.csdn.net/weixin_38090079/article/details/131846961?spm=1001.2014.3001.5502)
+
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
 
