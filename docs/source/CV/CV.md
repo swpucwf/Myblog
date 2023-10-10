@@ -18,8 +18,7 @@
     - [边缘端检测edgeyolo(查)](https://github.com/LSH9832/edgeyolo)
 - 检测算法
   - [Scaled YOLO V4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
-  - VarifocalNet
-  -[IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
+  - [IoU-aware同V-Focal Loss全面提升密集目标检测(附YOLOV5测试代码)全面提升密集目标检测](https://github.com/hyz-xmaster/VarifocalNet) 收集于mmdet
   - [PP-YOLO v2](https://github.com/PaddlePaddle/PaddleDetection)
   - [子豪兄](https://github.com/TommyZihao/Train_Custom_Dataset.git)
   - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
