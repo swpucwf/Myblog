@@ -67,8 +67,7 @@
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 
 ### 向量数据库
-- 张量匹配、查询
-[向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
+- [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
 ### OCR
 - [PPOCR描述-一种实用的超轻量OCR系统](https://zhuanlan.zhihu.com/p/560512112)
 ### 超分辨率
