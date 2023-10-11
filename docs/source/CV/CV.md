@@ -52,6 +52,7 @@
 - [自定义AVA数据集流程及在SlowFast中训练](https://blog.csdn.net/qq_45672807/article/details/123294954?spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=15)
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
+- [6个优秀的开源人脸识别项目](https://mp.weixin.qq.com/s?__biz=MzIyNTA3NDY2NQ==&mid=2247484966&idx=1&sn=ae79546338979af0d7674e1297c359c2&chksm=e8040aa0df7383b670b42367907bd4dc75b6b4803e7c1bd1ef4a088de22f4b0007b84ef38e04&mpshare=1&scene=2&srcid=1009xQE40MaJcvdkbIKh0dPV&sharer_shareinfo=e4ec0a7210445e83ed03f657d5766176&sharer_shareinfo_first=e4ec0a7210445e83ed03f657d5766176#rd)
 ### 模型部署
 - [使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
 - [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
@@ -59,13 +60,13 @@
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 
 ### 向量数据库
-- 张量匹配、查询
-[向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
+- [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
 ### OCR
 - [PPOCR描述-一种实用的超轻量OCR系统](https://zhuanlan.zhihu.com/p/560512112)
 ### 超分辨率
 - [codeformer](https://zhuanlan.zhihu.com/p/599051269)
 - [地震去噪](https://blog.csdn.net/weixin_44259058/article/details/119422994?ops_request_misc=&request_id=&biz_id=102&utm_term=%E5%9C%B0%E9%9C%87%E5%8E%BB%E5%99%AA&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-7-119422994.142^v94^insert_down1&spm=1018.2226.3001.4187)
+
 ### 信创经验
 - [手把手教你在昇腾平台上搭建PyTorch训练环境](https://blog.51cto.com/u_15214399/6354822)(https://bbs.huaweicloud.com/blogs/399602?utm_source=51cto&utm_medium=bbs-ex&utm_campaign=other&utm_content=content)
 - [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
