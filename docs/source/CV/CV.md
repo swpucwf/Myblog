@@ -90,3 +90,5 @@
 ### Docker安装
 - [Docker Desktop requires the Server service to be enabled ：Docker 在 Windows 10 专业版上的安装](https://blog.csdn.net/sunhy_csdn/article/details/106526991)
 - [Docker Desktop requires a newer WSL kernel version的解决办法之一](https://blog.csdn.net/qq_52695936/article/details/133535253#:~:text=Docker%20Desktop%20requires%20a%20newer%20WSL%20kernel%20version%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E4%B9%8B%E4%B8%80,%E5%90%AF%E5%8A%A8%20Docker%20Desktop%20%EF%BC%9A%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8%E5%90%8E%EF%BC%8C%E5%B0%9D%E8%AF%95%E5%86%8D%E6%AC%A1%E5%90%AF%E5%8A%A8%20Docker%20Desktop%E3%80%82%20)
+### Opencv
+- [实战 | 使用OpenCV确定对象的方向(角度)](https://mp.weixin.qq.com/s/g36hn27h5cx3am_baKg54g)
