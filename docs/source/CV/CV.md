@@ -83,7 +83,6 @@
 - [麒麟V10离线安装docker及docker-compose](https://blog.csdn.net/QQ83512272/article/details/126323435)
 - [海光服务器搭建流程](https://developer.hpccube.com/gitbook//dcu_tutorial/index.html)
 - [离线安装gcc,g++,make等依赖包](https://blog.csdn.net/weixin_38090079/article/details/131846961?spm=1001.2014.3001.5502)
-
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
 
@@ -92,3 +91,8 @@
 - [Docker Desktop requires a newer WSL kernel version的解决办法之一](https://blog.csdn.net/qq_52695936/article/details/133535253#:~:text=Docker%20Desktop%20requires%20a%20newer%20WSL%20kernel%20version%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E4%B9%8B%E4%B8%80,%E5%90%AF%E5%8A%A8%20Docker%20Desktop%20%EF%BC%9A%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8%E5%90%8E%EF%BC%8C%E5%B0%9D%E8%AF%95%E5%86%8D%E6%AC%A1%E5%90%AF%E5%8A%A8%20Docker%20Desktop%E3%80%82%20)
 ### Opencv
 - [实战 | 使用OpenCV确定对象的方向(角度)](https://mp.weixin.qq.com/s/g36hn27h5cx3am_baKg54g)
+### AI部署 
+- [Nvidia Jetson平台部署介绍](https://blog.csdn.net/qq_37755518/article/details/130286439)
+- [AI入门之Nvidia Jetson平台（二）- Xavier NX系统烧录](https://blog.csdn.net/qq_37755518/article/details/130381004?spm=1001.2014.3001.5502)
+- [AI入门之Nvidia Jetson平台（三）- Xavier NX软件开发栈介绍](https://blog.csdn.net/qq_37755518/article/details/130424642?spm=1001.2014.3001.5502)
+- 
