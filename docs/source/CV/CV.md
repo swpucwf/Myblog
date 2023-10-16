@@ -95,4 +95,8 @@
 - [Nvidia Jetson平台部署介绍](https://blog.csdn.net/qq_37755518/article/details/130286439)
 - [AI入门之Nvidia Jetson平台（二）- Xavier NX系统烧录](https://blog.csdn.net/qq_37755518/article/details/130381004?spm=1001.2014.3001.5502)
 - [AI入门之Nvidia Jetson平台（三）- Xavier NX软件开发栈介绍](https://blog.csdn.net/qq_37755518/article/details/130424642?spm=1001.2014.3001.5502)
-- 
+- [TensorRT推理-----杜老](https://github.com/shouxieai/tensorRT_Pro)
+- [TensorRT推理-----王星宇](https://github.com/wang-xinyu/tensorrtx)
+
+### 课程学习
+- [Datawhale人工智能培养方案V2.0](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#9qam2V)
