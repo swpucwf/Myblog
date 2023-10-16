@@ -38,6 +38,7 @@
   - [Vision Transformer原理及解析](https://zhuanlan.zhihu.com/p/427388113)
 - 视频行为识别
   - [yolo-slowfast](https://pytorch.org/hub/facebookresearch_pytorchvideo_slowfast/)
+  - [YoloV5+DeepSort+TensorRT目标检测、跟踪](https://blog.csdn.net/xuanlvxin/article/details/117734369?spm=1001.2101.3001.6650.6&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-117734369-blog-125247388.235%5Ev38%5Epc_relevant_anti_vip_base&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-6-117734369-blog-125247388.235%5Ev38%5Epc_relevant_anti_vip_base&utm_relevant_index=7)
 
 ### numpy实现机器学习算法
   - [numpy实现机器学习算法](https://github.com/ddbourgin/numpy-ml)
@@ -47,6 +48,9 @@
   - [Tian_Feng 人工智能博客](https://tianfeng.space/)
   - [10分钟部署ChatGLM2-6B](https://mp.weixin.qq.com/s/V2Ay4Bqu9dRbB9RyjALtRQ)
 - [开发人员都应该知道的9个GitHub库](https://github.com/EbookFoundation/free-programming-books)
+
+### AIGC
+  -[FaceChain](https://github.com/modelscope/facechain)
 ### 行为识别
 - [标注工具UltimateLabeling](https://github.com/alexandre01/UltimateLabeling)
 - [自定义AVA数据集流程及在SlowFast中训练](https://blog.csdn.net/qq_45672807/article/details/123294954?spm=1001.2101.3001.6650.11&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-11-123294954-blog-89518500.235%5Ev38%5Epc_relevant_sort_base1&utm_relevant_index=15)
