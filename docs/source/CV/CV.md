@@ -24,7 +24,8 @@
   - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
   - [深入浅出Yolo系列之Yolov5算法](https://zhuanlan.zhihu.com/p/172121380)
   - [深入浅出Yolo系列之YoloX算法](https://zhuanlan.zhihu.com/p/397993315)
-- 即插即用
+- 虚拟试穿
+  - [虚拟试穿论文合集](https://github.com/minar09/awesome-virtual-try-on)
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
 - 机器学习教材
@@ -100,6 +101,8 @@
 - [AI入门之Nvidia Jetson平台（三）- Xavier NX软件开发栈介绍](https://blog.csdn.net/qq_37755518/article/details/130424642?spm=1001.2014.3001.5502)
 - [TensorRT推理-----杜老](https://github.com/shouxieai/tensorRT_Pro)
 - [TensorRT推理-----王星宇](https://github.com/wang-xinyu/tensorrtx)
-
 ### 课程学习
 - [Datawhale人工智能培养方案V2.0](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#9qam2V)
+
+### 相关框架
+  - [浦视  | 视觉智能开源平台](https://openxlab.org.cn/openplatform?lang=zh-CN)
