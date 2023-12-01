@@ -24,7 +24,8 @@
   - [深入浅出Yolo系列之Yolov4算法](https://zhuanlan.zhihu.com/p/143747206)
   - [深入浅出Yolo系列之Yolov5算法](https://zhuanlan.zhihu.com/p/172121380)
   - [深入浅出Yolo系列之YoloX算法](https://zhuanlan.zhihu.com/p/397993315)
-- 即插即用
+- 虚拟试穿
+  - [虚拟试穿论文合集](https://github.com/minar09/awesome-virtual-try-on)
 - 算法应用
     - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
 - 机器学习教材
@@ -73,8 +74,7 @@
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 
 ### 向量数据库
-- 张量匹配、查询
-[向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
+- [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
 ### OCR
 - [PPOCR描述-一种实用的超轻量OCR系统](https://zhuanlan.zhihu.com/p/560512112)
 ### 超分辨率
@@ -91,7 +91,6 @@
 - [离线安装gcc,g++,make等依赖包](https://blog.csdn.net/weixin_38090079/article/details/131846961?spm=1001.2014.3001.5502)
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
-
 ### Docker安装
 - [Docker Desktop requires the Server service to be enabled ：Docker 在 Windows 10 专业版上的安装](https://blog.csdn.net/sunhy_csdn/article/details/106526991)
 - [Docker Desktop requires a newer WSL kernel version的解决办法之一](https://blog.csdn.net/qq_52695936/article/details/133535253#:~:text=Docker%20Desktop%20requires%20a%20newer%20WSL%20kernel%20version%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%E4%B9%8B%E4%B8%80,%E5%90%AF%E5%8A%A8%20Docker%20Desktop%20%EF%BC%9A%20%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%87%8D%E6%96%B0%E5%90%AF%E5%8A%A8%E5%90%8E%EF%BC%8C%E5%B0%9D%E8%AF%95%E5%86%8D%E6%AC%A1%E5%90%AF%E5%8A%A8%20Docker%20Desktop%E3%80%82%20)
@@ -103,6 +102,11 @@
 - [AI入门之Nvidia Jetson平台（三）- Xavier NX软件开发栈介绍](https://blog.csdn.net/qq_37755518/article/details/130424642?spm=1001.2014.3001.5502)
 - [TensorRT推理-----杜老](https://github.com/shouxieai/tensorRT_Pro)
 - [TensorRT推理-----王星宇](https://github.com/wang-xinyu/tensorrtx)
-
 ### 课程学习
 - [Datawhale人工智能培养方案V2.0](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#9qam2V)
+### 相关框架
+  - [浦视  | 视觉智能开源平台](https://openxlab.org.cn/openplatform?lang=zh-CN)
+### 车牌识别
+
+### [WSL迁移系统](https://zhuanlan.zhihu.com/p/660443677)
+  
