@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/docs/source/Study/source/code/MCIL_1D/.idea" />
     </content>
-    <orderEntry type="jdk" jdkName="reid" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="dcu_env" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Taffic_Anomaly_Detection_based_on_Neural_Network" />
     <orderEntry type="module" module-name="恶意流量检测" />

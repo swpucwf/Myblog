@@ -64,6 +64,8 @@
 - [facenet](https://github.com/davidsandberg/facenet)
 - [deepface](https://github.com/serengil/deepface)
 - [CompreFace](https://github.com/exadel-inc/CompreFace)
+- [超光快速通用人脸检测器-1MB
+超轻量级人脸检测模型](https://gitcode.com/mirrors/Linzaer/Ultra-Light-Fast-Generic-Face-Detector-1MB.git)
 ### 模型部署
 - [使用TensorRT网络定义API实现流行的深度学习网络](https://github.com/wang-xinyu/tensorrtx)
 - [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
