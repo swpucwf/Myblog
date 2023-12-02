@@ -10,5 +10,7 @@
 - [llm_finetuning：大语言模型微调和推理](https://github.com/taprosoft/llm_finetuning)
 - [ChatGPT资料汇总学习](https://github.com/dalinvip/Awesome-ChatGPT)
 
-### CLIP模型
-- 实时目标跟踪：基于DeepSORT和TorchVision检测器实现
+
+
+### AIGC
+  - [FaceChain](https://github.com/modelscope/facechain)
