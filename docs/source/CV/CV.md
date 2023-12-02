@@ -76,6 +76,7 @@
 - 实时目标跟踪：基于DeepSORT和TorchVision检测器实现
 
 ### OCR
+- [OCR学习笔记](/docs/source/CV/source/OCR.md)
 - [PPOCR描述-一种实用的超轻量OCR系统](https://zhuanlan.zhihu.com/p/560512112)
 
 ### 信创经验
