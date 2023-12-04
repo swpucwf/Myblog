@@ -55,6 +55,11 @@
   - [numpy实现机器学习算法](https://github.com/ddbourgin/numpy-ml)
   - [向量数据库简介和5个常用的开源项目介绍](https://mp.weixin.qq.com/s/VwhsedkAl1t94A16rDY9wA)
   - [WSL迁移系统](https://zhuanlan.zhihu.com/p/660443677)
+  - [python抠图（去水印）开源库lama-cleaner](https://github.com/advimman/lama)
+  - [基于OpenCV+YOLOv5实现车辆跟踪与计数(附源码)](https://mp.weixin.qq.com/s/mn8-o01AUnqhNiUdjMp_tg)
+    - [github](https://github.com/freedomwebtech/win11vehiclecount)
+  - [最强Backbone | 北大+港大+腾讯+复旦+蚂蚁提出GroupMixFormer](https://github.com/AILab-CVC/GroupMixFormer)
+  - [基于YOLOv8，目标计数及GUI界面实践教程](https://mp.weixin.qq.com/s/Kvqoqae-7oRn-bUHJCxztQ)
 
 
 
@@ -105,5 +110,8 @@
 - [Datawhale人工智能培养方案V2.0](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#9qam2V)
 ### 框架平台
   - [浦视  | 视觉智能开源平台](https://openxlab.org.cn/openplatform?lang=zh-CN)
+
+### 数据集
+  - [手部动作识别相关开源数据集汇总](https://mp.weixin.qq.com/s/yrpo7c-NY6rL5V6DPSDIeQ)
 
   
