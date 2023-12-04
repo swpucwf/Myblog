@@ -248,9 +248,10 @@ source ~/.bashrc
 ## Server环境搭建(with/without docker)
 
 [安装opencv](https://docs.opencv.org/4.5.2/d7/d9f/tutorial_linux_install.html)
+[参考链接](https://blog.csdn.net/qq_33532713/article/details/122994933?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522170171904816800184136356%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=170171904816800184136356&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-122994933-null-null.142^v96^pc_search_result_base4&utm_term=ubuntu%20%E7%9B%B4%E6%8E%A5%E5%AE%89%E8%A3%85opencv&spm=1018.2226.3001.4187)
 ```shell
 sudo apt install libopencv-dev python3-opencv  
- cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-master/modules ../opencv-master -DCMAKE_INSTALL_PREFIX=/usr/local/opencv -D OPENCV_GENERATE_PKGCONFIG=YES
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-master/modules ../opencv-master -DCMAKE_INSTALL_PREFIX=/usr/local/opencv -D OPENCV_GENERATE_PKGCONFIG=YES
 ```
 [opencv安装](https://blog.csdn.net/m0_48609250/article/details/124225995)
 ## 提高开发效率的软件安装与环境设置
