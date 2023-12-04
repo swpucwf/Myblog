@@ -49,3 +49,7 @@ if __name__ == '__main__':
     plot_time(signal, sample_rate)
     plot_freq(signal, sample_rate)
 
+    pre_emphasis = 0.97
+    emphasized_signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1])
+    plot_time(emphasized_signal, sample_rate)
+    plot_freq(emphasized_signal, sample_rate)
