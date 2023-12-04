@@ -49,7 +49,6 @@ grid  和 block
 
 - 属于逻辑意义上的东西
 - 启动一个kernel时候需要指定grid和block
-- 
 
 ## 2.1 理解.cu和.cpp的相互引用及Makefile
 
