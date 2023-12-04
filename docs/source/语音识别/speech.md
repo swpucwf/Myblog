@@ -266,7 +266,7 @@ frames *= hamming
 plot_time(frames[1], sample_rate)
 ```
 
-![image-20231204161601421](.\images\image-20231204161601421.png)
+![image-20231204161601421](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231204161601421.png)
 
 #### 2.1.5 快速傅里叶变换 (FFT)
 
@@ -294,7 +294,7 @@ plt.plot(pow_frames[1])
 plt.grid()
 ```
 
-![image-20231204161707014](.\images\image-20231204161707014.png)
+![image-20231204161707014](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231204161707014.png)
 
 #### 2.1.6  FBank特征（Filter Banks）
 
@@ -308,7 +308,7 @@ $$
 
 Mel滤波器组就是一系列的三角形滤波器，通常有 40 个或 80 个，在中心频率点响应值为 1 ，在两边的滤波器中心点衰减到0，如下图:
 
-![在这里插入图片描述](images/20190517174012508.jpg)
+![img.png](images/img.png)![在这里插入图片描述](images/20190517174012508.jpg)
 
 具体公式可以写为:
 $$
@@ -354,7 +354,7 @@ plot_spectrogram(filter_banks.T, 'Filter Banks')
 
 ```
 
-![image-20231204164951286](images/image-20231204164951286-1701679796713.png)
+![image-20231204164951286](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231204164951286-1701679796713.png)
 
 #### 2.1.7 MFCC
 
@@ -377,7 +377,7 @@ plot_spectrogram(mfcc.T, 'MFCC Coefficients')
 
 ```
 
-![image-20231204170025459](images/image-20231204170025459-1701680431681.png)
+![image-20231204170025459](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231204170025459-1701680431681.png)
 
 MFCC（Mel频率倒谱系数）计算通常包括一个正弦提升（cepstral mean normalization 或 cepstral mean subtraction）步骤，用于进一步改善MFCC特征的性能。正弦提升的目的是减小不同说话人和环境条件下的语音信号之间的差异，以提高语音识别系统的鲁棒性。
 
@@ -411,7 +411,7 @@ mfcc *= lift
 plot_spectrogram(mfcc.T, 'MFCC Coefficients')
 ```
 
-![image-20231204170949135](images/image-20231204170949135.png)
+![image-20231204170949135](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231204170949135.png)
 
 ## 参考笔记
 
