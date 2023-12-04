@@ -248,7 +248,11 @@ source ~/.bashrc
 ## Server环境搭建(with/without docker)
 
 [安装opencv](https://docs.opencv.org/4.5.2/d7/d9f/tutorial_linux_install.html)
-
+```shell
+sudo apt install libopencv-dev python3-opencv  
+ cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-master/modules ../opencv-master -DCMAKE_INSTALL_PREFIX=/usr/local/opencv -D OPENCV_GENERATE_PKGCONFIG=YES
+```
+[opencv安装](https://blog.csdn.net/m0_48609250/article/details/124225995)
 ## 提高开发效率的软件安装与环境设置
 
 [安装fish shell](https://fishshell.com)
