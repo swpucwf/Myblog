@@ -3,6 +3,11 @@
 
 🚀🚀🚀 YOLO is a great real-time one-stage object detection framework. This repository lists some awesome public YOLO object detection series projects.
 
+## demo
+- [yolov5+deepsort](docs/source/CV/source/yolo/code/unbox_yolov5_deepsort_counting-main/README.md)
+- [yolov5-dnn部署](docs/source/CV/source/yolo/code/yolov5-dnn-cpp-python-main/README.md)
+
+
 ## Contents
 - [Awesome-YOLO-Object-Detection](#awesome-yolo-object-detection)
   - [Summary](#summary)
