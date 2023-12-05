@@ -2,7 +2,26 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/CV/source/yolo/code/unbox_yolov5_deepsort_counting-main/.idea" />
       <excludeFolder url="file://$MODULE_DIR$/docs/source/Study/source/code/MCIL_1D/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/.eggs" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/build" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/asr/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/punctuation/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/speaker_diarization/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/speaker_verification/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/tp/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/egs_modelscope/vad/TEMPLATE" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/FunASR-main/funasr.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/.idea" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/build" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/dataset/annotation" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/dataset/audio" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/log" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/masr.egg-info" />
+      <excludeFolder url="file://$MODULE_DIR$/docs/source/语音识别/code/MASR/models" />
     </content>
     <orderEntry type="jdk" jdkName="dcu_env" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
