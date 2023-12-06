@@ -11,6 +11,6 @@
   - [**环境安装**](source/env/env.md)
   - [**计算机视觉**](source/CV/CV.md)
   - [**开发**](source/Web/Web.md)
-  - [**语音识别**](source/语音识别/md/speech.md)
+  - [**语音识别**](source/语音识别/speech.md)
   - [**NLP待更新**]
   - [**大模型待更新**]
