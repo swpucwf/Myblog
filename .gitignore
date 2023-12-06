@@ -5,10 +5,10 @@ resources/icons/.DS_Store
 
 .idea*
 labelImg.egg-info*
-
+.wav
 *.pyc
 .*.swp
-
+.wav.trt
 build/
 dist/
 
