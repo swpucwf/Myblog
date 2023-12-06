@@ -43,13 +43,13 @@ dataset_conf:
   # 过滤最长的音频长度，当为-1的时候不限制长度
   max_duration: 20
   # 训练数据的数据列表路径
-  train_manifest: 'dataset/manifest.train'
+  train_manifest: 'manifest.train'
   # 测试数据的数据列表路径
-  test_manifest: 'dataset/manifest.test'
+  test_manifest: 'manifest.test'
   # 数据字典的路径
-  dataset_vocab: 'dataset/vocabulary.txt'
+  dataset_vocab: 'vocabulary.txt'
   # 均值和标准值得json文件路径，后缀 (.json)
-  mean_istd_path: 'dataset/mean_istd.json'
+  mean_istd_path: 'mean_istd.json'
   # 噪声数据列表文件
   noise_manifest_path: 'dataset/manifest.noise'
   # 数据列表类型，支持txt、binary
@@ -83,7 +83,7 @@ ctc_beam_search_decoder_conf:
   num_processes: 10
   # 剪枝的概率
   cutoff_prob: 0.99
-  # 剪枝的learning_rate最大值
+  # 剪枝的最大值
   cutoff_top_n: 40
   # 语言模型文件路径
   language_model_path: 'lm/zh_giga.no_cna_cmn.prune01244.klm'

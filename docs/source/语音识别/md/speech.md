@@ -308,7 +308,7 @@ $$
 
 Mel滤波器组就是一系列的三角形滤波器，通常有 40 个或 80 个，在中心频率点响应值为 1 ，在两边的滤波器中心点衰减到0，如下图:
 
-![img.png](../images/img.png)![在这里插入图片描述](../images/20190517174012508.jpg)
+![img.png](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images202312061411265.png)!
 
 具体公式可以写为:
 $$
