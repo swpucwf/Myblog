@@ -6,3 +6,7 @@
 
 ## 语音识别框架wenet
 [wenet介绍](https://github.com/wenet-e2e/wenet)
+
+## 常用算法
+[conformer](https://zhuanlan.zhihu.com/p/412005303)
+[conformer知识点](source/语音识别/md/conformer.md)
