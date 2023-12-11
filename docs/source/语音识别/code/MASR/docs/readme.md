@@ -547,5 +547,9 @@ for i in range(0, len(wav), vad.window_size_samples):
 {'start': 11296} {'end': 21984} {'start': 25632} {'end': 54752} {'start': 57376} {'end': 97760} {'start': 103456} {'end': 124896} 
 ```
 
-## 8. 参考地址
+## 8. 参考github
+
+
+
+
 

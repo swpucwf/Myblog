@@ -22,7 +22,9 @@ if int(os.environ.get('LOCAL_RANK', 0)) == 0:
 # 获取训练器
 trainer = MASRTrainer(configs=args.configs, use_gpu=args.use_gpu)
 
-trainer.train(save_model_path=args.save_model_path,
-              resume_model=args.resume_model,
-              pretrained_model=args.pretrained_model,
-              augment_conf_path=args.augment_conf_path)
+trainer.train(
+    save_model_path=args.save_model_path,
+    resume_model=args.resume_model,
+    pretrained_model=args.pretrained_model,
+    augment_conf_path=args.augment_conf_path
+)
