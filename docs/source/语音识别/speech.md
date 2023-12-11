@@ -6,7 +6,9 @@
 
 ## 语音识别框架wenet
 [wenet介绍](https://github.com/wenet-e2e/wenet)
+[FunASR本地部署](https://github.com/alibaba-damo-academy/FunASR)
 
 ## 常用算法
 [conformer](https://zhuanlan.zhihu.com/p/412005303)
 [conformer知识点](source/语音识别/md/conformer.md)
+
