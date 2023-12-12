@@ -76,7 +76,7 @@
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 
 ### OCR
-- [OCR学习笔记](source/CV/source/OCR.md)
+- [OCR学习笔记](source/CV/source/OCR/OCR.md)
 ### 信创经验
 - [手把手教你在昇腾平台上搭建PyTorch训练环境](https://blog.51cto.com/u_15214399/6354822)(https://bbs.huaweicloud.com/blogs/399602?utm_source=51cto&utm_medium=bbs-ex&utm_campaign=other&utm_content=content)
 - [在昇腾平台上搭建PyTorch训练环境 (xjx100.cn)](http://wed.xjx100.cn/news/225611.html?action=onClick)
