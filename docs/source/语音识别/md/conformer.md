@@ -31,9 +31,9 @@
 
 ### 2. 1基于Transformer的ASR模型
 
-​	基于Transformer的ASR模型，其输入是提取的FBank或MFCC语音特征。由于语音特征序列一般比较长，在送入模型之前，通常会进行两层步长为2的卷积操作，将序列变为原来的1/4长。
+基于Transformer的ASR模型，其输入是提取的FBank或MFCC语音特征。由于语音特征序列一般比较长，在送入模型之前，通常会进行两层步长为2的卷积操作，将序列变为原来的1/4长。
 
-​	基于Transformer的ASR模型编码器和解码器与原始Transformer没有差别，在编码器端，是一个多头注意力子层和一个前馈网络子层，它们分别进行残差连接和层标准化（LayerNorm）操作，而在解码器端则会多一个编码器-解码器多头注意力层，用于进行输入和输出之间的交互。
+基于Transformer的ASR模型编码器和解码器与原始Transformer没有差别，在编码器端，是一个多头注意力子层和一个前馈网络子层，它们分别进行残差连接和层标准化（LayerNorm）操作，而在解码器端则会多一个编码器-解码器多头注意力层，用于进行输入和输出之间的交互。
 
 ![image-20231207004843581](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images/image-20231207004843581.png)
 

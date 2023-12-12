@@ -59,7 +59,8 @@
   - [基于OpenCV+YOLOv5实现车辆跟踪与计数(附源码)](https://mp.weixin.qq.com/s/mn8-o01AUnqhNiUdjMp_tg)
     - [github](https://github.com/freedomwebtech/win11vehiclecount)
   - [最强Backbone | 北大+港大+腾讯+复旦+蚂蚁提出GroupMixFormer](https://github.com/AILab-CVC/GroupMixFormer)
-  - [基于YOLOv8，目标计数及GUI界面实践教程](https://mp.weixin.qq.com/s/Kvqoqae-7oRn-bUHJCxztQ)
+  - [基于YOLOv8,目标计数及GUI界面实践教程](https://mp.weixin.qq.com/s/Kvqoqae-7oRn-bUHJCxztQ)
+  - 
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
 - [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace)
@@ -74,7 +75,7 @@
 - [使用TensorRT网络定义API实现流行的深度学习网络-兄弟项目存储库](https://github.com/wang-xinyu/pytorchx)
 - [TensorRT ONNX 学习笔记](https://zhuanlan.zhihu.com/p/354600414)
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
-
+- [deepstream流推理工具相关资料](https://blog.csdn.net/qq_40305597/article/details/121357306)
 ### OCR
 - [OCR学习笔记](source/CV/source/OCR/OCR.md)
 ### 信创经验
