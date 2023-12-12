@@ -9,6 +9,6 @@
 [FunASR本地部署](https://github.com/alibaba-damo-academy/FunASR)
 
 ## 常用算法
-[conformer](https://zhuanlan.zhihu.com/p/412005303)
-[conformer知识点](source/语音识别/md/conformer.md)
+- [conformer](https://zhuanlan.zhihu.com/p/412005303)
+- [conformer知识点](source/语音识别/md/conformer.md)
 
