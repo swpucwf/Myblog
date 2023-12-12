@@ -4,7 +4,7 @@
 - yolo全系列解析
   - [yolo全系列解析](source/CV/source/yolo/yolo.md)
 - repvgg
-  - [SOTA性能，让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
+  - [SOTA性能,让VGG式模型再次伟大](https://zhuanlan.zhihu.com/p/344324470)
 - 标注工具
   - [目标检测数据集标注工具](https://zhuanlan.zhihu.com/p/445559419)
 - 小目标问题
@@ -27,7 +27,7 @@
 - 虚拟试穿
   - [虚拟试穿论文合集](https://github.com/minar09/awesome-virtual-try-on)
 - 算法应用
-    - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
+  - [yolov5与产猪的关系](https://mp.weixin.qq.com/s/2yP7ZDRBsAQoTQjNDaIATw)
 - 机器学习教材
   - [教材网址](https://github.com/lTbgykio/Books-Free-Books) 
 - yolov8相关实例
@@ -60,9 +60,6 @@
     - [github](https://github.com/freedomwebtech/win11vehiclecount)
   - [最强Backbone | 北大+港大+腾讯+复旦+蚂蚁提出GroupMixFormer](https://github.com/AILab-CVC/GroupMixFormer)
   - [基于YOLOv8，目标计数及GUI界面实践教程](https://mp.weixin.qq.com/s/Kvqoqae-7oRn-bUHJCxztQ)
-
-
-
 ### 人脸识别
 - [最全人脸识别介绍](https://blog.csdn.net/qq_23091073/article/details/126930065)
 - [OpenFace](https://github.com/TadasBaltrusaitis/OpenFace)
