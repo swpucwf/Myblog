@@ -14,3 +14,6 @@
 
 ### AIGC
   - [FaceChain](https://github.com/modelscope/facechain)
+
+### 扩散模型
+  - [magic-animate](https://github.com/magic-research/magic-animate)
