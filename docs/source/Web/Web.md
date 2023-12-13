@@ -35,3 +35,4 @@
 - [聊天机器人框架](https://github.com/nonebot/nonebot2.git)
 - [在线教育平台](https://github.com/zaxlct/imooc-django.git)
 - [QQ机器人](https://github.com/RockChinQ/QChatGPT.git)
+- [一键部署机器人](https://github.com/lss233/chatgpt-mirai-qq-bot)
