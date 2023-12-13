@@ -27,3 +27,4 @@
 - [django-web](https://github.com/StrayCamel247/Django_web)
 - [大模型聊天机器人](https://github.com/zhayujie/chatgpt-on-wechat.git)
 - [django_教程](https://www.liujiangblog.com/)
+- [培训系统-java](https://github.com/PlayEdu/PlayEdu)
