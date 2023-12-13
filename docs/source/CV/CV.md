@@ -107,5 +107,9 @@
 
 ### 数据集
   - [手部动作识别相关开源数据集汇总](https://mp.weixin.qq.com/s/yrpo7c-NY6rL5V6DPSDIeQ)
+### project
+
+- [基于计算机视觉的智慧养老系统](https://github.com/Tang1705/Intelligent-Elderly-Care)
+- 
 
   

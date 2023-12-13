@@ -13,3 +13,14 @@
 
 ### python资料
 - 「python进阶-中英文版」[链接](https://pan.quark.cn/s/fdb4c46fcca3)  提取码：zLjA
+### JAVA
+- [链接地址](https://www.blog996.com/md/2023-11-09-1699496330596.html)
+
+
+- [算法工程师学习](https://github.com/lcylmhlcy/Awesome-algorithm-interview.git)
+
+- [微信机器人服务 微信机器人客户端](https://github.com/JiankeLiJin/wx-bot-server)
+- [c++](https://github.com/liuxuanhai/CodingInterviewsNotes)
+- [开源审计系统](https://github.com/jumpserver/jumpserver)
+- [基于人脸识别的门禁管理系统](https://github.com/hualuoo/dormitory_menage_system.git)
+- [QQ三国数值系统研究](https://github.com/WanderingQuantum/qqsganalysis?tab=readme-ov-file)
