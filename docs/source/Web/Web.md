@@ -34,3 +34,4 @@
 - [drf_admin](https://github.com/TianPangJi/drf_admin)
 - [聊天机器人框架](https://github.com/nonebot/nonebot2.git)
 - [在线教育平台](https://github.com/zaxlct/imooc-django.git)
+- [QQ机器人](https://github.com/RockChinQ/QChatGPT.git)
