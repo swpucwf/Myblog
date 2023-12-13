@@ -24,3 +24,5 @@
 - [开源审计系统](https://github.com/jumpserver/jumpserver)
 - [基于人脸识别的门禁管理系统](https://github.com/hualuoo/dormitory_menage_system.git)
 - [QQ三国数值系统研究](https://github.com/WanderingQuantum/qqsganalysis?tab=readme-ov-file)
+- [django-web](https://github.com/StrayCamel247/Django_web)
+- [大模型聊天机器人](https://github.com/zhayujie/chatgpt-on-wechat.git)
