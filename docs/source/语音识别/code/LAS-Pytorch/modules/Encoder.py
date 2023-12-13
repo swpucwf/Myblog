@@ -83,7 +83,7 @@ class Encoder(nn.Module):
         if rnn_celltype == 'lstm':
             self.rnn =  nn.LSTM(cnn_out_channels, self.hidden_dim, self.n_layers, dropout=self.dropout_p, bidirectional=False,batch_first=True)
         else:
-            self.rnn =  nn.GRU(cnn_out_channels, self.hidden_dim, self.n_layers, dropout=self.dropout_p, bidirectional=False,batch_first=True)
+            self.rnn =  nn.GRU(cnn_out_channels, self.hidden_dim, self.n_layers, dropout=self.dropout_p, bidirectional=False, batch_first=True)
 
     def forward(self, inputs, input_lengths):
         #print(inputs.shape)

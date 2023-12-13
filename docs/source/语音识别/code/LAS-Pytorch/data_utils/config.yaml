@@ -4,7 +4,7 @@ n_layers_enc: 4     ## Number of Encoder layers
 vocab_size: 30        ## VOcabulary size
 max_out_len: 100        ## Maximum output length
 dec_hidden_dim: 256   ## Decoder RNN hidden dimension
-n_layers_dec: 1       ## Number of decoder layers
+n_layers_dec: 2       ## Number of decoder layers
 sos_id: 1             ## start of sentence ID in vocab
 eos_id: 2             ##ENd of sentence ID in vocab
 use_gpu: 1
