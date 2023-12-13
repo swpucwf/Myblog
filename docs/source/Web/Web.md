@@ -26,3 +26,4 @@
 - [QQ三国数值系统研究](https://github.com/WanderingQuantum/qqsganalysis?tab=readme-ov-file)
 - [django-web](https://github.com/StrayCamel247/Django_web)
 - [大模型聊天机器人](https://github.com/zhayujie/chatgpt-on-wechat.git)
+- [django_教程](https://www.liujiangblog.com/)
