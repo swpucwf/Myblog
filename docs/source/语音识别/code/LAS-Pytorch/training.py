@@ -48,10 +48,6 @@ def train(model,dataloader_train,epoch,optimizer,device,criterion,char_dict,LOG_
         optimizer.zero_grad()
 
         # print(input_features.shape)
-        # print(input_lengths)
-        # print(targets.shape)
-        # exit()
-
         decoder_outputs,sequence_symbols = model(input_features,input_lengths,targets)
         loss = criterion(decoder_outputs,targets)
         loss.backward()
@@ -103,10 +99,8 @@ def main(config):
     decoder = Decoder(config['vocab_size'], config['max_out_len'], config['dec_hidden_dim'], config['enc_hidden_dim'],
                      config['sos_id'], config['eos_id'],config['n_layers_dec'], rnn_celltye='gru')
     model = Seq2seq(encoder,decoder).to(device)
-    # print(model)
-    # exit()
-
     optimizer = optim.Adam(model.parameters(), lr=0.001, weight_decay=0.0, betas=(0.9, 0.98), eps=1e-9)
+    # 交叉熵
     criterion = nn.CrossEntropyLoss(reduction='mean').to(device)
     
     ### Data related

@@ -17,3 +17,9 @@
 - [TTS](https://github.com/coqui-ai/TTS?tab=readme-ov-file)
 - [TTS使用资料](https://zhuanlan.zhihu.com/p/661291996)
 
+
+- [Meta的音频生成基础模型](https://mp.weixin.qq.com/s/rQa6if_XFF0s5vjjDMBjCA)
+- [实时语音克隆 - 中文/普通话](https://gitee.com/babysor/MockingBird)
+- [wenet](https://github.com/wenet-e2e/wenet )
+
+
