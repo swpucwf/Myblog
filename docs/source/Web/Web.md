@@ -36,3 +36,4 @@
 - [在线教育平台](https://github.com/zaxlct/imooc-django.git)
 - [QQ机器人](https://github.com/RockChinQ/QChatGPT.git)
 - [一键部署机器人](https://github.com/lss233/chatgpt-mirai-qq-bot)
+- [dkango-学习教程](https://www.cnblogs.com/derek1184405959/p/8579428.html)
