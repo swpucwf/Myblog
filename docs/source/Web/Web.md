@@ -16,7 +16,7 @@
 ### JAVA
 - [链接地址](https://www.blog996.com/md/2023-11-09-1699496330596.html)
 
-
+## other
 - [算法工程师学习](https://github.com/lcylmhlcy/Awesome-algorithm-interview.git)
 
 - [微信机器人服务 微信机器人客户端](https://github.com/JiankeLiJin/wx-bot-server)
@@ -37,3 +37,10 @@
 - [QQ机器人](https://github.com/RockChinQ/QChatGPT.git)
 - [一键部署机器人](https://github.com/lss233/chatgpt-mirai-qq-bot)
 - [dkango-学习教程](https://www.cnblogs.com/derek1184405959/p/8579428.html)
+- [fay数字人](https://gitee.com/xszyou/fay.git)
+- [基于Gradio Blocks的YOLOv5通用目标检测演示系统 Gradio YOLOv5 Det项目的扩展版](https://gitee.com/CV_Lab/gradio_yolov5_det_blocks)
+- [数字大屏](https://gitee.com/smartchart/smartchart)
+- [爬虫](https://gitee.com/AJay13/ECommerceCrawlers)
+- [马赛克去除工具 Depix]( Depix)
+- [一键抠图](https://github.com/danielgatis/rembg)
+- [换脸](https://github.com/iperov/DeepFaceLab)
