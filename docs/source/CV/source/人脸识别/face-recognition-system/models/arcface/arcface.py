@@ -18,7 +18,7 @@ class Arcface(object):
         ])
 
     def get_model(self):
-        path = os.path.join(os.path.dirname(__file__), 'weight', 'model_final.pth')
+        path = os.path.join(os.path.dirname(__file__), 'weight', 'arc_face.pth')
         # print(path)
         model = Backbone(50, 0.6, 'ir_se')
         if self.__cuda:
