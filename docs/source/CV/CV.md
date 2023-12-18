@@ -76,6 +76,7 @@
 - [TensorRT ONNX 学习笔记](https://zhuanlan.zhihu.com/p/354600414)
 - [TensorRT推理](https://blog.csdn.net/JianguoChow/article/details/122684310)
 - [deepstream流推理工具相关资料](https://blog.csdn.net/qq_40305597/article/details/121357306)
+- [tensorRT deploy](https://zhuanlan.zhihu.com/p/607572513?utm_id=0)
 ### OCR
 - [OCR学习笔记](source/CV/source/OCR/OCR.md)
 ### 信创经验
