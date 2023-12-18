@@ -172,7 +172,7 @@ class FaceRecordSystem(QMainWindow, Ui_MainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    app.setStyle(QStyleFactory.keys()[2])
+    # app.setStyle(QStyleFactory.keys()[2])
     window = FaceRecordSystem()
     window.show()
     sys.exit(app.exec_())

@@ -4,7 +4,6 @@ import math
 import torch
 import cv2
 
-
 class MTCNN(object):
     def __init__(self):
         use_cuda = torch.cuda.is_available()
@@ -30,9 +29,6 @@ class MTCNN(object):
             bbox.append(boxes)
         # print(bbox)
         bbox = [i for i in bbox if i is not None]
-        # print(bbox)
-        # exit()
-        # print(bbox)
         if not bbox:
             # print(1)
             return [],[]
@@ -53,8 +49,6 @@ class MTCNN(object):
 
         output = self._pnet(img)
         # 两个坐标，置信度
-        # print(output[1].shape)
-        # exit()
         probs = output[1].data.cpu().numpy()[0, 1, :, :]
         offsets = output[0].data.cpu().numpy()
 
@@ -103,7 +97,6 @@ class MTCNN(object):
         keep = self._nms(bbox, self.nms_thresholds[2], mode='min')
         bbox = bbox[keep]
         landmarks = landmarks[keep]
-
         return bbox, landmarks
 
     def _preprocess(self, img):
