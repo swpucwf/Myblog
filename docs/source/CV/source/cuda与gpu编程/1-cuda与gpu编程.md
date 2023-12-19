@@ -212,23 +212,17 @@ nvidia-smi
 ```shell
 vim ~/.bashrc
 ```
-
 ```
 export PATH=/usr/local/cuda-11.4/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64:$LD_LIBRARY_PATH          
 export LIBRARY_PATH=/usr/local/cuda-11.4/lib64:$LIBRARY_PATH                                                       
 ```
-
 ```shell
 source ~/.bashrc
 ```
-
 ![image-20231201091359217](https://raw.githubusercontent.com/swpucwf/MyBolgImage/main/images202312010925549.png)
-
 # 课程环境搭建设置
-
 ---
-
 ## Server环境搭建(without docker)
 
 [安装OpenSSH server并启动](https://www.cyberciti.biz/faq/ubuntu-linux-install-openssh-server/)
