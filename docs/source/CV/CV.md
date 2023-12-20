@@ -89,6 +89,7 @@
 - [麒麟V10离线安装docker及docker-compose](https://blog.csdn.net/QQ83512272/article/details/126323435)
 - [海光服务器搭建流程](https://developer.hpccube.com/gitbook//dcu_tutorial/index.html)
 - [离线安装gcc,g++,make等依赖包](https://blog.csdn.net/weixin_38090079/article/details/131846961?spm=1001.2014.3001.5502)
+- [dm sql](https://www.cnblogs.com/eternality/p/17693658.html)
 ### QT布局
 - [QT布局](https://blog.csdn.net/Fdog_/article/details/107522283)
 ### Docker安装
