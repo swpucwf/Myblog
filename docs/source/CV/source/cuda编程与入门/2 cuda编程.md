@@ -194,5 +194,123 @@ __global__ void print_thread_idx_per_grid_kernel(){
 }
 #endif //__UTILS__HPP__
 
+```cuda
+inline static void __kernelCheck(const char* file, const int line) {
+    /* 
+     * 在编写CUDA是，错误排查非常重要，默认的cuda runtime API中的函数都会返回cudaError_t类型的结果，
+     * 但是在写kernel函数的时候，需要通过cudaPeekAtLastError或者cudaGetLastError来获取错误
+     */
+    cudaError_t err = cudaPeekAtLastError();
+    if (err != cudaSuccess) {
+        printf("ERROR: %s:%d, ", file, line);
+        printf("CODE:%s, DETAIL:%s\n", cudaGetErrorName(err), cudaGetErrorString(err));
+        exit(1);
+    }
+}
 ```
+
+#### cuda运算
+- 设置大小
+- 分配内存；拷贝到GPU
+- 调用kernel来进行matmul计算
+- 结果拷贝到CPU
+- 释放内存
+
+#### 打印cuda信息
+```cuda
+// 使用变参进行LOG的打印。比较推荐的打印log的写法
+static void __log_info(const char* format, ...) {
+    char msg[1000];
+    va_list args;
+    va_start(args, format);
+
+    vsnprintf(msg, sizeof(msg), format, args);
+
+    fprintf(stdout, "%s\n", msg);
+    va_end(args);
+}
+int main(){
+    int count;
+    int index = 0;
+    cudaGetDeviceCount(&count);
+    while (index < count) {
+        cudaSetDevice(index);
+        cudaDeviceProp prop;
+        cudaGetDeviceProperties(&prop, index);
+        LOG("%-40s",             "*********************Architecture related**********************");
+        LOG("%-40s%d%s",         "Device id: ",                   index, "");
+        LOG("%-40s%s%s",         "Device name: ",                 prop.name, "");
+        LOG("%-40s%.1f%s",       "Device compute capability: ",   prop.major + (float)prop.minor / 10, "");
+        LOG("%-40s%.2f%s",       "GPU global meory size: ",       (float)prop.totalGlobalMem / (1<<30), "GB");
+        LOG("%-40s%.2f%s",       "L2 cache size: ",               (float)prop.l2CacheSize / (1<<20), "MB");
+        LOG("%-40s%.2f%s",       "Shared memory per block: ",     (float)prop.sharedMemPerBlock / (1<<10), "KB");
+        LOG("%-40s%.2f%s",       "Shared memory per SM: ",        (float)prop.sharedMemPerMultiprocessor / (1<<10), "KB");
+        LOG("%-40s%.2f%s",       "Device clock rate: ",           prop.clockRate*1E-6, "GHz");
+        LOG("%-40s%.2f%s",       "Device memory clock rate: ",    prop.memoryClockRate*1E-6, "Ghz");
+        LOG("%-40s%d%s",         "Number of SM: ",                prop.multiProcessorCount, "");
+        LOG("%-40s%d%s",         "Warp size: ",                   prop.warpSize, "");
+
+        LOG("%-40s",             "*********************Parameter related************************");
+        LOG("%-40s%d%s",         "Max block numbers: ",           prop.maxBlocksPerMultiProcessor, "");
+        LOG("%-40s%d%s",         "Max threads per block: ",       prop.maxThreadsPerBlock, "");
+        LOG("%-40s%d:%d:%d%s",   "Max block dimension size:",     prop.maxThreadsDim[0], prop.maxThreadsDim[1], prop.maxThreadsDim[2], "");
+        LOG("%-40s%d:%d:%d%s",   "Max grid dimension size: ",     prop.maxGridSize[0], prop.maxGridSize[1], prop.maxGridSize[2], "");
+        index ++;
+        printf("\n");
+    }
+    return 0;
+}
+```
+[//] 打印信息
+*********************Architecture related**********************
+Device id:                              0
+Device name:                            NVIDIA GeForce RTX 4090 Laptop GPU
+Device compute capability:              8.9
+GPU global meory size:                  15.68GB
+L2 cache size:                          64.00MB
+Shared memory per block:                48.00KB
+Shared memory per SM:                   100.00KB
+Device clock rate:                      1.45GHz
+Device memory clock rate:               9.00Ghz
+Number of SM:                           76
+Warp size:                              32
+*********************Parameter related************************
+Max block numbers:                      24
+Max threads per block:                  1024
+Max block dimension size:               1024:1024:64
+Max grid dimension size:                2147483647:65535:65535
+
+#### Tiling
+/*
+    使用Tiling技术
+    一个tile处理的就是block, 将一个矩阵分为多个小的tile，这些tile之间的执行独立，并且可以并行
+*/
+```cuda
+  dim3 dimBlock(blockSize, blockSize);
+    dim3 dimGrid(width / blockSize, width / blockSize);
+    if (staticMem) {
+        MatmulSharedStaticKernel <<<dimGrid, dimBlock>>> (M_device, N_device, P_device, width);
+    } else {
+        MatmulSharedDynamicKernel <<<dimGrid, dimBlock, sMemSize, nullptr>>> (M_device, N_device, P_device, width, blockSize);
+    }
+
+```
+####  动态共享变量
+```cuda
+    /* 
+        声明动态共享变量的时候需要加extern，同时需要是一维的 
+        注意这里有个坑, 不能够像这样定义： 
+            __shared__ float M_deviceShared[];
+            __shared__ float N_deviceShared[];
+        因为在cuda中定义动态共享变量的话，无论定义多少个他们的地址都是一样的。
+        所以如果想要像上面这样使用的话，需要用两个指针分别指向shared memory的不同位置才行
+    */
+
+
+```
+
+#### 流式处理
+
+
+
 
