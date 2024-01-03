@@ -108,7 +108,7 @@
 - [Datawhale人工智能培养方案V2.0](https://datawhale.feishu.cn/docs/doccn0AOicI3LJ8RwhY0cuDPSOc#9qam2V)
 ### 框架平台
   - [浦视  | 视觉智能开源平台](https://openxlab.org.cn/openplatform?lang=zh-CN)
-
+  - [学习GPU编程（CUDA）](https://face2ai.com/program-blog/#GPU%E7%BC%96%E7%A8%8B%EF%BC%88CUDA%EF%BC%89)
 ### 数据集
   - [手部动作识别相关开源数据集汇总](https://mp.weixin.qq.com/s/yrpo7c-NY6rL5V6DPSDIeQ)
 ### project
